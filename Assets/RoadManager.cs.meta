@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c6f3bb37fa291914bb464b3f4fc0f7e3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - planePrefab: {fileID: 6566586383797240269, guid: da3d54edf05f7c745b10057f62bd6753, type: 3}
+  - bigCar: {fileID: 2000301947540658689, guid: 0d0bdf5e8d0b0f34dbdf1b5e3ac22548, type: 3}
+  - transparentCube: {fileID: 3670827225768065925, guid: c48e7c00a6c1e1c4896f529290c9515c, type: 3}
+  executionOrder: 0
+  icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
