@@ -28,7 +28,7 @@ public class Engine : MonoBehaviour
     public float LsdMaxSlip;
     public float LsdMaxDistribution;
 
-    [Header("Transmisión")]
+    [Header("Transmisiï¿½n")]
     [Range(-4, 4)]
     public float[] gearRatios;
     public float gearRatio { get { return gearRatios[currentGear] * finalDriveRatio; } }

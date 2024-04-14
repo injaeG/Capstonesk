@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RightBarrier
+  - aaa
+  - LeftBarrier
+  - RoadLeftEnd
+  - RoadLeft
+  - RoadRightEnd
+  - RoadRight
+  - Car
+  - Road
   layers:
   - Default
   - TransparentFX
