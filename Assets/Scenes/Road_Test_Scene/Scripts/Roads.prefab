@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 773219858811056026}
   m_Layer: 0
   m_Name: RoadSpawner
-  m_TagString: Untagged
+  m_TagString: RoadSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
