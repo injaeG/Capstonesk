@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 84ba36fdb012f314ebd6b9bc7bd3f608
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - planePrefab: {fileID: 2690469432061830283, guid: 0cca89add407c634bb9873c24fd1fdc9, type: 3}
+  - microbus: {fileID: 6337336859969219881, guid: 7d449951b3edff845b1e30810f597453, type: 3}
+  - cube: {fileID: 6025165960337577709, guid: 0cf6da61d73fdd7428b9e8a38feb4697, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
