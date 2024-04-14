@@ -23,7 +23,7 @@ public class Road_Spawner : MonoBehaviour
         roads.Remove(movedRoad);
         float newZ = roads[roads.Count - 1].transform.position.z + offset;
         movedRoad.transform.position = new Vector3(0, 0, newZ);
-        roads.Add(MOVEDrOAD);
+        roads.Add(movedRoad);
 
     }
 }
