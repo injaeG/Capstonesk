@@ -19,6 +19,11 @@ public class Road_Spawner : MonoBehaviour
     // Update is called once per frame
     public void MoveRoad()
     {
-        GameObject movedRoad = roads
+        GameObject movedRoad = roads[0];
+        roads.Remove(movedRoad);
+        float newZ = roads[roads.Count - 1].transform.position.z + offset;
+        movedRoad.transform.position = new Vector3(0, 0, newZ);
+        roads.Add(MOVEDrOAD);
+
     }
 }
