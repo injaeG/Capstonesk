@@ -180,63 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 1419717442, guid: f56d46228aee4734f9114056c53bb57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &552343070
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2834880405115166550, guid: 7d449951b3edff845b1e30810f597453, type: 3}
-      propertyPath: m_Name
-      value: MicroBus4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337336859969219881, guid: 7d449951b3edff845b1e30810f597453, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337336859969219881, guid: 7d449951b3edff845b1e30810f597453, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337336859969219881, guid: 7d449951b3edff845b1e30810f597453, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337336859969219881, guid: 7d449951b3edff845b1e30810f597453, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337336859969219881, guid: 7d449951b3edff845b1e30810f597453, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337336859969219881, guid: 7d449951b3edff845b1e30810f597453, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337336859969219881, guid: 7d449951b3edff845b1e30810f597453, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337336859969219881, guid: 7d449951b3edff845b1e30810f597453, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337336859969219881, guid: 7d449951b3edff845b1e30810f597453, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337336859969219881, guid: 7d449951b3edff845b1e30810f597453, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7d449951b3edff845b1e30810f597453, type: 3}
 --- !u!28 &609776848
 Texture2D:
   m_ObjectHideFlags: 0
@@ -486,7 +429,7 @@ MonoBehaviour:
     roadShapeDataActive: 0
     roadShapeData:
       nodes: []
-      hardEdge: 
+      hardEdge: []
       priorityNodeIndexLeft: 0
       priorityNodeIndexRight: 0
       nodesV3: []
@@ -513,14 +456,14 @@ MonoBehaviour:
     roadShape: []
     roadShapeExt: []
     roadShapeExt2: []
-    doConnectionTri: 
-    doConnectionTriExt: 
+    doConnectionTri: []
+    doConnectionTriExt: []
     roadShapeUVs: []
     roadShapeExtUVs: []
     roadShapeExtUVs2: []
     roadShapeUVs2: []
     preserveUVs: 0
-    hardEdge: 
+    hardEdge: []
     roadShapeVecsString: 
     defaultSidewalk: 0
     sidewalks: 0
@@ -598,7 +541,11 @@ MonoBehaviour:
     mainRoadsOnly: 0
     isRoadShape: 0
     controlType: 0
-    vertexColor: {r: 0, g: 0, b: 0, a: 0}
+    vertexColor:
+      r: 0
+      g: 0
+      b: 0
+      a: 0
     trafficPosts: []
     activeTrafficPostIndex: -1
     showTrafficPosts: 0
@@ -725,7 +672,6 @@ MonoBehaviour:
   soTrees: 1
   doDetail: 1
   terrainRect:
-    serializedVersion: 2
     x: 0
     y: 0
     width: 0
@@ -843,10 +789,26 @@ MonoBehaviour:
   tempHighlightIndents: 0
   tempHighlightSurroundings: 0
   highlightSideObject: 1
-  highlightRoadColor: {r: 0.39, g: 0.53, b: 0.9, a: 0.1}
-  highlightMarkerColor: {r: 0.6, g: 0.15, b: 0.15, a: 0.25}
-  highlightIndentColor: {r: 1, g: 1, b: 1, a: 0.1}
-  highlightSurroundingColor: {r: 1, g: 1, b: 1, a: 0.05}
+  highlightRoadColor:
+    r: 0.39
+    g: 0.53
+    b: 0.9
+    a: 0.1
+  highlightMarkerColor:
+    r: 0.6
+    g: 0.15
+    b: 0.15
+    a: 0.25
+  highlightIndentColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 0.1
+  highlightSurroundingColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 0.05
   highlightSurfacesDrag: 0
   onlyShowSelectedRoad: 0
   soDeformationObjects: []
@@ -914,7 +876,11 @@ MonoBehaviour:
   prefabScripts: []
   globalGridActive: 0
   gridGUIActive: 0
-  globalGridColor: {r: 0.35, g: 0.5, b: 0.9, a: 0.9}
+  globalGridColor:
+    r: 0.35
+    g: 0.5
+    b: 0.9
+    a: 0.9
   globalGridSize: 10
   globalGridRadius: 1000
   globalGridRotation: 0
@@ -949,9 +915,8 @@ MonoBehaviour:
     shapeCurbPercentages: []
     sidewalkUVs: []
     curbUVs: []
-    doConnectionTri: 
+    doConnectionTri: []
     tileRect:
-      serializedVersion: 2
       x: 0
       y: 0
       width: 0
@@ -1047,9 +1012,21 @@ MonoBehaviour:
   aiIgnoreConnections: 1
   displayLaneData: 0
   rightHandDriving: 1
-  leftLaneHandleColour: {r: 0.1, g: 0.1, b: 0.1, a: 0.75}
-  rightLaneHandleColour: {r: 1, g: 1, b: 1, a: 0.75}
-  laneHandleSelectedColour: {r: 1, g: 1, b: 0, a: 0.5}
+  leftLaneHandleColour:
+    r: 0.1
+    g: 0.1
+    b: 0.1
+    a: 0.75
+  rightLaneHandleColour:
+    r: 1
+    g: 1
+    b: 1
+    a: 0.75
+  laneHandleSelectedColour:
+    r: 1
+    g: 1
+    b: 0
+    a: 0.5
   roadUvThreshold: 1750
   updateQueue: 0
   checkPresetsFlag: 0
@@ -1058,9 +1035,21 @@ MonoBehaviour:
   RoadNetworkInitFlag: 1
   excludeFromSelection: []
   addExcludeFromSelection: {fileID: 0}
-  shapeUVColor: {r: 0, g: 0, b: 0, a: 1}
-  startCapColor: {r: 0.35, g: 0.5, b: 0.9, a: 1}
-  endCapColor: {r: 0.35, g: 0.5, b: 0.9, a: 1}
+  shapeUVColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  startCapColor:
+    r: 0.35
+    g: 0.5
+    b: 0.9
+    a: 1
+  endCapColor:
+    r: 0.35
+    g: 0.5
+    b: 0.9
+    a: 1
   soSectionMaterial: {fileID: 0}
   v32b4Flag: 1
   ctrlKey: 0
@@ -9426,4 +9415,3 @@ SceneRoots:
   - {fileID: 1722746243}
   - {fileID: 2435455045684344353}
   - {fileID: 8133374474172086881}
-  - {fileID: 552343070}
