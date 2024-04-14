@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< Updated upstream
   m_IndirectSpecularColor: {r: 0.18314904, g: 0.22669867, b: 0.2942732, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+>>>>>>> Stashed changes
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -568,8 +572,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_LocalEulerAnglesHint: {x: 22.538, y: -30, z: 0}
 --- !u!1 &956183846
+=======
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1063235266
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -577,22 +586,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 956183850}
   - component: {fileID: 956183847}
   m_Layer: 0
   m_Name: RoadSpawner
+=======
+  - component: {fileID: 1063235268}
+  - component: {fileID: 1063235267}
+  m_Layer: 0
+  m_Name: Enemy
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!65 &956183847
+=======
+--- !u!65 &1063235267
+>>>>>>> Stashed changes
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 956183846}
+=======
+  m_GameObject: {fileID: 1063235266}
+>>>>>>> Stashed changes
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -607,12 +631,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!4 &956183850
+=======
+--- !u!4 &1063235268
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 956183846}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -675,6 +704,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Scenes/Road_Test_Scene/Road_Test_Scene.unity
 --- !u!1 &1175742393
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,11 +757,22 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.208868, y: 11.366635, z: -21.612288}
+=======
+=======
+  m_GameObject: {fileID: 1063235266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> 202fe544a4d3583891ec2e72cbab075704e1a6a8:Assets/Scenes/Road_Test_Scene.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD:Assets/Scenes/Road_Test_Scene/Road_Test_Scene.unity
+=======
+>>>>>>> Stashed changes
+>>>>>>> 202fe544a4d3583891ec2e72cbab075704e1a6a8:Assets/Scenes/Road_Test_Scene.unity
 --- !u!1 &1333599562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1221,13 @@ SceneRoots:
   m_Roots:
   - {fileID: 1333599565}
   - {fileID: 871964446}
+<<<<<<< Updated upstream
   - {fileID: 669680948}
   - {fileID: 2146651445}
+<<<<<<< HEAD:Assets/Scenes/Road_Test_Scene/Road_Test_Scene.unity
   - {fileID: 1175742396}
+=======
+=======
+  - {fileID: 1063235268}
+>>>>>>> Stashed changes
+>>>>>>> 202fe544a4d3583891ec2e72cbab075704e1a6a8:Assets/Scenes/Road_Test_Scene.unity
