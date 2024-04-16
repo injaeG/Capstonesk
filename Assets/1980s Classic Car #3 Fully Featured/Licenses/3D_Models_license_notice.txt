@@ -1,0 +1,5 @@
+Copyright (C) 2024, Empty Room Games
+
+The 3D models (80sClassicCar#3.dae, PrefabWorld.fbx) was created in Blender by me (TheKnightsKing)
+
+Please refer to the Unity Asset Store Terms of Service and EULA
