@@ -78,6 +78,8 @@ public class VehicleController : MonoBehaviour
 
     void Update()
     {
+
+
         currentSpeed = GetComponent<Rigidbody>().velocity.magnitude * 3.6f; // 현재 속도 업데이트 (m/s에서 km/h로 변환)
 
         // 속도계 바늘 회전 계산
@@ -92,7 +94,15 @@ public class VehicleController : MonoBehaviour
         }
 
         float speedAdjustedSteeringSpeed = steeringSpeed * (1 + (currentSpeed / maxSpeed));
+        // Smoothly update the steering wheel rotation
+        float targetSteeringAngle = controls.steering * maxSteeringAngle;
+        currentSteeringAngle = Mathf.SmoothDamp(currentSteeringAngle, targetSteeringAngle, ref speedAdjustedSteeringSpeed, steeringSmoothTime);
 
+        if (steeringWheel != null)
+        {
+            // Update the steering wheel rotation based on the smoothed angle
+            steeringWheel.transform.localRotation = initialRotation * Quaternion.Euler(0, currentSteeringAngle, 0);
+        }
         // 연료가 있는 경우에만 throttle, brakes, handBrake, clutch 제어 가능
         if (fuelAmount > 0)
         {
@@ -135,12 +145,6 @@ public class VehicleController : MonoBehaviour
             controls.steering = 0; // 조향을 0으로 설정
         }
 
-        if (steeringWheel != null)
-        {
-            float yRotation = controls.steering * maxSteeringAngle; // 조향 입력에 따른 y축 회전값 계산
-            // 핸들의 회전을 조절합니다. 초기 회전값에 y축 회전을 조절하여 추가합니다.
-            steeringWheel.transform.localRotation = initialRotation * Quaternion.Euler(0, yRotation, 0);
-        }
 
         // 브레이크 소리 재생 로직
         if (controls.handBrake && !brakeSoundSource.isPlaying)
