@@ -11,6 +11,9 @@ public class kin : MonoBehaviour, Interactable
     private int currentAudioIndex = 0; // 현재 재생할 오디오 클립의 인덱스
     public float animationResetDelay = 5f; // 애니메이션을 기본값으로 되돌리기까지의 지연 시간(초)
 
+    [SerializeField]
+    private bool resetAnimationEnabled = true; // 기본값은 true로 설정
+
     private bool isAnimationActive = false;
     private float defaultOutlineWidth = 0f; // 아웃라인 기본 너비
     public float activeOutlineWidth = 10f; // 인터랙션 활성화 시 아웃라인 너비
@@ -64,9 +67,9 @@ public class kin : MonoBehaviour, Interactable
         // 오디오 클립 재생
         PlayNextAudioClip();
 
-        if (isAnimationActive)
+        if (isAnimationActive && resetAnimationEnabled)
         {
-            // 애니메이션 활성화 시, 애니메이션 길이 후에 추가 지연 시간을 포함하여 애니메이션 상태 재설정
+            // 애니메이션 활성화와 resetAnimationEnabled가 true일 때만 코루틴 실행
             StartCoroutine(ResetAnimationAfterDelay());
         }
     }
@@ -84,6 +87,10 @@ public class kin : MonoBehaviour, Interactable
         // 지연 시간이 만료되면 애니메이션 상태를 초기화
         if (isAnimationActive)
         {
+            // 다음 오디오 클립 재생을 위해 현재 오디오 인덱스를 1 증가시킵니다.
+            currentAudioIndex = (currentAudioIndex + 1) % audioClips.Length;
+            // 다음 오디오 클립 재생
+            PlayNextAudioClip();
             isAnimationActive = false;
             animator.SetBool("mirror", isAnimationActive);
         }

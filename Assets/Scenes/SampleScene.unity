@@ -232,9 +232,29 @@ PrefabInstance:
       propertyPath: handBrakeForce
       value: 3000
       objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: animationResetDelay
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3628969750994337376, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: bba74e54a0cee534d97da43d75900c10, type: 3}
+    - target: {fileID: 3628969750994337376, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 56d1669bab87b7845942de66f4197b44, type: 3}
+    - target: {fileID: 4188773397221474594, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: steeringSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4188773397221474594, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: decelerationRate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188773397221474594, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: fuelConsumptionRate
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5237432647028115437, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: clutch
@@ -259,6 +279,22 @@ PrefabInstance:
     - target: {fileID: 8692660157106089111, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: handBrakeForce
       value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884644479097429051, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: animationResetDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887310092313928385, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: audioClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887310092313928385, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: resetAnimationEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887310092313928385, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: audioClips.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
