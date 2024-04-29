@@ -15,8 +15,15 @@ TagManager:
   - RoadRightEnd
   - RoadRight
   - Car
+<<<<<<< Updated upstream
   - Road
   - object
+>>>>>>> Stashed changes
+=======
+  - Interactable
+  - Road
+  - engine
+  - enginesound
 >>>>>>> Stashed changes
   layers:
   - Default
