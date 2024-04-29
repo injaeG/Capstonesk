@@ -228,13 +228,89 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.067
       objectReference: {fileID: 0}
+    - target: {fileID: 776402238812561966, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: waitAfterAnimation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 776402238812561966, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: animationResetDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 776402238812561966, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: exitIfAnimationActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 776402238812561966, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: resetAnimationEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 776402238812561966, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: enableAnimationWaitTime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1555270568569991106, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: handBrakeForce
       value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: audio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: playOnce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: audioEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: enableAnimation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: isAnimationActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: playNextAudioClip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: waitAfterAnimation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: animationResetDelay
-      value: 100000
+      value: 100000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: exitIfAnimationActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: resetAnimationEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: enableAnimationWaitTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c961913eda72074fbed550f11faf3e1, type: 3}
+    - target: {fileID: 3628969750994337376, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: waitAfterAnimation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3628969750994337376, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: animationResetDelay
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3628969750994337376, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: audioClips.Array.data[0]
@@ -272,6 +348,10 @@ PrefabInstance:
       propertyPath: engineTorqueScale
       value: 600
       objectReference: {fileID: 0}
+    - target: {fileID: 6144997482831785392, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7568055550697054039, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: m_Name
       value: carMAIN
@@ -283,6 +363,10 @@ PrefabInstance:
     - target: {fileID: 8884644479097429051, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: animationResetDelay
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887310092313928385, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: animationResetDelay
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8887310092313928385, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: audioClips.Array.size

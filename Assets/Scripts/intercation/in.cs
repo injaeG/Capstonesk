@@ -10,14 +10,12 @@ public class kin : MonoBehaviour, Interactable
     public AudioClip[] audioClips; // 오디오 클립 배열
     private int currentAudioIndex = 0; // 현재 재생할 오디오 클립의 인덱스
     public float animationResetDelay = 5f; // 애니메이션을 기본값으로 되돌리기까지의 지연 시간(초)
-
-    [SerializeField]
-    private bool resetAnimationEnabled = true; // 기본값은 true로 설정
-
+    public bool playOnce = false; // 오디오 클립을 한 번만 재생할지 여부를 결정하는 변수
+    private bool hasPlayedOnce = false; // 오디오 클립이 이미 한 번 재생되었는지를 확인하는 변수
     private bool isAnimationActive = false;
     private float defaultOutlineWidth = 0f; // 아웃라인 기본 너비
     public float activeOutlineWidth = 10f; // 인터랙션 활성화 시 아웃라인 너비
-
+    public bool audioEnabled = false; // 오디오 클립 재생 여부를 결정하는 변수
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -64,10 +62,15 @@ public class kin : MonoBehaviour, Interactable
         isAnimationActive = !isAnimationActive;
         animator.SetBool("mirror", isAnimationActive);
 
-        // 오디오 클립 재생
-        PlayNextAudioClip();
+        // audioEnabled가 false이고, playOnce가 false이거나 오디오 클립이 아직 한 번도 재생되지 않았을 때만 오디오 클립 재생
+        if (!audioEnabled && (!playOnce || !hasPlayedOnce))
+        {
+            // 오디오 클립 재생
+            PlayNextAudioClip();
+            hasPlayedOnce = true; // 오디오 클립이 한 번 재생되었음을 표시
+        }
 
-        if (isAnimationActive && resetAnimationEnabled)
+        if (isAnimationActive)
         {
             // 애니메이션 활성화와 resetAnimationEnabled가 true일 때만 코루틴 실행
             StartCoroutine(ResetAnimationAfterDelay());
@@ -87,12 +90,9 @@ public class kin : MonoBehaviour, Interactable
         // 지연 시간이 만료되면 애니메이션 상태를 초기화
         if (isAnimationActive)
         {
-            // 다음 오디오 클립 재생을 위해 현재 오디오 인덱스를 1 증가시킵니다.
-            currentAudioIndex = (currentAudioIndex + 1) % audioClips.Length;
-            // 다음 오디오 클립 재생
-            PlayNextAudioClip();
             isAnimationActive = false;
             animator.SetBool("mirror", isAnimationActive);
+
         }
     }
 
