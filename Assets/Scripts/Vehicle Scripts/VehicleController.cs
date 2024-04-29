@@ -260,7 +260,7 @@ public class VehicleController : MonoBehaviour
     void ApplySpeedBasedDeceleration()
     {
         float currentSpeed = vehicleRigidbody.velocity.magnitude;
-        float maxDecelerationRate = 10f; // 최대 감속률 가정
+        float maxDecelerationRate = 12f; // 최대 감속률 가정
         float decelerationCoefficient = 0.025f; // 감속 계수 가정
 
         // currentSpeed의 영향을 줄이기 위해 값을 조정
