@@ -4,6 +4,10 @@ using UnityEngine;
 using TMPro;
 public class SuspensionAndWheel : MonoBehaviour
 {
+
+    // 기타 필요한 변수 선언
+    // 이하 변수들도 적절히 정의 필요
+
     [Header("Vehicle")]
     public Rigidbody chasis;
     public WheelVisualController wheelVisual;
@@ -302,27 +306,30 @@ public class SuspensionAndWheel : MonoBehaviour
     float torqueBrakesAndRollingResitance(float torque, bool abs)
     {
         int dir = wheelAngularVelocity > 0 ? 1 : -1;
-        float maxBreaking = (Mathf.Abs((wheelAngularMass * Mathf.Pow(wheelRadius, 2) / 2) * Mathf.Abs(wheelAngularVelocity)) + torque * Time.deltaTime) / Time.deltaTime;   
+        float maxBreaking = (Mathf.Abs((wheelAngularMass * Mathf.Pow(wheelRadius, 2) / 2) * Mathf.Abs(wheelAngularVelocity)) + torque * Time.deltaTime) / Time.deltaTime;
 
-        if(handBrake && controller.controls.handBrake)
+        if (handBrake && controller.controls.handBrake)
         {
             return Mathf.Clamp(handBrakeForce + wheelRollingResistance,
             -maxBreaking, maxBreaking) * dir;
         }
 
-        if(abs && wheelAngularVelocity > absMinVelocity)
+
+        if (abs && wheelAngularVelocity > absMinVelocity)
         {
             float optimalBrakingSpeed = (Mathf.Abs(vLong) - vLong * absTargetSlip) / wheelRadius;
             if (Mathf.Abs(wheelAngularVelocity) < Mathf.Abs(optimalBrakingSpeed) && dir > 0)
+            {
+
                 return wheelRollingResistance;
-            if (Mathf.Abs(wheelAngularVelocity) < Mathf.Abs(optimalBrakingSpeed) && dir > 0)
-                return wheelRollingResistance;
-            //maxBreaking = Mathf.Abs((wheelAngularMass * Mathf.Pow(wheelRadius, 2) / 2) * (wheelAngularVelocity - optimalBrakingSpeed) + torque) / Time.deltaTime;
+            }
+
         }
         return Mathf.Clamp(
             controller.controls.brakes * brakeForce + wheelRollingResistance,
             -maxBreaking, maxBreaking) * dir;
     }
+
 
     float torqueToRoad(float torque)
     {
@@ -396,23 +403,36 @@ public class SuspensionAndWheel : MonoBehaviour
         {
             GameObject particleContainer = Instantiate(surfacesParticleControllers[i], wheelVisual.particleContainer, false);
             surfacesInstantiatedParticleSystem[i] = particleContainer.GetComponent<ParticleSystem>();
+
+
         }
         
     }
 
     void runParticles()
     {
-        if(wheelLoad > minEmitWheelLoad)
-        emitParticles(surfacesInstantiatedParticleSystem[currentSurface], surfaceEmissionMinSlip[currentSurface],
-           surfaceEmissionMaxSlip[currentSurface], 
-           (wheelVisual.transform.right * wheelAngularVelocity * wheelRadius - chasis.GetPointVelocity(wheelVisual.transform.position)).magnitude
-           , surfaceEmissionMax[currentSurface]);
+        // wheelLoad가 minEmitWheelLoad보다 클 경우에만 파티클과 소리를 실행합니다.
+        if (wheelLoad > minEmitWheelLoad)
+        {
+            // 파티클 발생 함수 호출
+            emitParticles(
+                surfacesInstantiatedParticleSystem[currentSurface],
+                surfaceEmissionMinSlip[currentSurface],
+                surfaceEmissionMaxSlip[currentSurface],
+                (wheelVisual.transform.right * wheelAngularVelocity * wheelRadius - chasis.GetPointVelocity(wheelVisual.transform.position)).magnitude,
+                surfaceEmissionMax[currentSurface]
+            );
+
+        }
     }
+
 
     void emitParticles(ParticleSystem particles, float minSlip, float maxSlip, float slip, int maxAmmount)
     {
         int ammountToEmit = (int)Mathf.Clamp((slip - minSlip) / (maxSlip - minSlip) * maxAmmount, 0, maxAmmount);
         particles.Emit(ammountToEmit);
+
+
     }
 
     float calculateHookesLaw(float x, float k)
@@ -436,6 +456,7 @@ public class SuspensionAndWheel : MonoBehaviour
                     {
                         currentSurface = a;
                         return surface.distance;
+
                     }
                 }
 
