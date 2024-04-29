@@ -80,6 +80,7 @@ public class VehicleController : MonoBehaviour
     {
 
 
+
         currentSpeed = GetComponent<Rigidbody>().velocity.magnitude * 3.6f; // 현재 속도 업데이트 (m/s에서 km/h로 변환)
 
         // 속도계 바늘 회전 계산
@@ -169,26 +170,13 @@ public class VehicleController : MonoBehaviour
         }
         UpdateFuelSystem(); // 연료 시스템 업데이트 호출
                             // 플레이어가 "W" 키를 누르고 있지 않다면
-        if (Input.GetAxis("Vertical") == 0)
-        {
-            // 차량의 현재 속도를 기반으로 감속값 계산
-            Vector3 deceleration = -vehicleRigidbody.velocity.normalized * decelerationRate * Time.deltaTime;
 
-            // 감속 후의 속도가 원래 속도보다 작거나 같을 경우, 감속을 적용
-            if (deceleration.magnitude < vehicleRigidbody.velocity.magnitude)
-            {
-                vehicleRigidbody.velocity += deceleration;
-            }
-            else
-            {
-                // 감속 후의 속도가 현재 속도보다 작아지면 속도를 0으로 설정
-                vehicleRigidbody.velocity = Vector3.zero;
-            }
-        }
+        // 모든 경우에 속도에 따른 감속률 조정 적용
+        ApplySpeedBasedDeceleration();
+
+
+
     }
-
-
-
 
 
     IEnumerator SmoothSteeringWheelRotation(float targetAngle)
@@ -269,7 +257,21 @@ public class VehicleController : MonoBehaviour
         }
     }
 
+    void ApplySpeedBasedDeceleration()
+    {
+        float currentSpeed = vehicleRigidbody.velocity.magnitude;
+        float maxDecelerationRate = 10f; // 최대 감속률 가정
+        float decelerationCoefficient = 0.025f; // 감속 계수 가정
 
+        // currentSpeed의 영향을 줄이기 위해 값을 조정
+        float speedFactor = Mathf.Clamp01(currentSpeed * decelerationCoefficient);
 
+        // Mathf.SmoothStep을 사용해 보다 부드러운 감속률 조정 적용
+        float adjustedDecelerationRate = Mathf.SmoothStep(decelerationRate, maxDecelerationRate, speedFactor);
 
+        Vector3 deceleration = -vehicleRigidbody.velocity.normalized * adjustedDecelerationRate * Time.deltaTime;
+
+        // 감속 적용
+        vehicleRigidbody.velocity += deceleration;
+    }
 }
