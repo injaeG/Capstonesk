@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class FirstPersonCamera : MonoBehaviour
 {
-    public float mouseSensitivity = 100.0f;
+    public float baseMouseSensitivity = 100.0f;
+    public float mouseSensitivity;
     public Transform playerBody;
     private float xRotation = 0.0f;
     private float yRotation = 0.0f;
-
+    public float targetFrameRate = 60.0f; // 목표 프레임레이트
+    public float minXRotation = -70f;
+    public float maxXRotation = 30f;
+    public float minYRotation = -110f;
+    public float maxYRotation = 110f;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -16,22 +21,27 @@ public class FirstPersonCamera : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        // Calculate the mouse sensitivity based on the screen resolution
+        float referenceResolutionWidth = 1920f;
+        float referenceResolutionHeight = 1080f;
+        float currentResolutionWidth = Screen.width;
+        float currentResolutionHeight = Screen.height;
+        float widthRatio = currentResolutionWidth / referenceResolutionWidth;
+        float heightRatio = currentResolutionHeight / referenceResolutionHeight;
+        mouseSensitivity = baseMouseSensitivity * (widthRatio + heightRatio) / 2;
+
+        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
 
         xRotation -= mouseY;
         yRotation += mouseX;
-        xRotation = Mathf.Clamp(xRotation, -80f, 80f);
-        yRotation = Mathf.Clamp(yRotation, -90f, 90f);
-        // 카메라의 위아래 회전
+
+        // Use the public variables to clamp the rotation values
+        xRotation = Mathf.Clamp(xRotation, minXRotation, maxXRotation);
+        yRotation = Mathf.Clamp(yRotation, minYRotation, maxYRotation);
+    
+
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
-
-        // 플레이어 몸체의 좌우 회전
-
-
-        // 플레이어 몸체의 위아래 회전을 추가합니다.
-        // 주의: 이는 일반적인 FPS 컨트롤과는 다른 행동을 유발할 수 있습니다.
-        // playerBody.Rotate(Vector3.right * mouseY); // 이 코드는 몸체가 이상하게 회전할 수 있으므로 사용하지 않는 것이 좋습니다.
     }
 }

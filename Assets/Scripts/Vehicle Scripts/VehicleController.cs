@@ -41,7 +41,8 @@ public class VehicleController : MonoBehaviour
 
     public float steeringSpeed = 1.0f; // 핸들 회전 속도
     private float currentSpeed; // 현재 속도
-
+    private float currentSteeringAngle; // Current rotation angle of the steering wheel
+    private const float steeringSmoothTime = 0.1f; // Time to smooth the steering wheel rotation
 
     public int dir { get { return !reverse ? 1 : -1; } }
 
@@ -75,8 +76,7 @@ public class VehicleController : MonoBehaviour
             speedometerNeedle.transform.localRotation = initialNeedleRotation * Quaternion.Euler(0, angle, 0);
         }
 
-        // 속도에 관계없이 일정한 핸들링 속도를 유지
-        float speedAdjustedSteeringSpeed = steeringSpeed;
+        float speedAdjustedSteeringSpeed = steeringSpeed * (1 + (currentSpeed / maxSpeed));
 
         controls.throttle = Mathf.Clamp(Input.GetAxis("Vertical") * dir, 0, 1);
         controls.brakes = -Mathf.Clamp(Input.GetAxis("Vertical") * dir, -1, 0);
@@ -91,21 +91,17 @@ public class VehicleController : MonoBehaviour
             controls.steering = 0;
         }
 
+        float targetSteeringAngle = controls.steering * maxSteeringAngle;
+
+        currentSteeringAngle = Mathf.SmoothDamp(currentSteeringAngle, targetSteeringAngle, ref speedAdjustedSteeringSpeed, steeringSmoothTime);
+
         if (steeringWheel != null)
         {
-            if (Mathf.Abs(controls.steering) > 0)
-            {
-                // 사용자가 조향 입력을 할 때
-                float yRotation = controls.steering * maxSteeringAngle * speedAdjustedSteeringSpeed;
-                steeringWheel.transform.localRotation = initialRotation * Quaternion.Euler(0, yRotation, 0);
-            }
-            else
-            {
-                // 사용자가 조향 입력을 하지 않을 때 핸들을 초기 위치로 부드럽게 돌려놓기
-                steeringWheel.transform.localRotation = Quaternion.Slerp(steeringWheel.transform.localRotation, initialRotation, Time.deltaTime * steeringSpeed);
-            }
+            // Update the steering wheel rotation based on the smoothed angle
+            steeringWheel.transform.localRotation = initialRotation * Quaternion.Euler(0, currentSteeringAngle, 0);
         }
-        
+
+
         // 브레이크 소리 재생 로직
         if (controls.handBrake && !brakeSoundSource.isPlaying)
         {
@@ -128,6 +124,23 @@ public class VehicleController : MonoBehaviour
             brakeSoundSource.Stop();
         }
 
+    }
+
+    IEnumerator SmoothSteeringWheelRotation(float targetAngle)
+    {
+        float startTime = Time.time;
+        float startAngle = currentSteeringAngle;
+
+        while (Time.time - startTime < steeringSmoothTime)
+        {
+            float t = (Time.time - startTime) / steeringSmoothTime;
+            currentSteeringAngle = Mathf.Lerp(startAngle, targetAngle, t);
+            steeringWheel.transform.localRotation = initialRotation * Quaternion.Euler(0, currentSteeringAngle, 0);
+            yield return null;
+        }
+
+        currentSteeringAngle = targetAngle;
+        steeringWheel.transform.localRotation = initialRotation * Quaternion.Euler(0, currentSteeringAngle, 0);
     }
 
 }
