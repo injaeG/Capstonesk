@@ -4,16 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - RightBarrier
-  - aaa
-  - LeftBarrier
-  - RoadLeftEnd
-  - RoadLeft
-  - RoadRightEnd
-  - RoadRight
+  - Road_Make
+  - Road_Spawn_Place
+  - car
   - Car
-  - Road
-  - Interactable
   layers:
   - Default
   - TransparentFX

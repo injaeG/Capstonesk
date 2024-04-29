@@ -1,12 +1,7 @@
 fileFormatVersion: 2
 guid: dc3af180ffa4e2840af6a2e481783985
-labels:
-- parking
-- set
-- tile
-NativeFormatImporter:
+PrefabImporter:
   externalObjects: {}
-  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
