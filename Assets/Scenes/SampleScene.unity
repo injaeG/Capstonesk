@@ -243,7 +243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 776402238812561966, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: animationResetDelay
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 776402238812561966, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: exitIfAnimationActive
@@ -267,11 +267,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: playOnce
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: audioEnabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: enableAnimation
@@ -312,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 2563379038741702547, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: audioClips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 6c961913eda72074fbed550f11faf3e1, type: 3}
+      objectReference: {fileID: 8300000, guid: 804c867f03b2ff149a3da464b2710ac5, type: 3}
     - target: {fileID: 3628969750994337376, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: waitAfterAnimation
       value: 0
@@ -361,6 +361,10 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6144997482831785392, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7568055550697054039, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: m_Name
       value: carMAIN
@@ -375,7 +379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8887310092313928385, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: animationResetDelay
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8887310092313928385, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: audioClips.Array.size
