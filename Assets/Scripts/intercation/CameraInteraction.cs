@@ -7,7 +7,9 @@ public class CameraInteraction : MonoBehaviour
     public float interactionDistance = 5f; // 상호작용 가능한 최대 거리
 
     private Interactable lastInteractable = null; // 마지막으로 상호작용한 객체
-
+    private bool secondaryInteractTriggered = false; // SecondaryInteract가 실행되었는지 여부
+    private float secondaryInteractTimer = 0f; // SecondaryInteract가 실행된 이후의 시간
+    public GameObject specificObject; // 특정 오브젝트
     void Update()
     {
         RaycastHit hit;
@@ -24,6 +26,8 @@ public class CameraInteraction : MonoBehaviour
             }
 
             lastInteractable = interactable;
+            secondaryInteractTriggered = false;
+            secondaryInteractTimer = 0f;
         }
 
         // 새로운 객체에 대해 상호작용을 시작합니다.
@@ -36,6 +40,25 @@ public class CameraInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && interactable != null)
         {
             interactable.SecondaryInteract();
+            secondaryInteractTriggered = true;
+        }
+
+        // SecondaryInteract가 실행된 이후 5초 이상이 되면 'ghost' 태그가 있는 오브젝트를 삭제합니다.
+        if (secondaryInteractTriggered && hit.collider.gameObject == specificObject)
+        {
+            secondaryInteractTimer += Time.deltaTime;
+
+            if (secondaryInteractTimer >= 5f)
+            {
+                GameObject ghost = GameObject.FindGameObjectWithTag("ghost");
+                if (ghost != null)
+                {
+                    Destroy(ghost);
+                }
+
+                secondaryInteractTriggered = false;
+                secondaryInteractTimer = 0f;
+            }
         }
     }
 }

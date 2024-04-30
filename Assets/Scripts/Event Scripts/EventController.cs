@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EventPrefabSpawner : MonoBehaviour
 {
-    public GameObject[] eventPrefabs; // 인스펙터에서 설정할 이벤트 프리팹 배열
+    private GameObject[] eventPrefabs; // PreFabs/event 디렉토리에 있는 모든 프리팹
     public Transform spawnPoint; // 빈 오브젝트 위치 (Ghost 태그가 있을 경우)
 
     void Start()
     {
+        // PreFabs/event 디렉토리에 있는 모든 프리팹을 로드합니다.
+        eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
         // 이벤트 태그가 있는 프리팹을 찾아서 처리합니다.
         foreach (GameObject taggedPrefab in GameObject.FindGameObjectsWithTag("event"))
         {

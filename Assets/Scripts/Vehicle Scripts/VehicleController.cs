@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class VehicleController : MonoBehaviour
 {
+
     [HideInInspector]
     public float div = 5; // 숨겨진 변수, 외부에서 접근하지 못하게 함
     [HideInInspector]
@@ -48,7 +49,7 @@ public class VehicleController : MonoBehaviour
     private Quaternion initialFuelNeedleRotation; // 연료 계기판 바늘의 초기 회전값 저장 변수
     public float maxFuel = 100f; // 연료 최대량
     public float fuelConsumptionRate = 1f; // 초당 연료 소모량
-    private float fuelAmount; // 현재 연료량
+    public float fuelAmount; // 현재 연료량
     public float maxFuelGaugeAngle = 70f; // 연료 계기판 바늘이 회전할 수 있는 최대 각도
     private Rigidbody vehicleRigidbody; // 차량의 Rigidbody 컴포넌트
 
@@ -173,7 +174,6 @@ public class VehicleController : MonoBehaviour
 
         // 모든 경우에 속도에 따른 감속률 조정 적용
         ApplySpeedBasedDeceleration();
-
     }
 
 
@@ -281,6 +281,4 @@ public class VehicleController : MonoBehaviour
         // 감속 적용
         vehicleRigidbody.velocity = new Vector3(vehicleRigidbody.velocity.x + deceleration.x, vehicleRigidbody.velocity.y, vehicleRigidbody.velocity.z + deceleration.z);
     }
-
-
 }
