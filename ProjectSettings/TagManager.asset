@@ -20,6 +20,7 @@ TagManager:
   - Road_Spawn_Place
   - ghost
   - new_Road
+  - event
   layers:
   - Default
   - TransparentFX
