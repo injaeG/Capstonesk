@@ -331,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 56d1669bab87b7845942de66f4197b44, type: 3}
     - target: {fileID: 4188773397221474594, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: steeringSpeed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4188773397221474594, guid: 7bafd5efe76738f449badc9b70a8d1c0, type: 3}
       propertyPath: decelerationRate

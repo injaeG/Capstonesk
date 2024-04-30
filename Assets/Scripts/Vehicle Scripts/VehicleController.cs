@@ -185,14 +185,22 @@ public class VehicleController : MonoBehaviour
         while (Time.time - startTime < steeringSmoothTime)
         {
             float t = (Time.time - startTime) / steeringSmoothTime;
+            float acceleration = Mathf.Abs(targetAngle - startAngle) / maxSteeringAngle;
+            t = t * acceleration;
+
             currentSteeringAngle = Mathf.Lerp(startAngle, targetAngle, t);
             steeringWheel.transform.localRotation = initialRotation * Quaternion.Euler(0, currentSteeringAngle, 0);
+
             yield return null;
         }
 
-        currentSteeringAngle = targetAngle;
-        steeringWheel.transform.localRotation = initialRotation * Quaternion.Euler(0, currentSteeringAngle, 0);
+        // while 루프가 끝난 후, 핸들의 각도를 목표 각도로 설정하고,
+        // 핸들의 회전을 초기 회전으로 설정합니다.
+        currentSteeringAngle = 0;
+        steeringWheel.transform.localRotation = initialRotation;
     }
+
+
 
 
     IEnumerator FadeOutEngineSoundWithFilters()
@@ -259,7 +267,7 @@ public class VehicleController : MonoBehaviour
     {
         Vector3 horizontalVelocity = new Vector3(vehicleRigidbody.velocity.x, 0, vehicleRigidbody.velocity.z);
         float currentSpeed = horizontalVelocity.magnitude;
-        float maxDecelerationRate = 12f; // 최대 감속률 가정
+        float maxDecelerationRate = 15f; // 최대 감속률 가정
         float decelerationCoefficient = 0.025f; // 감속 계수 가정
 
         // currentSpeed의 영향을 줄이기 위해 값을 조정
