@@ -21,5 +21,5 @@ public class Road_Remover : MonoBehaviour
 
         // 부모 게임 오브젝트(프리팹) 삭제
         Destroy(gameObject.transform.parent.gameObject);
-    }
+    }   
 }
