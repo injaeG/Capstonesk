@@ -23,6 +23,7 @@ TagManager:
   - event
   - road
   - Right_Sound
+  - Game_Over
   layers:
   - Default
   - TransparentFX
