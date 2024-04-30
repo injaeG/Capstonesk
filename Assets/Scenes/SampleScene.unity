@@ -1834,7 +1834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf39939ab8ed2a4a80768cf83db5efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound1: {fileID: 871578367}
+  rightSound: {fileID: 871578367}
 --- !u!1001 &907331015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2677,7 +2677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf39939ab8ed2a4a80768cf83db5efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound1: {fileID: 1282190728}
+  rightSound: {fileID: 1282190728}
 --- !u!82 &1282190728
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3010,7 +3010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf39939ab8ed2a4a80768cf83db5efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound1: {fileID: 1608091321}
+  rightSound: {fileID: 1608091321}
 --- !u!82 &1608091321
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3313,7 +3313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf39939ab8ed2a4a80768cf83db5efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionSound1: {fileID: 0}
+  rightSound: {fileID: 0}
 --- !u!1001 &1765893436
 PrefabInstance:
   m_ObjectHideFlags: 0
