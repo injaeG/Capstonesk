@@ -21,6 +21,7 @@ TagManager:
   - ghost
   - new_Road
   - event
+  - road
   layers:
   - Default
   - TransparentFX

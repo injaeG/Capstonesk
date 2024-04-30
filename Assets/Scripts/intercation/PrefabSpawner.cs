@@ -10,6 +10,7 @@ public class PrefabSpawner : MonoBehaviour
 
     void Start()
     {
+        // "PreFabs/event" 경로에서 모든 프리팹을 불러옵니다.
         prefabs = Resources.LoadAll<GameObject>("PreFabs/event");
     }
 
@@ -21,14 +22,24 @@ public class PrefabSpawner : MonoBehaviour
 
             foreach (var target in targets)
             {
+                // 프리팹 배열에서 랜덤하게 하나를 선택합니다.
                 GameObject prefabToSpawn = prefabs[Random.Range(0, prefabs.Length)];
 
-                GameObject spawnedPrefab = Instantiate(prefabToSpawn, target.transform.position + new Vector3(0, 0, 0), Quaternion.identity);
-                spawnedPrefab.transform.parent = this.transform;
+                if (prefabToSpawn.name == "ghost")
+                {
+                    // 'ghost' 프리팹인 경우, 대상 오브젝트의 위치에서 생성합니다.
+                    Instantiate(prefabToSpawn, this.transform.position, Quaternion.identity, this.transform);
+                }
+                else
+                {
+                    // 그 외의 경우, 현재 스크립트가 부착된 오브젝트의 위치에서 생성합니다.
+                    // 해당 라인은 필요 없으므로 제거합니다: GameObject spawnedPrefab;
+                    GameObject spawnedPrefab = prefabToSpawn;
+                }
 
                 hasSpawned = true; // 프리팹이 생성되었음을 표시
+                break; // 한 번 생성 후 반복문을 빠져나옵니다.
             }
         }
     }
 }
-
