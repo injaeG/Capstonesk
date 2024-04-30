@@ -141,7 +141,7 @@ public class VehicleController : MonoBehaviour
 
         if (stop)
         {
-            controls.brakes = 1; // 정지 상태일 경우, 브레이크를 최대로 적용
+            controls.brakes = 1;
             controls.throttle = 0; // 가속을 0으로 설정
             controls.steering = 0; // 조향을 0으로 설정
         }
@@ -173,8 +173,6 @@ public class VehicleController : MonoBehaviour
 
         // 모든 경우에 속도에 따른 감속률 조정 적용
         ApplySpeedBasedDeceleration();
-
-
 
     }
 
@@ -259,7 +257,8 @@ public class VehicleController : MonoBehaviour
 
     void ApplySpeedBasedDeceleration()
     {
-        float currentSpeed = vehicleRigidbody.velocity.magnitude;
+        Vector3 horizontalVelocity = new Vector3(vehicleRigidbody.velocity.x, 0, vehicleRigidbody.velocity.z);
+        float currentSpeed = horizontalVelocity.magnitude;
         float maxDecelerationRate = 12f; // 최대 감속률 가정
         float decelerationCoefficient = 0.025f; // 감속 계수 가정
 
@@ -269,9 +268,11 @@ public class VehicleController : MonoBehaviour
         // Mathf.SmoothStep을 사용해 보다 부드러운 감속률 조정 적용
         float adjustedDecelerationRate = Mathf.SmoothStep(decelerationRate, maxDecelerationRate, speedFactor);
 
-        Vector3 deceleration = -vehicleRigidbody.velocity.normalized * adjustedDecelerationRate * Time.deltaTime;
+        Vector3 deceleration = -horizontalVelocity.normalized * adjustedDecelerationRate * Time.deltaTime;
 
         // 감속 적용
-        vehicleRigidbody.velocity += deceleration;
+        vehicleRigidbody.velocity = new Vector3(vehicleRigidbody.velocity.x + deceleration.x, vehicleRigidbody.velocity.y, vehicleRigidbody.velocity.z + deceleration.z);
     }
+
+
 }

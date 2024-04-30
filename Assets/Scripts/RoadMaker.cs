@@ -21,6 +21,28 @@ public class RoadMaker : MonoBehaviour
         }
     }
 
+    // 주어진 위치에서 가장 가까운 Road_Spawn_Place 태그를 가진 오브젝트 찾기
+    // 무작위 도로 프리팹 생성
+    private void InstantiateRandomRoadPrefab(GameObject spawnPlace)
+    {
+        if (roadPrefabs != null && roadPrefabs.Length > 0)
+        {
+            int randomIndex = Random.Range(0, roadPrefabs.Length);
+            GameObject roadPrefabToInstantiate = roadPrefabs[randomIndex];
+            // roadSpawnPlaceTag 태그를 가진 오브젝트의 위치를 기준으로 도로 프리팹 생성
+            Vector3 spawnPosition = spawnPlace.transform.position;
+            // y축 회전값이 변하지 않도록 설정
+            Quaternion spawnRotation = Quaternion.Euler(0, spawnPlace.transform.rotation.eulerAngles.y, 0);
+            Instantiate(roadPrefabToInstantiate, spawnPosition, spawnRotation);
+        }
+        else
+        {
+            Debug.LogWarning("No road prefabs are loaded.");
+        }
+    }
+
+
+
     void OnTriggerEnter(Collider other)
     {
         // 충돌 처리가 아직 안 되었고, 대상 오브젝트와 충돌한 경우
@@ -36,8 +58,8 @@ public class RoadMaker : MonoBehaviour
             GameObject closestSpawnPlace = FindClosestSpawnPlace(collisionPoint);
             if (closestSpawnPlace != null)
             {
-                // 가장 가까운 위치에 도로 생성
-                InstantiateRandomRoadPrefab(closestSpawnPlace.transform.position);
+                // roadSpawnPlaceTag 태그를 가진 오브젝트의 위치를 기준으로 도로 프리팹 생성
+                InstantiateRandomRoadPrefab(closestSpawnPlace);
                 // 충돌한 오브젝트 삭제
                 Destroy(closestSpawnPlace);
             }
@@ -45,6 +67,9 @@ public class RoadMaker : MonoBehaviour
             isCollisionHandled = false; // 충돌 처리 완료
         }
     }
+
+
+
 
 
     // 주어진 위치에서 가장 가까운 Road_Spawn_Place 태그를 가진 오브젝트 찾기
@@ -67,18 +92,4 @@ public class RoadMaker : MonoBehaviour
         return closestSpawnPlace;
     }
 
-    // 무작위 도로 프리팹 생성
-    private void InstantiateRandomRoadPrefab(Vector3 position)
-    {
-        if (roadPrefabs != null && roadPrefabs.Length > 0)
-        {
-            int randomIndex = Random.Range(0, roadPrefabs.Length);
-            GameObject roadPrefabToInstantiate = roadPrefabs[randomIndex];
-            Instantiate(roadPrefabToInstantiate, position, Quaternion.identity);
-        }
-        else
-        {
-            Debug.LogWarning("No road prefabs are loaded.");
-        }
-    }
 }

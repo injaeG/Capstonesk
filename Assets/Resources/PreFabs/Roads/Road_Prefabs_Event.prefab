@@ -43,6 +43,7 @@ Transform:
   - {fileID: 8177519629508314052}
   - {fileID: 4418395925869197814}
   - {fileID: 2725380078775870744}
+  - {fileID: 8184377257273532666}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2343372702853697952
@@ -362,6 +363,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300110, guid: bca5c93adbc71744ca9ea932c796e900, type: 3}
+--- !u!1 &3384153963526315200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8184377257273532666}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: new_Road
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8184377257273532666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384153963526315200}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 551128043192020481}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3607917956453568642
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +516,7 @@ MonoBehaviour:
   roadPrefabs:
   - {fileID: 0}
   roadSpawnPlaceTag: Road_Spawn_Place
-  eventController: {fileID: 0}
+  targetObject: {fileID: 0}
 --- !u!1 &4149248105830687749
 GameObject:
   m_ObjectHideFlags: 0

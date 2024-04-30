@@ -14,6 +14,12 @@ TagManager:
   - Car
   - Road
   - Interactable
+  - enginesound
+  - engine
+  - Road_Make
+  - Road_Spawn_Place
+  - ghost
+  - new_Road
   layers:
   - Default
   - TransparentFX

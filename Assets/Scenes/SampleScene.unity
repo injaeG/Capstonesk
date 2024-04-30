@@ -175,8 +175,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Prefabs_S (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7025083513526007091, guid: 5694862678b7a764dbd6c76dbc5f0c86, type: 3}
+      propertyPath: m_TagString
+      value: Road_Spawn_Place
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313887521953314155, guid: 5694862678b7a764dbd6c76dbc5f0c86, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3515653388134789916, guid: 5694862678b7a764dbd6c76dbc5f0c86, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5694862678b7a764dbd6c76dbc5f0c86, type: 3}
