@@ -9,7 +9,8 @@ public class VehicleController : MonoBehaviour
     public float div = 5; // 숨겨진 변수, 외부에서 접근하지 못하게 함
     [HideInInspector]
     public bool stop; // 차량 정지 상태를 제어하는 불린 변수
-
+    public GameObject gameover;  // 게임오버
+    private bool isGameOverCreated = false;// ��임오버 오브젝트가 생성되었는지 확인하는 불��
     public GameObject speedometerNeedle; // 계기판 바늘 오브젝트에 대한 참조
     public float maxSpeedometerAngle = -270f; // 바늘이 회전할 수 있는 최대 각도 (예: -270도)
     public float maxSpeed = 200f; // 차량의 최대 속도 (단위 km/h 또는 mph 등 프로젝트에 맞게 조정)
@@ -120,6 +121,7 @@ public class VehicleController : MonoBehaviour
             controls.brakes = 0;
             controls.handBrake = false;
             controls.clutch = false;
+
             // 점진적으로 속도 감소
             if (vehicleRigidbody.velocity.magnitude > 0)
             {
@@ -131,6 +133,11 @@ public class VehicleController : MonoBehaviour
                 if (nextVelocity.magnitude < deceleration.magnitude)
                 {
                     vehicleRigidbody.velocity = Vector3.zero;
+                    if (!isGameOverCreated)
+                    {
+                        Instantiate(gameover);
+                        isGameOverCreated = true;
+                    }
                 }
                 else
                 {
