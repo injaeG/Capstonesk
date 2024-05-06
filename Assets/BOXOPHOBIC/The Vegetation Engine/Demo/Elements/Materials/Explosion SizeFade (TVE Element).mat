@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Explosion SizeFade (TVE Element)
   m_Shader: {fileID: 4800000, guid: 4776cc0409f0f4e4da64e5837bff4b0d, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -19,6 +21,7 @@ Material:
     ElementType: VertexElement
   disabledShaderPasses:
   - VolumePass
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -49,6 +52,7 @@ Material:
     - _ElementLayerMessage: 0
     - _ElementLayerValue: -1
     - _ElementLayerWarning: 0
+    - _ElementMessage: 0
     - _ElementMode: 0
     - _ElementMotionMode: 15
     - _ElementRaycastMode: 0
@@ -77,10 +81,13 @@ Material:
     - _NoiseSpeedValue: 0.5
     - _RaycastDistanceEndValue: 2
     - _RaycastLayerMask: 1
+    - _SeasonMaxValue: 1
+    - _SeasonMinValue: 0
     - _SpaceTexture: 0
+    - _SpeedTresholdValue: 10
     - _render_colormask: 15
     - _render_dst: 0
-    - _render_src: 2
+    - _render_src: 7
     m_Colors:
     - _AdditionalColor1: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
     - _AdditionalColor2: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
@@ -93,5 +100,6 @@ Material:
     - _MainTexFallofRemap: {r: 0.7699115, g: 0.86283183, b: 0, a: 0}
     - _MainUVs: {r: 0.06, g: 0.06, b: 0, a: 0}
     - _NoiseRemap: {r: 0, g: 1, b: 0, a: 0}
+    - _SeasonRemap: {r: 0, g: 0, b: 0, a: 0}
     - _element_direction_mode: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -845,7 +845,7 @@ PlayerSettings:
     PS5: DOTWEEN
     QNX: DOTWEEN
     Stadia: DOTWEEN
-    Standalone: CROSS_PLATFORM_INPUT;DOTWEEN
+    Standalone: CROSS_PLATFORM_INPUT;DOTWEEN;ATMOSPHERIC_HEIGHT_FOG
     VisionOS: DOTWEEN
     WebGL: DOTWEEN
     Windows Store Apps: DOTWEEN

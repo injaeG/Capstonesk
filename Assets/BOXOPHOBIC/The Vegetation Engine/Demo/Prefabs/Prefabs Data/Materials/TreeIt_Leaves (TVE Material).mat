@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: TreeIt_Leaves (TVE Material)
   m_Shader: {fileID: 4800000, guid: a933075b367f9b24981408633f72ff34, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - TVE_ALPHA_CLIP
   m_InvalidKeywords:
@@ -26,6 +28,7 @@ Material:
   - TransparentBackfaceDebugDisplay
   - TransparentDepthPrepass
   - TransparentDepthPostpass
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -95,6 +98,7 @@ Material:
     - _ColorsMaskMaxValue: 1
     - _ColorsMaskMinValue: 0
     - _ColorsMaskMode: 0
+    - _ColorsMaskValue: 1
     - _ColorsPositionMode: 0
     - _ColorsVariationValue: 0
     - _Cutoff: 0.5
@@ -273,9 +277,11 @@ Material:
     - _SubsurfaceValue: 1
     - _TransAmbient: 0.2
     - _TransDirect: 1
+    - _TransNormal: 0
     - _TransNormalDistortion: 0
     - _TransScattering: 8
     - _TransShadow: 1
+    - _TransStrength: 2
     - _Translucency: 2
     - _TranslucencyAmbientValue: 0.2
     - _TranslucencyDirectValue: 1

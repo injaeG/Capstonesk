@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Element Diorama Size (TVE Element)
   m_Shader: {fileID: 4800000, guid: 4776cc0409f0f4e4da64e5837bff4b0d, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -19,6 +21,7 @@ Material:
     ElementType: VertexElement
   disabledShaderPasses:
   - VolumePass
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -46,6 +49,7 @@ Material:
     - _ElementLayerMessage: 0
     - _ElementLayerValue: -1
     - _ElementLayerWarning: 0
+    - _ElementMessage: 0
     - _ElementMode: 1
     - _ElementRaycastMode: 0
     - _ElementUVsMode: 0
@@ -58,6 +62,8 @@ Material:
     - _MainTexAlphaMinValue: 0.043662325
     - _MainTexColorMaxValue: 0
     - _MainTexColorMinValue: 0
+    - _MainTexFallofMaxValue: 0
+    - _MainTexFallofMinValue: 0
     - _MainTexMaxValue: 0.4
     - _MainTexMinValue: 0.2
     - _MainValue: 1
@@ -65,13 +71,19 @@ Material:
     - _RaycastDistanceEndValue: 2
     - _RaycastFadeValue: 1
     - _RaycastLayerMask: 1
+    - _SeasonMaxValue: 1
+    - _SeasonMinValue: 0
+    - _SpaceTexture: 0
+    - _SpeedTresholdValue: 10
     - _render_dst: 0
-    - _render_src: 2
+    - _render_src: 7
     m_Colors:
     - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
     - _MainTexAlphaRemap: {r: 0.043662325, g: 0.38852584, b: 0, a: 0}
     - _MainTexColorRemap: {r: 0, g: 0, b: 0, a: 0}
+    - _MainTexFallofRemap: {r: 0, g: 0, b: 0, a: 0}
     - _MainTexRemap: {r: 0.2, g: 0.4, b: 0, a: 0}
     - _MainUVs: {r: 3, g: 3, b: 0, a: 0}
     - _NoiseRemap: {r: 0, g: 1, b: 0, a: 0}
+    - _SeasonRemap: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
