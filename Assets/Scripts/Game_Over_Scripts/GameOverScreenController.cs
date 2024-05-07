@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using DG.Tweening;
 
@@ -17,32 +18,50 @@ public class GameOverScreenController : MonoBehaviour
     public Text gameOverText;
     public Text textToBlink;
 
-    private void Start()
+    bool gameover = false;
+
+    public void Start()
     {
         // 게임오버 화면 초기에 숨김 처리
         gameOverCanvasGroup.alpha = 0f;
-        ShowGameOverScreen();
-        textToBlink.DOFade(0f, blinkingDuration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+        //ShowGameOverScreen();
+        //textToBlink.DOFade(0f, blinkingDuration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
     }
 
-    void Update()
+    public void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && gameover)
         {
             Debug.Log("This is anyKeyDown.");
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //Time.timeScale = 1f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-            
-
-
     }
+
+    //public void ShowGameOverScreen()
+    //{
+    //    StartCoroutine(FadeInGameOverScreen());
+    //    gameover = true;
+
+    //    gameOverText.DOFade(1f, textAppearDuration).From(0f);
+    //    gameOverText.transform.DOScale(1.2f, textAppearDuration / 2f).From(1.125f).SetEase(Ease.OutBack);
+    //    textToBlink.DOFade(0f, blinkingDuration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+    //}
 
     public void ShowGameOverScreen()
     {
+        // 게임 시간을 멈춥니다.
+        //Time.timeScale = 0f;
+
+        // 게임오버 화면을 표시합니다.
         StartCoroutine(FadeInGameOverScreen());
 
-        gameOverText.DOFade(1f, textAppearDuration).From(0f);
-        gameOverText.transform.DOScale(1.2f, textAppearDuration / 2f).From(1.125f).SetEase(Ease.OutBack);
+        gameover = true;
+
+        // DOTween의 SetUpdate(true)를 사용하여 Time.timeScale의 영향을 받지 않도록 합니다.
+        gameOverText.DOFade(1f, textAppearDuration).From(0f).SetUpdate(true);
+        gameOverText.transform.DOScale(1.2f, textAppearDuration / 2f).From(1.125f).SetEase(Ease.OutBack).SetUpdate(true);
+        textToBlink.DOFade(0f, blinkingDuration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear).SetUpdate(true);
     }
 
     private IEnumerator FadeInGameOverScreen()
