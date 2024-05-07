@@ -34,7 +34,14 @@ public class GameOverScreenController : MonoBehaviour
         {
             Debug.Log("This is anyKeyDown.");
             //Time.timeScale = 1f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            SceneManager.LoadScene("UI");
+
+            
         }
     }
 
