@@ -22,7 +22,7 @@ public class GameOverScreenController : MonoBehaviour
 
     public void Start()
     {
-        // °ÔÀÓ¿À¹ö È­¸é ÃÊ±â¿¡ ¼û±è Ã³¸®
+        // ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ È­ï¿½ï¿½ ï¿½Ê±â¿¡ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
         gameOverCanvasGroup.alpha = 0f;
         //ShowGameOverScreen();
         //textToBlink.DOFade(0f, blinkingDuration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
@@ -30,7 +30,7 @@ public class GameOverScreenController : MonoBehaviour
 
     public void Update()
     {
-        if (Input.anyKeyDown && gameover)
+        if (Input.GetMouseButtonDown(0) && gameover)
         {
             Debug.Log("This is anyKeyDown.");
             //Time.timeScale = 1f;
@@ -57,15 +57,15 @@ public class GameOverScreenController : MonoBehaviour
 
     public void ShowGameOverScreen()
     {
-        // °ÔÀÓ ½Ã°£À» ¸ØÃä´Ï´Ù.
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.
         //Time.timeScale = 0f;
 
-        // °ÔÀÓ¿À¹ö È­¸éÀ» Ç¥½ÃÇÕ´Ï´Ù.
+        // ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ È­ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
         StartCoroutine(FadeInGameOverScreen());
 
         gameover = true;
 
-        // DOTweenÀÇ SetUpdate(true)¸¦ »ç¿ëÇÏ¿© Time.timeScaleÀÇ ¿µÇâÀ» ¹ÞÁö ¾Êµµ·Ï ÇÕ´Ï´Ù.
+        // DOTweenï¿½ï¿½ SetUpdate(true)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ Time.timeScaleï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
         gameOverText.DOFade(1f, textAppearDuration).From(0f).SetUpdate(true);
         gameOverText.transform.DOScale(1.2f, textAppearDuration / 2f).From(1.125f).SetEase(Ease.OutBack).SetUpdate(true);
         textToBlink.DOFade(0f, blinkingDuration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear).SetUpdate(true);
@@ -73,7 +73,7 @@ public class GameOverScreenController : MonoBehaviour
 
     private IEnumerator FadeInGameOverScreen()
     {
-        // ÆäÀÌµå ÀÎ È¿°ú
+        // ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ È¿ï¿½ï¿½
         gameOverCanvasGroup.gameObject.SetActive(true);
         while (gameOverCanvasGroup.alpha < 1f)
         {
@@ -90,7 +90,7 @@ public class GameOverScreenController : MonoBehaviour
 
     private IEnumerator FadeOutGameOverScreen()
     {
-        // ÆäÀÌµå ¾Æ¿ô È¿°ú
+        // ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Æ¿ï¿½ È¿ï¿½ï¿½
         while (gameOverCanvasGroup.alpha > 0f)
         {
             gameOverCanvasGroup.alpha -= Time.deltaTime / fadeOutDuration;

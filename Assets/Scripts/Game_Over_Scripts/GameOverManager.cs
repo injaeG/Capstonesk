@@ -7,15 +7,15 @@ using DG.Tweening;
 
 public class GameOverManager : MonoBehaviour
 {
-    //public string gameOverSceneName = "GameOverScene"; // °ÔÀÓ ¿À¹ö ½ÅÀÇ ÀÌ¸§
+    //public string gameOverSceneName = "GameOverScene"; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
     public GameOverScreenController gameOverScreenController;
 
     private void OnTriggerEnter(Collider other)
     {
-        // Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®ÀÇ ÅÂ±× È®ÀÎ
+        // ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Â±ï¿½ È®ï¿½ï¿½
         if (other.CompareTag("Game_Over"))
         {
-            // Æ¯Á¤ ÅÂ±×¸¦ °¡Áø ¹°Ã¼¿Í ºÎµúÇûÀ¸¹Ç·Î °ÔÀÓ ¿À¹ö Ã³¸® ½ÇÇà
+            // Æ¯ï¿½ï¿½ ï¿½Â±×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             Debug.Log("aaa");
             GameOver();
         }
@@ -24,7 +24,7 @@ public class GameOverManager : MonoBehaviour
 
     private void GameOver()
     {
-        // °ÔÀÓ ¿À¹ö Ã³¸®: °ÔÀÓ ¿À¹ö ½ÅÀ¸·Î ÀüÈ¯
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
         //SceneManager.LoadScene(gameOverSceneName);
 
         gameOverScreenController.ShowGameOverScreen();

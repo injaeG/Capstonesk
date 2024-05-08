@@ -9,7 +9,7 @@ public class VehicleController : MonoBehaviour
     public float div = 5; // 숨겨진 변수, 외부에서 접근하지 못하게 함
     [HideInInspector]
     public bool stop; // 차량 정지 상태를 제어하는 불린 변수
-    public GameObject gameover;  // 게임오버
+    public GameOverScreenController gameOverScreenController;
     private bool isGameOverCreated = false;// ��임오버 오브젝트가 생성되었는지 확인하는 불��
     public GameObject speedometerNeedle; // 계기판 바늘 오브젝트에 대한 참조
     public float maxSpeedometerAngle = -270f; // 바늘이 회전할 수 있는 최대 각도 (예: -270도)
@@ -135,7 +135,7 @@ public class VehicleController : MonoBehaviour
                     vehicleRigidbody.velocity = Vector3.zero;
                     if (!isGameOverCreated)
                     {
-                        Instantiate(gameover);
+                        gameOverScreenController.ShowGameOverScreen();
                         isGameOverCreated = true;
                     }
                 }
@@ -181,6 +181,7 @@ public class VehicleController : MonoBehaviour
 
         // 모든 경우에 속도에 따른 감속률 조정 적용
         ApplySpeedBasedDeceleration();
+
     }
 
 
@@ -287,5 +288,17 @@ public class VehicleController : MonoBehaviour
 
         // 감속 적용
         vehicleRigidbody.velocity = new Vector3(vehicleRigidbody.velocity.x + deceleration.x, vehicleRigidbody.velocity.y, vehicleRigidbody.velocity.z + deceleration.z);
+    }
+
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        // �浹�� ������Ʈ�� �±� Ȯ��
+        if (other.CompareTag("Game_Over"))
+        {
+            // Ư�� �±׸� ���� ��ü�� �ε������Ƿ� ���� ���� ó�� ����
+            Debug.Log("aaa");
+            gameOverScreenController.ShowGameOverScreen();
+        }
     }
 }
