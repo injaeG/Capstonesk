@@ -135,7 +135,8 @@ public class VehicleController : MonoBehaviour
                     vehicleRigidbody.velocity = Vector3.zero;
                     if (!isGameOverCreated)
                     {
-                        gameOverScreenController.ShowGameOverScreen();
+                        gameOverScreenController.TriggerGameOver();
+
                         isGameOverCreated = true;
                     }
                 }
@@ -297,8 +298,9 @@ public class VehicleController : MonoBehaviour
         if (other.CompareTag("Game_Over"))
         {
             // Ư�� �±׸� ���� ��ü�� �ε������Ƿ� ���� ���� ó�� ����
-            Debug.Log("aaa");
-            gameOverScreenController.ShowGameOverScreen();
+            Debug.Log("gameover");
+
+            gameOverScreenController.TriggerGameOver();
         }
     }
 }

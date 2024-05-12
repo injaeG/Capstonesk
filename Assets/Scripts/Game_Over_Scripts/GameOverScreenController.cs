@@ -51,9 +51,6 @@ public class GameOverScreenController : MonoBehaviour
             Cursor.visible = true;
 
             SceneManager.LoadScene("UI");
-
-
-            
         }
     }
 
@@ -67,19 +64,28 @@ public class GameOverScreenController : MonoBehaviour
     //    textToBlink.DOFade(0f, blinkingDuration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
     //}
 
+    // 게임 오버 상태를 설정하고 게임 오버 화면을 표시하는 함수
+    public void TriggerGameOver()
+    {
+        // 게임 오버 사운드 재생
+        gameOverSound.Play();
+
+        // 게임 오버 상태를 true로 설정
+        isGameover = true;
+
+        // 게임 오버 화면 표시
+        ShowGameOverScreen();
+    }
+
     public void ShowGameOverScreen()
     {
         // ���� �ð��� ����ϴ�.
         //Time.timeScale = 0f;
 
-        //gameOverSound.Play();
-
         // ���ӿ��� ȭ���� ǥ���մϴ�.
         StartCoroutine(FadeInGameOverScreen());
 
-        isGameover = true;
-
-
+        //isGameover = true;
 
         // DOTween�� SetUpdate(true)�� ����Ͽ� Time.timeScale�� ������ ���� �ʵ��� �մϴ�.
         gameOverText.DOFade(1f, textAppearDuration).From(0f).SetUpdate(true);
@@ -115,6 +121,4 @@ public class GameOverScreenController : MonoBehaviour
         gameOverCanvasGroup.alpha = 0f;
         gameOverCanvasGroup.gameObject.SetActive(false);
     }
-
-
 }
