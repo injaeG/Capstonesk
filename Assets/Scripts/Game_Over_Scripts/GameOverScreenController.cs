@@ -18,7 +18,10 @@ public class GameOverScreenController : MonoBehaviour
     public Text gameOverText;
     public Text textToBlink;
 
-    bool gameover = false;
+    public AudioSource gameOverSound;
+    public Image screenOverlay;
+
+    bool isGameover = false;
 
     public void Start()
     {
@@ -30,7 +33,15 @@ public class GameOverScreenController : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0) && gameover)
+        if (isGameover && screenOverlay.color.a < 0.35f)
+        {
+            float alphaChange = Time.deltaTime / fadeInDuration;
+            float newAlpha = Mathf.Min(screenOverlay.color.a + alphaChange, 0.35f); // 최대 투명도를 0.35로 제한
+            screenOverlay.color = new Color(1, 0, 0, newAlpha);
+        }
+
+
+        if (Input.GetMouseButtonDown(0) && isGameover)
         {
             Debug.Log("This is anyKeyDown.");
             //Time.timeScale = 1f;
@@ -40,6 +51,7 @@ public class GameOverScreenController : MonoBehaviour
             Cursor.visible = true;
 
             SceneManager.LoadScene("UI");
+
 
             
         }
@@ -60,14 +72,18 @@ public class GameOverScreenController : MonoBehaviour
         // ���� �ð��� ����ϴ�.
         //Time.timeScale = 0f;
 
+        //gameOverSound.Play();
+
         // ���ӿ��� ȭ���� ǥ���մϴ�.
         StartCoroutine(FadeInGameOverScreen());
 
-        gameover = true;
+        isGameover = true;
+
+
 
         // DOTween�� SetUpdate(true)�� ����Ͽ� Time.timeScale�� ������ ���� �ʵ��� �մϴ�.
         gameOverText.DOFade(1f, textAppearDuration).From(0f).SetUpdate(true);
-        gameOverText.transform.DOScale(1.2f, textAppearDuration / 2f).From(1.125f).SetEase(Ease.OutBack).SetUpdate(true);
+        gameOverText.transform.DOScale(1.2f, textAppearDuration).From(1.0f).SetEase(Ease.OutBack).SetUpdate(true);
         textToBlink.DOFade(0f, blinkingDuration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear).SetUpdate(true);
     }
 

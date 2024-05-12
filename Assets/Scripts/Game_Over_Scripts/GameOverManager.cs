@@ -16,7 +16,7 @@ public class GameOverManager : MonoBehaviour
         if (other.CompareTag("Game_Over"))
         {
             // Ư�� �±׸� ���� ��ü�� �ε������Ƿ� ���� ���� ó�� ����
-            Debug.Log("aaa");
+            Debug.Log("gameover");
             GameOver();
         }
     }
