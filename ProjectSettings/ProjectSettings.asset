@@ -183,7 +183,7 @@ PlayerSettings:
   keepLoadedShadersAlive: 0
   StripUnusedMeshComponents: 1
   strictShaderVariantMatching: 0
-  VertexChannelCompressionMask: 4054
+  VertexChannelCompressionMask: 326
   iPhoneSdkVersion: 988
   iOSTargetOSVersionString: 12.0
   tvOSSdkVersion: 0
@@ -845,7 +845,7 @@ PlayerSettings:
     PS5: DOTWEEN
     QNX: DOTWEEN
     Stadia: DOTWEEN
-    Standalone: CROSS_PLATFORM_INPUT;DOTWEEN;ATMOSPHERIC_HEIGHT_FOG
+    Standalone: CROSS_PLATFORM_INPUT;DOTWEEN;ATMOSPHERIC_HEIGHT_FOG;__MICROSPLAT__
     VisionOS: DOTWEEN
     WebGL: DOTWEEN
     Windows Store Apps: DOTWEEN
