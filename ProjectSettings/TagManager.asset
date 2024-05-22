@@ -28,10 +28,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - GameHandler
   - Water
   - UI
-  - 
+  - wall
   - 
   - 
   - 
