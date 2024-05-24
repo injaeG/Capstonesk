@@ -102,6 +102,7 @@ Material:
     - _ElementLayerValue: 0
     - _ElementLayerVegetationMessage: 0
     - _ElementLayerWarning: 0
+    - _ElementMessage: 0
     - _ElementMode: 0
     - _ElementRaycastEndValue: 1
     - _ElementRaycastMask: 1
@@ -151,6 +152,8 @@ Material:
     - _RaycastLayerMask: 1
     - _RaycastMessage: 0
     - _RenderCat: 1
+    - _SeasonMaxValue: 1
+    - _SeasonMinValue: 0
     - _SeasonMode: 0
     - _SeasonMode_Seasons: 0
     - _SeasonMode_Simple: 0
@@ -158,6 +161,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpaceTexture: 0
     - _SpecularHighlights: 1
+    - _SpeedTresholdValue: 10
     - _Spring: 1
     - _SpringValue: 0
     - _SrcBlend: 1
@@ -173,7 +177,7 @@ Material:
     - _render_colormask: 15
     - _render_dst: 0
     - _render_priority: 0
-    - _render_src: 2
+    - _render_src: 7
     m_Colors:
     - _AdditionalColor1: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
     - _AdditionalColor2: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
@@ -192,6 +196,7 @@ Material:
     - _NoiseColorOne: {r: 0, g: 0, b: 0, a: 0}
     - _NoiseColorTwo: {r: 2.8175628, g: 0.8457446, b: 0.014751666, a: 1}
     - _NoiseRemap: {r: 0.35, g: 0.65, b: 0, a: 0}
+    - _SeasonRemap: {r: 0, g: 0, b: 0, a: 0}
     - _SpringColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
     - _SummerColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
     - _WinterColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}

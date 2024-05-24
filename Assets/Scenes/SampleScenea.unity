@@ -323,7 +323,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fec25434bdeb99d4fa4eaa96709b7eee, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1896,81 +1896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a5f4c5bf2a8a94e8b9853075089491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &691610936
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 691610937}
-  - component: {fileID: 691610939}
-  - component: {fileID: 691610938}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &691610937
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691610936}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1770731679}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -402, y: -215}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &691610938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691610936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.13725491}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &691610939
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691610936}
-  m_CullTransparentMesh: 1
 --- !u!1001 &768167123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1993,15 +1918,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 49099519960920004, guid: 0f8f7097443617a4d8b55180feb301f1, type: 3}
       propertyPath: m_Color.b
-      value: 0.08962262
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 49099519960920004, guid: 0f8f7097443617a4d8b55180feb301f1, type: 3}
       propertyPath: m_Color.g
-      value: 0.08962262
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 49099519960920004, guid: 0f8f7097443617a4d8b55180feb301f1, type: 3}
       propertyPath: m_Color.r
-      value: 0.08962262
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 376903704276814620, guid: 0f8f7097443617a4d8b55180feb301f1, type: 3}
       propertyPath: m_Pivot.x
@@ -2121,9 +2046,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 376903704276814620, guid: 0f8f7097443617a4d8b55180feb301f1, type: 3}
       insertIndex: 0
       addedObject: {fileID: 110471204}
-    - targetCorrespondingSourceObject: {fileID: 376903704276814620, guid: 0f8f7097443617a4d8b55180feb301f1, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 691610937}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f8f7097443617a4d8b55180feb301f1, type: 3}
 --- !u!1 &816634464 stripped
@@ -3476,7 +3398,7 @@ MonoBehaviour:
   gameOverText: {fileID: 1844124588}
   textToBlink: {fileID: 1806128047}
   gameOverSound: {fileID: 110471205}
-  screenOverlay: {fileID: 691610938}
+  screenOverlay: {fileID: 0}
 --- !u!4 &1551364253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4310663345150258, guid: 64eff6a84e31077428dbea1165626501, type: 3}
