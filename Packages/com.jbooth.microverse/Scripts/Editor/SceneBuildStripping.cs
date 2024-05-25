@@ -10,7 +10,6 @@ namespace JBooth.MicroVerseCore
         public int callbackOrder { get { return 0; } }
         public void OnProcessScene(UnityEngine.SceneManagement.Scene scene, BuildReport report)
         {
-
             var mv = GameObject.FindObjectOfType<MicroVerse>();
             if (mv != null)
             {
@@ -19,7 +18,7 @@ namespace JBooth.MicroVerseCore
                 var binds = mv.GetComponentsInChildren<BindHeightFilterRangeToTransform>();
                 foreach (var b in binds)
                 {
-                    GameObject.Destroy(b);
+                    GameObject.DestroyImmediate(b);
                 }
 #endif
                 var all = mv.GetComponentsInChildren<IModifier>();
