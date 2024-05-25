@@ -24,6 +24,8 @@ TagManager:
   - road
   - Right_Sound
   - Game_Over
+  - lui_btn_01
+  - Back Button
   layers:
   - Default
   - TransparentFX
@@ -32,7 +34,7 @@ TagManager:
   - Water
   - UI
   - wall
-  - 
+  - road
   - 
   - 
   - 

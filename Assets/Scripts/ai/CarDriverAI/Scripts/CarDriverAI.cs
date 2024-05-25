@@ -8,14 +8,18 @@ public class CarDriverAI : MonoBehaviour
     [SerializeField] private Transform frontTransform; // front 오브젝트를 참조
     [SerializeField] private float rayDistance = 20f;
     [SerializeField] private LayerMask obstacleLayerMask;
+    [SerializeField] private LayerMask roadLayerMask;
     [SerializeField] private bool zigzagChase = false; // 좌우로 움직이면서 추격하는 방식 여부
 
     private CarDriver carDriver;
     private Vector3 targetPosition;
     private bool isReversing = false;
     private float reverseTimer = 0f;
-    private float baseReverseDuration = 0.25f; // 기본 후진 시간
-    private int collisionCount = 0;
+    private float baseReverseDuration = 1f; // 기본 후진 시간
+    private bool recentlyReversed = false;
+    private float noReverseTimer = 0f;
+    private float noReverseDuration = 2f; // 일정 시간 동안 후진 금지
+    private float lastTurnAmount = 0f;
 
     private void Awake()
     {
@@ -28,6 +32,15 @@ public class CarDriverAI : MonoBehaviour
         {
             Reverse();
             return;
+        }
+
+        if (recentlyReversed)
+        {
+            noReverseTimer -= Time.deltaTime;
+            if (noReverseTimer <= 0)
+            {
+                recentlyReversed = false;
+            }
         }
 
         SetTargetPosition(targetPositionTransform.position);
@@ -60,7 +73,13 @@ public class CarDriverAI : MonoBehaviour
 
                     if (zigzagChase)
                     {
-                        turnAmount = Mathf.Sin(Time.time * 2f) * 0.5f; // 좌우로 움직이면서 추격
+                        turnAmount = Mathf.Sin(Time.time * 5f) * 0.5f; // 좌우로 움직이면서 추격
+                    }
+                    else
+                    {
+                        float angleToDir = Vector3.SignedAngle(frontTransform.forward, dirToMovePosition, Vector3.up);
+                        float maxTurnAmount = 0.5f; // 최대 회전량을 0.5로 제한
+                        turnAmount = Mathf.Clamp(angleToDir / 180f, -maxTurnAmount, maxTurnAmount); // 각도에 비례해 회전량 조정, 최대 회전량을 제한
                     }
                 }
                 else
@@ -76,11 +95,11 @@ public class CarDriverAI : MonoBehaviour
                     {
                         forwardAmount = -1f;
                     }
-                }
 
-                float angleToDir = Vector3.SignedAngle(frontTransform.forward, dirToMovePosition, Vector3.up);
-                float maxTurnAmount = 0.5f; // 최대 회전량을 0.5로 제한
-                turnAmount = Mathf.Clamp(angleToDir / 180f, -maxTurnAmount, maxTurnAmount); // 각도에 비례해 회전량 조정, 최대 회전량을 제한
+                    float angleToDir = Vector3.SignedAngle(frontTransform.forward, dirToMovePosition, Vector3.up);
+                    float maxTurnAmount = 0.5f; // 최대 회전량을 0.5로 제한
+                    turnAmount = Mathf.Clamp(angleToDir / 180f, -maxTurnAmount, maxTurnAmount); // 각도에 비례해 회전량 조정, 최대 회전량을 제한
+                }
             }
         }
         else
@@ -100,67 +119,77 @@ public class CarDriverAI : MonoBehaviour
         carDriver.SetInputs(forwardAmount, turnAmount);
     }
 
+    
+
     private bool IsObstacleDetected(out float turnAmount)
     {
         turnAmount = 0f;
         int raysCount = 5; // 발사할 레이의 수
         float angle = 60f; // 각도 범위 (좌우 30도)
+        bool obstacleDetected = false;
 
         for (int i = 0; i < raysCount; i++)
         {
-            float rayAngle = Mathf.Lerp(-angle, angle, i / (raysCount - 1f));
+            float rayAngle = Mathf.Lerp(-angle, angle, i / (float)(raysCount - 1));
             Vector3 rayDirection = Quaternion.Euler(0, rayAngle, 0) * frontTransform.forward;
-            if (Physics.Raycast(frontTransform.position, rayDirection, out RaycastHit hit, rayDistance, obstacleLayerMask))
-            {
-                CreateMarkerAtHitLocation(hit.point); // 충돌 위치에 마커 생성
 
-                if (rayAngle < 0)
-                {
-                    turnAmount = Mathf.Max(turnAmount, 1f - (hit.distance / rayDistance));
-                }
-                else
-                {
-                    turnAmount = Mathf.Min(turnAmount, -1f + (hit.distance / rayDistance));
-                }
-                return true;
-            }
-        }
+            // 레이를 씬에 시각적으로 표시
+            Debug.DrawRay(frontTransform.position, rayDirection * rayDistance, Color.red);
 
-        return false;
+            // "wall" 레이어와의 충돌 검사
+if (Physics.Raycast(frontTransform.position, rayDirection, out RaycastHit hit, rayDistance, obstacleLayerMask | roadLayerMask))
+{
+    if ((roadLayerMask.value & (1 << hit.collider.gameObject.layer)) > 0)
+    {
+        continue; // 만약 충돌한 물체가 'road' 레이어에 속한다면 계속 진행
     }
 
-    // 충돌 위치에 작은 구체를 생성하여 마커로 사용하는 함수
-void CreateMarkerAtHitLocation(Vector3 position)
-{
-    GameObject marker = new GameObject("Marker"); // 빈 게임 오브젝트 생성
-    marker.transform.position = position;
+    obstacleDetected = true;
 
-    // 시각적으로 표시하기 위해 Sphere Collider 추가
-    SphereCollider sphereCollider = marker.AddComponent<SphereCollider>();
-    sphereCollider.isTrigger = true; // 필요에 따라 Trigger로 설정
-    sphereCollider.radius = 1f; // 반지름 설정
-
-    // 필요한 경우 추가적인 컴포넌트 구성
-
-    Destroy(marker, 1f); // 1초 후에 마커 삭제
+    // 장애물 회피를 위한 회전 방향 설정
+    float angleToObstacle = Vector3.SignedAngle(frontTransform.forward, rayDirection, Vector3.up);
+    if (angleToObstacle < 0)
+    {
+        turnAmount = 1f - (hit.distance / rayDistance); // 오른쪽으로 회전
+    }
+    else
+    {
+        turnAmount = -1f + (hit.distance / rayDistance); // 왼쪽으로 회전
+    }
 }
 
+        }
+
+        return obstacleDetected;
+    }
 
     private void Reverse()
     {
         if (reverseTimer > 0)
         {
-            carDriver.SetInputs(-1f, 0f); // 후진
+            carDriver.SetInputs(-1f, lastTurnAmount); // 후진하면서 회전
             reverseTimer -= Time.deltaTime;
         }
         else if (reverseTimer < 0)
         {
-            carDriver.SetInputs(1f, 0f); // 전진 (후면 충돌 시)
+            carDriver.SetInputs(1f, lastTurnAmount); // 전진하면서 회전 (후면 충돌 시)
             reverseTimer += Time.deltaTime;
         }
         else
         {
             isReversing = false;
+            recentlyReversed = true;
+            noReverseTimer = noReverseDuration;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if ((obstacleLayerMask.value & (1 << collision.gameObject.layer)) > 0 && !recentlyReversed)
+        {
+            isReversing = true;
+            reverseTimer = baseReverseDuration;
+
         }
     }
 
