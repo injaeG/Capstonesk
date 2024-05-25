@@ -3208,7 +3208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324364349}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.48542196, y: -0.3994668, z: 0.25823015, w: 0.73355913}
+  m_LocalRotation: {x: -0.485422, y: -0.39946687, z: 0.25823012, w: 0.73355913}
   m_LocalPosition: {x: -0.25220144, y: 0.17195827, z: 0.60771996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6235,7 +6235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669354098}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.4000026, y: 0.025878608, z: 0.04227689, w: 0.9151726}
+  m_LocalRotation: {x: -0.40000278, y: 0.025878616, z: 0.042276893, w: 0.9151726}
   m_LocalPosition: {x: 0.0000026226046, y: 0.22070539, z: 0.8943138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7630,7 +7630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771344877}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5043605, y: 0.31069106, z: -0.20083903, w: 0.7802277}
+  m_LocalRotation: {x: -0.5043607, y: 0.310691, z: -0.20083903, w: 0.78022766}
   m_LocalPosition: {x: -0.40296015, y: 0.17202327, z: 0.60815716}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13480,7 +13480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408887177}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.40610158, y: -0.11688089, z: -0.048787057, w: 0.9050084}
+  m_LocalRotation: {x: -0.4061018, y: -0.11688088, z: -0.048787083, w: 0.9050083}
   m_LocalPosition: {x: -0.57130426, y: 0.2128999, z: 0.79991406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16223,7 +16223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773970613}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.0000001872535, z: -0, w: 1}
   m_LocalPosition: {x: -0.366419, y: -0.027427167, z: 0.9543644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -22594,6 +22594,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fca7c6ea6b2be241844f325ebfca4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wheelColliders: []
+  wheelMeshes: []
+  centerOfMass: {fileID: 0}
+  maxSteerAngle: 30
+  motorTorque: 1000
+  forwardFrictionStiffness: 1
+  sidewaysFrictionStiffness: 1
 --- !u!114 &7974768195543494852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22606,7 +22613,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb59b9c1ad3c8e34999f1b2e07b5774f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPositionTranform: {fileID: 162096691}
+  targetPositionTransform: {fileID: 0}
+  frontTransform: {fileID: 0}
+  rayDistance: 20
+  obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  zigzagChase: 0
 --- !u!4 &8057468370651377366
 Transform:
   m_ObjectHideFlags: 0
