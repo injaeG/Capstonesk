@@ -26,6 +26,7 @@ TagManager:
   - Game_Over
   - lui_btn_01
   - Back Button
+  - start_map
   layers:
   - Default
   - TransparentFX
