@@ -86,31 +86,31 @@ public class RoadMaker : MonoBehaviour
     }
 
     // 무작위 도로 프리팹 생성
-    private void InstantiateRandomRoadPrefab(GameObject spawnPlace)
+private void InstantiateRandomRoadPrefab(GameObject spawnPlace)
+{
+    if (roadPrefabs != null && roadPrefabs.Length > 0)
     {
-        if (roadPrefabs != null && roadPrefabs.Length > 0)
+        int randomIndex = Random.Range(0, roadPrefabs.Length);
+        GameObject roadPrefabToInstantiate = roadPrefabs[randomIndex];
+        // spawn 오브젝트의 위치를 기준으로 도로 프리팹 생성
+        Vector3 spawnPosition = spawnPlace.transform.position;
+        // spawn 오브젝트의 회전값을 사용하여 도로의 y축 회전값을 설정
+        Quaternion spawnRotation = Quaternion.Euler(0, spawnPlace.transform.rotation.eulerAngles.y, 0);
+        
+        // 새로운 도로 프리팹이 겹치지 않도록 위치 확인
+        float roadPrefabRadius = 5f; // 프리팹의 반지름 (겹침 확인을 위한 값)
+        if (!IsPositionOccupied(spawnPosition, roadPrefabRadius))
         {
-            int randomIndex = Random.Range(0, roadPrefabs.Length);
-            GameObject roadPrefabToInstantiate = roadPrefabs[randomIndex];
-            // roadSpawnPlaceTag 태그를 가진 오브젝트의 위치를 기준으로 도로 프리팹 생성
-            Vector3 spawnPosition = spawnPlace.transform.position;
-            // y축 회전값이 변하지 않도록 설정
-            Quaternion spawnRotation = Quaternion.Euler(0, spawnPlace.transform.rotation.eulerAngles.y, 0);
-            
-            // 새로운 도로 프리팹이 겹치지 않도록 위치 확인
-            float roadPrefabRadius = 5f; // 프리팹의 반지름 (겹침 확인을 위한 값)
-            if (!IsPositionOccupied(spawnPosition, roadPrefabRadius))
-            {
-                Instantiate(roadPrefabToInstantiate, spawnPosition, spawnRotation);
-            }
-            else
-            {
-                Debug.LogWarning("Cannot instantiate road prefab at the spawn place. Position is occupied.");
-            }
+            Instantiate(roadPrefabToInstantiate, spawnPosition, spawnRotation);
         }
         else
         {
-            Debug.LogWarning("No road prefabs are loaded.");
+            Debug.LogWarning("Cannot instantiate road prefab at the spawn place. Position is occupied.");
         }
     }
+    else
+    {
+        Debug.LogWarning("No road prefabs are loaded.");
+    }
+}
 }

@@ -3,23 +3,40 @@ using System.Collections;
 
 public class Road_Remover : MonoBehaviour
 {
-    public float destroyDelay = 2f; // µµ·Î »èÁ¦ Áö¿¬ ½Ã°£ (ÃÊ)
+    public float destroyDelay = 2f;
+    public string requiredComponentName = "RoadComponent"; // í•„ìš”í•œ ì»´í¬ë„ŒíŠ¸ ì´ë¦„
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Car"))
         {
-            // ÅÂ±×°¡ "Car"ÀÎ °´Ã¼°¡ Æ®¸®°Å¿¡ Ãæµ¹ÇÏ¸é µµ·Î »èÁ¦ ÄÚ·çÆ¾ ½ÃÀÛ
+            // íƒœê·¸ê°€ "Car"ì¸ ê°ì²´ì™€ íŠ¸ë¦¬ê±°ì— ì¶©ëŒí•˜ë©´ íŒŒê´´ ì ˆì°¨ ì‹œìž‘
             StartCoroutine(DestroyRoad());
         }
     }
 
     private IEnumerator DestroyRoad()
     {
-        // destroyDelay ½Ã°£ µ¿¾È ´ë±â ÈÄ µµ·Î »èÁ¦
+        // destroyDelay ì‹œê°„ ë™ì•ˆ ëŒ€ê¸°
         yield return new WaitForSeconds(destroyDelay);
 
-        // ºÎ¸ð °ÔÀÓ ¿ÀºêÁ§Æ®(ÇÁ¸®ÆÕ) »èÁ¦
-        Destroy(gameObject.transform.parent.gameObject);
-    }   
+        // ë¶€ëª¨ ê°ì²´ë¥¼ ê°€ì ¸ì˜´
+        var parentObject = gameObject.transform.parent.gameObject;
+
+        // íŠ¹ì • ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì§€ê³  ìžˆëŠ” ìžì‹ ì˜¤ë¸Œì íŠ¸ ìˆ˜ë¥¼ ê³„ì‚°
+        int componentCount = 0;
+        foreach (Transform child in parentObject.transform)
+        {
+            if (child.GetComponent(requiredComponentName) != null)
+            {
+                componentCount++;
+            }
+        }
+
+        // íŠ¹ì • ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì§„ ìžì‹ ì˜¤ë¸Œì íŠ¸ê°€ 3ê°œ ì´ìƒì´ë©´ íŒŒê´´
+        if (componentCount >= 1)
+        {
+            Destroy(parentObject);
+        }
+    }
 }

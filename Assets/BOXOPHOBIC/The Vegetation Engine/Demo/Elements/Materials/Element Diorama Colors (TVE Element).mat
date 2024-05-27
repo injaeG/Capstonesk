@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Element Diorama Colors (TVE Element)
   m_Shader: {fileID: 4800000, guid: 853be43322d350648a82ec17b27de5cf, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -19,6 +21,7 @@ Material:
     ElementType: ColorsElement
   disabledShaderPasses:
   - VolumePass
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -41,6 +44,7 @@ Material:
     - _ElementLayerMessage: 0
     - _ElementLayerValue: -1
     - _ElementLayerWarning: 0
+    - _ElementMessage: 0
     - _ElementMode: 1
     - _ElementRaycastMode: 0
     - _ElementUVsMode: 0
@@ -50,16 +54,22 @@ Material:
     - _IsColorsElement: 1
     - _IsElementShader: 1
     - _IsVersion: 810
-    - _MainTexAlphaMaxValue: 0.6698115
-    - _MainTexAlphaMinValue: 0.16792464
-    - _MainTexColorMaxValue: 0
+    - _MainTexAlphaMaxValue: 0.9198115
+    - _MainTexAlphaMinValue: 0.41792464
+    - _MainTexColorMaxValue: 0.15972222
     - _MainTexColorMinValue: 0
+    - _MainTexFallofMaxValue: 0.090277776
+    - _MainTexFallofMinValue: 0
     - _MainTexMaxValue: 1
     - _MainTexMinValue: 0
     - _Message: 0
     - _RaycastDistanceEndValue: 2
     - _RaycastFadeValue: 1
     - _RaycastLayerMask: 1
+    - _SeasonMaxValue: 1
+    - _SeasonMinValue: 0
+    - _SpaceTexture: 0
+    - _SpeedTresholdValue: 10
     - _render_colormask: 15
     m_Colors:
     - _AdditionalColor1: {r: 0.5660378, g: 0.47833878, b: 0.40316823, a: 1}
@@ -68,9 +78,11 @@ Material:
     - _AdditionalColor4: {r: 0.764151, g: 0.5198327, b: 0.31359014, a: 1}
     - _ElementParams: {r: 1, g: 1, b: 1, a: 1}
     - _MainColor: {r: 0.7924528, g: 0.49025124, b: 0.23549289, a: 1}
-    - _MainTexAlphaRemap: {r: 0.16792464, g: 0.6698115, b: 0, a: 0}
-    - _MainTexColorRemap: {r: 0, g: 0, b: 0, a: 0}
+    - _MainTexAlphaRemap: {r: 0.41792464, g: 0.9198115, b: 0, a: 0}
+    - _MainTexColorRemap: {r: 0, g: 0.15972222, b: 0, a: 0}
+    - _MainTexFallofRemap: {r: 0, g: 0.090277776, b: 0, a: 0}
     - _MainTexRemap: {r: 0, g: 1, b: 0, a: 0}
     - _MainUVs: {r: 2, g: 2, b: 0, a: 0}
     - _NoiseRemap: {r: 0, g: 1, b: 0, a: 0}
+    - _SeasonRemap: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
