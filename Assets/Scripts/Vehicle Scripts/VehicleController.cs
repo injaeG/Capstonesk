@@ -83,18 +83,6 @@ public class VehicleController : MonoBehaviour
 
 
 
-        currentSpeed = GetComponent<Rigidbody>().velocity.magnitude * 3.6f; // 현재 속도 업데이트 (m/s에서 km/h로 변환)
-
-        // 속도계 바늘 회전 계산
-        float speedPercent = currentSpeed / maxSpeed; // 최대 속도 대비 현재 속도의 비율 계산
-        float angle = Mathf.Lerp(0, maxSpeedometerAngle, speedPercent); // 속도 비율에 기반해 최소 및 최대 각도 사이에서 선형 보간
-
-        // 속도계 바늘의 회전 설정
-        if (speedometerNeedle != null)
-        {
-            // y축 기준으로 회전 적용
-            speedometerNeedle.transform.localRotation = initialNeedleRotation * Quaternion.Euler(0, angle, 0);
-        }
 
         float speedAdjustedSteeringSpeed = steeringSpeed * (1 + (currentSpeed / maxSpeed));
         // Smoothly update the steering wheel rotation
@@ -182,6 +170,19 @@ public class VehicleController : MonoBehaviour
 
         // 모든 경우에 속도에 따른 감속률 조정 적용
         ApplySpeedBasedDeceleration();
+        
+        currentSpeed = GetComponent<Rigidbody>().velocity.magnitude * 3.6f; // 현재 속도 업데이트 (m/s에서 km/h로 변환)
+
+        // 속도계 바늘 회전 계산
+        float speedPercent = currentSpeed / maxSpeed; // 최대 속도 대비 현재 속도의 비율 계산
+        float angle = Mathf.Lerp(0, maxSpeedometerAngle, speedPercent); // 속도 비율에 기반해 최소 및 최대 각도 사이에서 선형 보간
+
+        // 속도계 바늘의 회전 설정
+        if (speedometerNeedle != null)
+        {
+            // y축 기준으로 회전 적용
+            speedometerNeedle.transform.localRotation = initialNeedleRotation * Quaternion.Euler(0, angle, 0);
+        }
 
     }
 
@@ -190,10 +191,11 @@ public class VehicleController : MonoBehaviour
     {
         float startTime = Time.time;
         float startAngle = currentSteeringAngle;
+        float adjustedSteeringSmoothTime = steeringSmoothTime * 10;
 
-        while (Time.time - startTime < steeringSmoothTime)
+        while (Time.time - startTime < adjustedSteeringSmoothTime)
         {
-            float t = (Time.time - startTime) / steeringSmoothTime;
+            float t = (Time.time - startTime) / adjustedSteeringSmoothTime;
             float acceleration = Mathf.Abs(targetAngle - startAngle) / maxSteeringAngle;
             t = t * acceleration;
 
@@ -205,8 +207,8 @@ public class VehicleController : MonoBehaviour
 
         // while 루프가 끝난 후, 핸들의 각도를 목표 각도로 설정하고,
         // 핸들의 회전을 초기 회전으로 설정합니다.
-        currentSteeringAngle = 0;
-        steeringWheel.transform.localRotation = initialRotation;
+        currentSteeringAngle = targetAngle;
+        steeringWheel.transform.localRotation = initialRotation * Quaternion.Euler(0, currentSteeringAngle, 0);
     }
 
 
@@ -272,24 +274,34 @@ public class VehicleController : MonoBehaviour
         }
     }
 
-    void ApplySpeedBasedDeceleration()
+void ApplySpeedBasedDeceleration()
+{
+    // 차량의 수평 속도를 가져옴 (수직 성분은 무시)
+    Vector3 horizontalVelocity = new Vector3(vehicleRigidbody.velocity.x, 0, vehicleRigidbody.velocity.z);
+    
+    // 현재 속도를 계산
+    float currentSpeed = horizontalVelocity.magnitude;
+    
+    // 최대 감속률과 감속 계수를 정의
+    float maxDecelerationRate = 15f; // 최대 감속률
+    float decelerationCoefficient = 0.025f; // 감속 계수
+
+    // 현재 속도의 영향을 조절하기 위해 속도 계수를 조정
+    float speedFactor = Mathf.Clamp01(currentSpeed * decelerationCoefficient);
+
+    // Mathf.SmoothStep를 사용하여 부드러운 감속률 변화를 계산
+    float adjustedDecelerationRate = Mathf.SmoothStep(0, maxDecelerationRate, speedFactor);
+
+    // 감속 벡터를 계산
+    Vector3 deceleration = -horizontalVelocity.normalized * adjustedDecelerationRate * Time.deltaTime;
+
+    // 수평 입력이 없을 때만 감속을 적용
+    if (Mathf.Approximately(Input.GetAxis("Vertical"), 0))
     {
-        Vector3 horizontalVelocity = new Vector3(vehicleRigidbody.velocity.x, 0, vehicleRigidbody.velocity.z);
-        float currentSpeed = horizontalVelocity.magnitude;
-        float maxDecelerationRate = 15f; // 최대 감속률 가정
-        float decelerationCoefficient = 0.025f; // 감속 계수 가정
-
-        // currentSpeed의 영향을 줄이기 위해 값을 조정
-        float speedFactor = Mathf.Clamp01(currentSpeed * decelerationCoefficient);
-
-        // Mathf.SmoothStep을 사용해 보다 부드러운 감속률 조정 적용
-        float adjustedDecelerationRate = Mathf.SmoothStep(decelerationRate, maxDecelerationRate, speedFactor);
-
-        Vector3 deceleration = -horizontalVelocity.normalized * adjustedDecelerationRate * Time.deltaTime;
-
-        // 감속 적용
+        // 계산된 감속을 적용하여 차량의 속도를 조정
         vehicleRigidbody.velocity = new Vector3(vehicleRigidbody.velocity.x + deceleration.x, vehicleRigidbody.velocity.y, vehicleRigidbody.velocity.z + deceleration.z);
     }
+}
 
     
     private void OnTriggerEnter(Collider other)
