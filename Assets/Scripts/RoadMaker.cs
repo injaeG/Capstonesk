@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class RoadMaker : MonoBehaviour
 {
-    public GameObject[] roadPrefabs;
-    public string roadSpawnPlaceTag = "Road_Spawn_Place";
-    private bool isCollisionHandled = false;
+    public GameObject[] roadPrefabs; // 도로 프리팹 배열
+    public string roadSpawnPlaceTag = "Road_Spawn_Place"; // 도로 스폰 위치를 나타내는 태그
+    private bool isCollisionHandled = false; // 충돌 처리 여부를 나타내는 불리언 변수
+    private int lastPrefabIndex = -1; // 마지막으로 생성된 도로 프리팹의 인덱스 (-1은 시작 시 아무것도 생성되지 않았음을 의미)
 
     void Start()
     {
+        // Resources 폴더에서 도로 프리팹을 로드합니다.
         roadPrefabs = Resources.LoadAll<GameObject>("Prefabs/Roads");
         if (roadPrefabs == null || roadPrefabs.Length == 0)
         {
@@ -75,12 +77,19 @@ public class RoadMaker : MonoBehaviour
     {
         if (roadPrefabs != null && roadPrefabs.Length > 0)
         {
-            int randomIndex = Random.Range(0, roadPrefabs.Length);
+            int randomIndex;
+            do
+            {
+                // 이전에 생성된 프리팹과 다른 프리팹을 선택하기 위해 반복합니다.
+                randomIndex = Random.Range(0, roadPrefabs.Length);
+            } while (randomIndex == lastPrefabIndex && roadPrefabs.Length > 1); // 도로 프리팹 배열에 한 가지 이상의 프리팹이 있을 경우에만 실행
+
+            lastPrefabIndex = randomIndex; // 마지막으로 생성된 프리팹의 인덱스를 업데이트합니다.
             GameObject roadPrefabToInstantiate = roadPrefabs[randomIndex];
             Vector3 spawnPosition = spawnPlace.transform.position;
             Quaternion spawnRotation = Quaternion.Euler(0, spawnPlace.transform.rotation.eulerAngles.y, 0);
-            
-            float radius = 10f; // 구체의 반지름을 정의합니다. 이 예제에서는 5 유닛으로 설정합니다.
+
+            float radius = 1f;
             if (!IsPositionOccupied(spawnPosition, radius))
             {
                 Instantiate(roadPrefabToInstantiate, spawnPosition, spawnRotation);
