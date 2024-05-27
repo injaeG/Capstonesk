@@ -8,8 +8,6 @@ public class RoadMaker : MonoBehaviour
     public string roadSpawnPlaceTag = "Road_Spawn_Place";
     // 충돌 처리 여부 플래그
     private bool isCollisionHandled = false;
-    // 충돌 감지 대상 오브젝트
-    public GameObject targetObject;
 
     void Start()
     {
@@ -73,6 +71,20 @@ public class RoadMaker : MonoBehaviour
         }
     }
 
+    // 주어진 위치에 다른 오브젝트가 있는지 체크
+    private bool IsPositionOccupied(Vector3 position, float radius)
+    {
+        Collider[] colliders = Physics.OverlapSphere(position, radius);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Road"))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // 무작위 도로 프리팹 생성
     private void InstantiateRandomRoadPrefab(GameObject spawnPlace)
     {
@@ -84,7 +96,17 @@ public class RoadMaker : MonoBehaviour
             Vector3 spawnPosition = spawnPlace.transform.position;
             // y축 회전값이 변하지 않도록 설정
             Quaternion spawnRotation = Quaternion.Euler(0, spawnPlace.transform.rotation.eulerAngles.y, 0);
-            Instantiate(roadPrefabToInstantiate, spawnPosition, spawnRotation);
+            
+            // 새로운 도로 프리팹이 겹치지 않도록 위치 확인
+            float roadPrefabRadius = 5f; // 프리팹의 반지름 (겹침 확인을 위한 값)
+            if (!IsPositionOccupied(spawnPosition, roadPrefabRadius))
+            {
+                Instantiate(roadPrefabToInstantiate, spawnPosition, spawnRotation);
+            }
+            else
+            {
+                Debug.LogWarning("Cannot instantiate road prefab at the spawn place. Position is occupied.");
+            }
         }
         else
         {
