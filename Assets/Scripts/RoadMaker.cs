@@ -7,6 +7,8 @@ public class RoadMaker : MonoBehaviour
     private bool isCollisionHandled = false; // 충돌 처리 여부를 나타내는 불리언 변수
     private int lastPrefabIndex = -1; // 마지막으로 생성된 도로 프리팹의 인덱스 (-1은 시작 시 아무것도 생성되지 않았음을 의미)
 
+    private GameObject lastSpawnedRoad; // 마지막으로 생성된 도로 프리팹
+
     void Start()
     {
         // Resources 폴더에서 도로 프리팹을 로드합니다.
@@ -90,9 +92,18 @@ public class RoadMaker : MonoBehaviour
             Quaternion spawnRotation = Quaternion.Euler(0, spawnPlace.transform.rotation.eulerAngles.y, 0);
 
             float radius = 1f;
+
+            // 이전에 생성된 프리팹이 있을 경우 삭제합니다.
+            if (lastSpawnedRoad != null)
+            {
+                Destroy(lastSpawnedRoad);
+                lastSpawnedRoad = null; // 삭제 후 null로 설정하여 안전하게 처리
+            }
+
             if (!IsPositionOccupied(spawnPosition, radius))
             {
-                Instantiate(roadPrefabToInstantiate, spawnPosition, spawnRotation);
+                // 새로운 도로를 인스턴스화하고 추적합니다.
+                lastSpawnedRoad = Instantiate(roadPrefabToInstantiate, spawnPosition, spawnRotation);
             }
             else
             {
