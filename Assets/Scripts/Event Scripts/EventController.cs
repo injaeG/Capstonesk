@@ -58,7 +58,7 @@ public class EventPrefabSpawner : MonoBehaviour
         else
         {
             audioSource.clip = eventSound;
-            GameObject[] roadObjects = GameObject.FindGameObjectsWithTag("road");
+            GameObject[] roadObjects = GameObject.FindGameObjectsWithTag("Road");
             if (roadObjects.Length == 0) return;
 
             GameObject randomRoadObject = roadObjects[Random.Range(0, roadObjects.Length)];
@@ -77,9 +77,9 @@ public class EventPrefabSpawner : MonoBehaviour
 
         if (eventPrefabs.Length == 0) return;
 
-        GameObject[] selectedPrefabs = new GameObject[4];
+        GameObject[] selectedPrefabs = new GameObject[8];
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 8; i++)
         {
             do
             {
@@ -88,23 +88,23 @@ public class EventPrefabSpawner : MonoBehaviour
             } while (!selectedPrefabs[i].CompareTag("eye_ghost") && selectedPrefabs[i] != null);
         }
 
-        GameObject[] roadObjects = GameObject.FindGameObjectsWithTag("road");
+        GameObject[] roadObjects = GameObject.FindGameObjectsWithTag("Road");
         if (roadObjects.Length == 0) return;
 
         int count = -1;
 
-        for (int j = 0; j < 2; j++)
+        for (int j = 0; j < 4; j++)
         {
             GameObject randomRoadObject = roadObjects[Random.Range(0, roadObjects.Length)];
 
-            for (int k = 0; k < selectedPrefabs.Length; k++)
+            for (int k = 0; k < 2; k++)
             {
                 count++;
                 if (count >= selectedPrefabs.Length) break;
 
                 Vector3 randomPosition = new Vector3(
                     Random.Range(randomRoadObject.transform.position.x - 17, randomRoadObject.transform.position.x + 17),
-                    1,
+                    1.9f,
                     Random.Range(randomRoadObject.transform.position.z - 10, randomRoadObject.transform.position.z + 10)
                 );
 

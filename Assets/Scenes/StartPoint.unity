@@ -18700,7 +18700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 2019007315}
   eye_ghostSound: {fileID: 8300000, guid: c922081a161935047babba52f856f551, type: 3}
-  eventSound: {fileID: 0}
+  eventSound: {fileID: 8300000, guid: 8417c18176f92b54d832c5a7437a07b0, type: 3}
   hitchhikerSound: {fileID: 0}
 --- !u!82 &2019007317
 AudioSource:
