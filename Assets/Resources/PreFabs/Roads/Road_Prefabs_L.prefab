@@ -1829,8 +1829,8 @@ GameObject:
   - component: {fileID: 3299085986472931213}
   - component: {fileID: 7344089085755626110}
   - component: {fileID: 846837616094386401}
-  - component: {fileID: 575183500577001147}
-  - component: {fileID: 3959381892101797801}
+  - component: {fileID: 3918031262908361537}
+  - component: {fileID: 8116217239833316157}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Road_Make
@@ -1903,8 +1903,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &575183500577001147
-MeshCollider:
+--- !u!114 &3918031262908361537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186925764195676183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714c3f1a3df23a445b5c58a9710cbe92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabPath: PreFabs/Roads
+  spawnTransforms:
+  - {fileID: 8597305921507628195}
+--- !u!65 &8116217239833316157
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1921,25 +1936,9 @@ MeshCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &3959381892101797801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186925764195676183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714c3f1a3df23a445b5c58a9710cbe92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roadPrefabs:
-  - {fileID: 0}
-  roadSpawnPlaceTag: Road_Spawn_Place
+  serializedVersion: 3
+  m_Size: {x: 10, y: 2.2204466e-16, z: 10.000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1272041616143435126
 GameObject:
   m_ObjectHideFlags: 0
@@ -6420,6 +6419,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.9999967, y: 0.8225595, z: 0.015863687}
   m_Center: {x: -0.00001513958, y: 0.723443, z: 0.000000031664968}
+--- !u!1 &4674174862118976327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8597305921507628195}
+  m_Layer: 0
+  m_Name: EndPoint
+  m_TagString: Road_Spawn_Place
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8597305921507628195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674174862118976327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 110, y: 0, z: -97.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3828605916833613817}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &4737968419877187473
 GameObject:
   m_ObjectHideFlags: 0
@@ -7811,37 +7841,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.9999967, y: 0.8225595, z: 0.015863687}
   m_Center: {x: -0.00001513958, y: 0.723443, z: 0.000000031664968}
---- !u!1 &5989978110804987385
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2329281452999054527}
-  m_Layer: 0
-  m_Name: Road_Spawn_Place
-  m_TagString: Road_Spawn_Place
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2329281452999054527
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5989978110804987385}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 109.8, y: 0, z: -97.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3828605916833613817}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &6190837670561967781
 GameObject:
   m_ObjectHideFlags: 0
@@ -8201,7 +8200,7 @@ Transform:
   - {fileID: 81014037766484559}
   - {fileID: 4196473776571270238}
   - {fileID: 3299085986472931213}
-  - {fileID: 2329281452999054527}
+  - {fileID: 8597305921507628195}
   - {fileID: 8398323780630839549}
   - {fileID: 4479985583507058014}
   - {fileID: 5069765499325145164}
