@@ -551,8 +551,6 @@ GameObject:
   - component: {fileID: 1046069657539140688}
   - component: {fileID: 4912090694500461624}
   - component: {fileID: 1557654363871590494}
-  - component: {fileID: 4562679637155044682}
-  - component: {fileID: 5682596571370342196}
   m_Layer: 0
   m_Name: AIcar
   m_TagString: Untagged
@@ -627,49 +625,3 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4562679637155044682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8822718718236121464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fca7c6ea6b2be241844f325ebfca4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheelColliders:
-  - {fileID: 3853224726037090837}
-  - {fileID: 2425508873357251048}
-  - {fileID: 5651842454414062840}
-  - {fileID: 1194595011326584026}
-  wheelMeshes:
-  - {fileID: 7609052683772625968}
-  - {fileID: 9152447133240015993}
-  - {fileID: 1113702571308805365}
-  - {fileID: 4618249927353378404}
-  centerOfMass: {fileID: 4565421661093595767}
-  maxSteerAngle: 30
-  motorTorque: 3000
-  forwardFrictionStiffness: 2
-  sidewaysFrictionStiffness: 2
---- !u!114 &5682596571370342196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8822718718236121464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb59b9c1ad3c8e34999f1b2e07b5774f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPositionTransform: {fileID: 0}
-  frontTransform: {fileID: 8073115124778029866}
-  rayDistance: 20
-  obstacleLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  zigzagChase: 0
