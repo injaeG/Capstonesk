@@ -25,6 +25,7 @@ TagManager:
   - lui_btn_01
   - Back Button
   - start_map
+  - eye_ghost
   layers:
   - Default
   - TransparentFX
