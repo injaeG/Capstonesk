@@ -26,6 +26,7 @@ TagManager:
   - Back Button
   - start_map
   - eye_ghost
+  - Fuel_Charge
   layers:
   - Default
   - TransparentFX

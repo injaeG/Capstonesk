@@ -213,33 +213,33 @@ public class VehicleController : MonoBehaviour
         }
     }
 
-    void UpdateFuelSystem()
+  void UpdateFuelSystem()
+{
+    if (fuelAmount > 0) // 연료가 0보다 큰 경우에만 연료 소비
     {
-        if (fuelAmount > 0 && vehicleRigidbody != null)
+        float fuelConsumed = fuelConsumptionRate * vehicleRigidbody.velocity.magnitude * Time.deltaTime;
+        fuelAmount -= fuelConsumed;
+        fuelAmount = Mathf.Max(fuelAmount, 0);
+
+        float fuelPercent = fuelAmount / maxFuel;
+        float angle = Mathf.Lerp(0, maxFuelGaugeAngle, 1 - fuelPercent);
+
+        if (fuelGaugeNeedle != null)
         {
-            float fuelConsumed = fuelConsumptionRate * vehicleRigidbody.velocity.magnitude * Time.deltaTime;
-            fuelAmount -= fuelConsumed;
-            fuelAmount = Mathf.Max(fuelAmount, 0);
+            fuelGaugeNeedle.transform.localRotation = initialFuelNeedleRotation * Quaternion.Euler(0, 0, -angle);
+        }
 
-            float fuelPercent = fuelAmount / maxFuel;
-            float angle = Mathf.Lerp(0, maxFuelGaugeAngle, 1 - fuelPercent);
-
-            if (fuelGaugeNeedle != null)
+        if (Mathf.Approximately(angle, maxFuelGaugeAngle))
+        {
+            var engines = GameObject.FindGameObjectsWithTag("engine");
+            foreach (var engine in engines)
             {
-                fuelGaugeNeedle.transform.localRotation = initialFuelNeedleRotation * Quaternion.Euler(0, 0, -angle);
-            }
-
-            if (Mathf.Approximately(angle, maxFuelGaugeAngle))
-            {
-                var engines = GameObject.FindGameObjectsWithTag("engine");
-                foreach (var engine in engines)
-                {
-                    engine.SetActive(false);
-                    StartCoroutine(FadeOutEngineSoundWithFilters());
-                }
+                engine.SetActive(false);
+                StartCoroutine(FadeOutEngineSoundWithFilters());
             }
         }
     }
+}
 
     void ApplySpeedBasedDeceleration()
     {

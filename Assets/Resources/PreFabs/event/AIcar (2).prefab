@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2536572532863352082}
   - component: {fileID: 8408301388856953424}
-  - component: {fileID: 6415659693663652833}
-  - component: {fileID: 474884206962198179}
   - component: {fileID: 69566139749754869}
   m_Layer: 0
   m_Name: AIcar (2)
@@ -67,55 +65,6 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6415659693663652833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71668357737865350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fca7c6ea6b2be241844f325ebfca4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheelColliders:
-  - {fileID: 1956991750525039678}
-  - {fileID: 8731518643744747539}
-  - {fileID: 3940193818960337274}
-  - {fileID: 7887736308845542531}
-  wheelMeshes:
-  - {fileID: 3234984102522363270}
-  - {fileID: 292105879007755781}
-  - {fileID: 274172802007312019}
-  - {fileID: 2487156987091572124}
-  centerOfMass: {fileID: 7612592523368194833}
-  maxSteerAngle: 30
-  motorTorque: 1000
-  forwardFrictionStiffness: 2
-  sidewaysFrictionStiffness: 2
---- !u!114 &474884206962198179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71668357737865350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb59b9c1ad3c8e34999f1b2e07b5774f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPositionTransform: {fileID: 0}
-  frontTransform: {fileID: 2282546927146527705}
-  rayDistance: 30
-  obstacleLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  roadLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  zigzagChase: 0
 --- !u!114 &69566139749754869
 MonoBehaviour:
   m_ObjectHideFlags: 0

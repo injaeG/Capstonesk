@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 4066759127909098394}
   - component: {fileID: 7729810439308354203}
   - component: {fileID: 5792754433603097426}
-  - component: {fileID: 582837489263955064}
+  - component: {fileID: 4249476343414060933}
   - component: {fileID: 723966712335738931}
   m_Layer: 0
   m_Name: AIcar (1)
@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6344654605482303600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fca7c6ea6b2be241844f325ebfca4c7, type: 3}
   m_Name: 
@@ -1250,24 +1250,24 @@ MonoBehaviour:
   motorTorque: 1000
   forwardFrictionStiffness: 2
   sidewaysFrictionStiffness: 2
---- !u!114 &582837489263955064
+--- !u!114 &4249476343414060933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6344654605482303600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb59b9c1ad3c8e34999f1b2e07b5774f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetPositionTransform: {fileID: 0}
-  frontTransform: {fileID: 1220911093016700630}
-  rayDistance: 30
+  frontTransform: {fileID: 0}
+  rayDistance: 20
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   roadLayerMask:
     serializedVersion: 2
     m_Bits: 0
