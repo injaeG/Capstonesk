@@ -27,6 +27,7 @@ TagManager:
   - start_map
   - eye_ghost
   - Fuel_Charge
+  - Event_Fog
   layers:
   - Default
   - TransparentFX
