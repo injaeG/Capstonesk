@@ -331,7 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd93f4156e40944aa83b613485b86e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  badTVEffect: {fileID: 0}
 --- !u!1 &377941134944812954
 GameObject:
   m_ObjectHideFlags: 0
