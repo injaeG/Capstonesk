@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 7873858918130288903}
   - component: {fileID: 128670680523047864}
   - component: {fileID: 2025145397121370302}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: prop_barrier_4M__388_.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}

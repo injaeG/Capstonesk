@@ -6,7 +6,6 @@ public class EventPrefabSpawner : MonoBehaviour
 {
     private GameObject[] eventPrefabs; // PreFabs/event 디렉토리에 있는 모든 프리팹
     public Transform spawnPoint; // 빈 오브젝트 위치 (Ghost 태그가 있을 경우)
-    public LayerMask roadLayerMask; // 도로 레이어 마스크
 
     public AudioClip eye_ghostSound;
     public AudioClip eventSound;
@@ -54,21 +53,15 @@ public class EventPrefabSpawner : MonoBehaviour
         if (selectedPrefab.CompareTag("ghost"))
         {
             audioSource.clip = hitchhikerSound;
-            Vector3 spawnPosition = FindRoadPositionNearby(spawnPoint.position);
-            instance = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity, spawnPoint);
+            instance = Instantiate(selectedPrefab, spawnPoint.position, Quaternion.identity, spawnPoint);
         }
         else
         {
             audioSource.clip = eventSound;
-            GameObject[] roadObjects = GameObject.FindGameObjectsWithTag("Road");
-            if (roadObjects.Length == 0) return;
-
-            GameObject randomRoadObject = roadObjects[Random.Range(0, roadObjects.Length)];
-            Vector3 spawnPosition = FindRoadPositionNearby(randomRoadObject.transform.position);
+            Vector3 spawnPosition = FindRoadPositionNearby();
             instance = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
         }
 
-        //audioSource.Play();
         instantiateAndDestroyCoroutine = StartCoroutine(InstantiateAndPlayAudio(instance));
     }
 
@@ -111,24 +104,26 @@ public class EventPrefabSpawner : MonoBehaviour
                     Random.Range(randomRoadObject.transform.position.z - 10, randomRoadObject.transform.position.z + 10)
                 );
 
-                Vector3 spawnPosition = FindRoadPositionNearby(randomPosition);
+                Vector3 spawnPosition = FindRoadPositionNearby();
                 instance = Instantiate(selectedPrefabs[count], spawnPosition, Quaternion.identity);
                 instantiateAndDestroyCoroutine = StartCoroutine(InstantiateAndPlayAudio(instance));
             }
         }
     }
 
-    private Vector3 FindRoadPositionNearby(Vector3 startPosition)
+    private Vector3 FindRoadPositionNearby()
     {
-        Vector3 searchPosition = startPosition + Vector3.up * 1000f; // 높은 위치에서 시작
-        RaycastHit hit;
-        if (Physics.Raycast(searchPosition, Vector3.down, out hit, Mathf.Infinity, roadLayerMask))
-        {
-            return hit.point; // 도로 위치 반환
-        }
+        // 'road' 태그가 있는 모든 오브젝트를 찾습니다.
+        GameObject[] roadObjects = GameObject.FindGameObjectsWithTag("Road");
 
-        // 도로 위치를 찾지 못한 경우 원래 위치 반환
-        return startPosition;
+        // 'road' 태그가 있는 오브젝트가 없는 경우, 현재 위치 반환
+        if (roadObjects.Length == 0) return spawnPoint.position;
+
+        // 'road' 태그가 있는 오브젝트 중에서 랜덤으로 하나를 선택합니다.
+        GameObject randomRoadObject = roadObjects[Random.Range(0, roadObjects.Length)];
+
+        // 선택한 오브젝트의 위치를 반환합니다.
+        return randomRoadObject.transform.position;
     }
 
     IEnumerator InstantiateAndPlayAudio(GameObject instance)

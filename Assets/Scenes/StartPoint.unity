@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 876527}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 27941257}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLDoorWindow_Point_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 35021400}
   - component: {fileID: 35021398}
   - component: {fileID: 35021399}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Chassis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 38999697}
   - component: {fileID: 38999698}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 50970605}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uC55E\uD2B8\uB801\uD06C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 66370076}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLDoor_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 71447950}
   - component: {fileID: 71447951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 73998026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Bonnet_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 74378895}
   - component: {fileID: 74378896}
   - component: {fileID: 74378897}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RightFender_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 74583625}
   - component: {fileID: 74583626}
   - component: {fileID: 74583627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Bonnet_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +738,7 @@ GameObject:
   - component: {fileID: 88442203}
   - component: {fileID: 88442205}
   - component: {fileID: 88442204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HighSound
   m_TagString: enginesound
   m_Icon: {fileID: 0}
@@ -876,7 +876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 93803361}
   - component: {fileID: 93803362}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FL Suspension
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1219,7 +1219,7 @@ GameObject:
   - component: {fileID: 109524427}
   - component: {fileID: 109524426}
   - component: {fileID: 109524425}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FrontBumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1304,7 +1304,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 115912974}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1370,7 +1370,7 @@ GameObject:
   - component: {fileID: 128980365}
   - component: {fileID: 128980366}
   - component: {fileID: 128980367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearHatch_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1458,7 +1458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 132017244}
   - component: {fileID: 132017245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1551,7 +1551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 136707040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrontSuspension.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1583,7 +1583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 140163472}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1615,7 +1615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 149684886}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ParticleSystems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1646,7 +1646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 153908774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uC640\uC774\uD37C\uC6C0\uC9C1\uC784L"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1677,7 +1677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 169762292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1712,7 +1712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 176264850}
   - component: {fileID: 176264851}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1796,7 +1796,7 @@ GameObject:
   - component: {fileID: 195700628}
   - component: {fileID: 195700627}
   - component: {fileID: 195700626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1879,7 +1879,7 @@ GameObject:
   - component: {fileID: 196434133}
   - component: {fileID: 196434132}
   - component: {fileID: 196434131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_LeftFender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1965,7 +1965,7 @@ GameObject:
   - component: {fileID: 210886299}
   - component: {fileID: 210886297}
   - component: {fileID: 210886298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_SpeedoDial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2113,7 +2113,7 @@ GameObject:
   - component: {fileID: 217932553}
   - component: {fileID: 217932552}
   - component: {fileID: 217932551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLDoorWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2369,7 +2369,7 @@ GameObject:
   - component: {fileID: 232596287}
   - component: {fileID: 232596288}
   - component: {fileID: 232596289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearBumper_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2453,7 +2453,7 @@ GameObject:
   - component: {fileID: 236437425}
   - component: {fileID: 236437424}
   - component: {fileID: 236437423}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FuelDial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2535,7 +2535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 248434838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Engine_ExhaustTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2568,7 +2568,7 @@ GameObject:
   - component: {fileID: 251361961}
   - component: {fileID: 251361960}
   - component: {fileID: 251361959}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRDoorWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2649,7 +2649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 252937004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRDoorWindow_Point_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2701,7 +2701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 505259914758475780, guid: 822d85fb6eda6b54490eb08958315517, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1966.1866
+      value: -1982.6417
       objectReference: {fileID: 0}
     - target: {fileID: 505259914758475780, guid: 822d85fb6eda6b54490eb08958315517, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2746,7 +2746,7 @@ PrefabInstance:
     - target: {fileID: 2302763229217128830, guid: 822d85fb6eda6b54490eb08958315517, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1364090159}
+      objectReference: {fileID: 860951254}
     - target: {fileID: 3163314923315561460, guid: 822d85fb6eda6b54490eb08958315517, type: 3}
       propertyPath: noiseMax
       value: 1
@@ -2895,7 +2895,7 @@ GameObject:
   - component: {fileID: 299903427}
   - component: {fileID: 299903426}
   - component: {fileID: 299903425}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RightSunVisor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2967,41 +2967,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1219743768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &312005528
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Height Fog Global
-  m_Shader: {fileID: 4800000, guid: 3a7ef1b66bafb7a448a880ef76d2e6e6, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AdvancedCat: 1
-    - _Banner: 1
-    - _DirectionalCat: 1
-    - _FogCat: 1
-    - _HeightFogGlobal: 1
-    - _IsHeightFogShader: 1
-    - _NoiseCat: 1
-    - _SkyboxCat: 1
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!4 &314573372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7254134033642201282, guid: 8cf582fcc0c460c43ae6803320cab984, type: 3}
@@ -3016,7 +2981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 319246375}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uC640\uC774\uD37C\uC6C0\uC9C1\uC784R"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3047,7 +3012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 319314949}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ParticleSystems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3080,7 +3045,7 @@ GameObject:
   - component: {fileID: 331497333}
   - component: {fileID: 331497334}
   - component: {fileID: 331497335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Chassis_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3270,7 +3235,7 @@ GameObject:
   - component: {fileID: 351337927}
   - component: {fileID: 351337928}
   - component: {fileID: 351337929}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3363,7 +3328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 356686748}
   - component: {fileID: 356686749}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uBB38\uC0C1\uD638\uC791\uC6A9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3417,7 +3382,7 @@ GameObject:
   - component: {fileID: 357329182}
   - component: {fileID: 357329183}
   - component: {fileID: 357329184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearBumper_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3499,7 +3464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 357425219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Engine_RadiatorFan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3530,7 +3495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 357929119}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRDoor_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3563,7 +3528,7 @@ GameObject:
   - component: {fileID: 370523243}
   - component: {fileID: 370523244}
   - component: {fileID: 370523245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_LeftFender_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3646,7 +3611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 370625483}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Engine_DistributorShaftPulley
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3679,7 +3644,7 @@ GameObject:
   - component: {fileID: 375945239}
   - component: {fileID: 375945240}
   - component: {fileID: 375945241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRDoorWindow_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3762,7 +3727,7 @@ GameObject:
   - component: {fileID: 377472680}
   - component: {fileID: 377472681}
   - component: {fileID: 377472682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRDoor_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3855,7 +3820,7 @@ GameObject:
   - component: {fileID: 390205460}
   - component: {fileID: 390205461}
   - component: {fileID: 390205462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Extras_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3978,7 +3943,7 @@ GameObject:
   - component: {fileID: 401040739}
   - component: {fileID: 401040738}
   - component: {fileID: 401040737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_ClutchPedal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4060,7 +4025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 433109054}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uC18D\uB3C4\uACC4\uAE30\uD310"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4092,7 +4057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 444282801}
   - component: {fileID: 444282802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4185,7 +4150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 445205735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrontSuspension.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4288,7 +4253,7 @@ GameObject:
   - component: {fileID: 458974363}
   - component: {fileID: 458974362}
   - component: {fileID: 458974361}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RightFender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4373,7 +4338,7 @@ GameObject:
   - component: {fileID: 459756942}
   - component: {fileID: 459756943}
   - component: {fileID: 459756944}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLDoor_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4466,7 +4431,7 @@ GameObject:
   - component: {fileID: 481715213}
   - component: {fileID: 481715214}
   - component: {fileID: 481715215}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Extras_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4555,7 +4520,7 @@ GameObject:
   - component: {fileID: 524099800}
   - component: {fileID: 524099799}
   - component: {fileID: 524099798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Extras_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4644,7 +4609,7 @@ GameObject:
   - component: {fileID: 524809750}
   - component: {fileID: 524809751}
   - component: {fileID: 524809752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Chassis_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4766,7 +4731,7 @@ GameObject:
   - component: {fileID: 535007315}
   - component: {fileID: 535007314}
   - component: {fileID: 535007313}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_SteeringWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5029,7 +4994,7 @@ GameObject:
   - component: {fileID: 536374042}
   - component: {fileID: 536374041}
   - component: {fileID: 536374040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearViewMirror
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -5288,7 +5253,7 @@ GameObject:
   - component: {fileID: 539779020}
   - component: {fileID: 539779021}
   - component: {fileID: 539779022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRWheel_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5402,7 +5367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 571913765}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLDoorWindow_Point_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5434,7 +5399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 573277087}
   - component: {fileID: 573277086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Drivetrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5543,7 +5508,7 @@ GameObject:
   - component: {fileID: 579356243}
   - component: {fileID: 579356244}
   - component: {fileID: 579356245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLWheel_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5626,7 +5591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 583038893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 80sClassicCar#3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5664,7 +5629,7 @@ GameObject:
   - component: {fileID: 587424435}
   - component: {fileID: 587424436}
   - component: {fileID: 587424437}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLDoor_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5758,7 +5723,7 @@ GameObject:
   - component: {fileID: 600032944}
   - component: {fileID: 600032946}
   - component: {fileID: 600032945}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: breaksound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5897,7 +5862,7 @@ GameObject:
   - component: {fileID: 603557095}
   - component: {fileID: 603557096}
   - component: {fileID: 603557097}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearWindow_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5978,7 +5943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 613476669}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6011,7 +5976,7 @@ GameObject:
   - component: {fileID: 616009064}
   - component: {fileID: 616009065}
   - component: {fileID: 616009066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLDoorWindow_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6093,7 +6058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 644419469}
   - component: {fileID: 644419470}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uC640\uC774\uD37CL"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6152,7 +6117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 648764230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RearSuspension.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6183,7 +6148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 651880424}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearWindow_Point_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6216,7 +6181,7 @@ GameObject:
   - component: {fileID: 661197248}
   - component: {fileID: 661197247}
   - component: {fileID: 661197246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Windscreen_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6299,7 +6264,7 @@ GameObject:
   - component: {fileID: 661951956}
   - component: {fileID: 661951957}
   - component: {fileID: 661951958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearWindow_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6383,7 +6348,7 @@ GameObject:
   - component: {fileID: 663822182}
   - component: {fileID: 663822180}
   - component: {fileID: 663822181}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RevCounterDial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6494,7 +6459,7 @@ GameObject:
   - component: {fileID: 664881396}
   - component: {fileID: 664881397}
   - component: {fileID: 664881398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRDoorWindow_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6576,7 +6541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 700364947}
   - component: {fileID: 700364948}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6623,7 +6588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 727262577}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ParticleSystems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6661,7 +6626,7 @@ GameObject:
   - component: {fileID: 742262133}
   - component: {fileID: 742262134}
   - component: {fileID: 742262135}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLDoorWindow_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6744,7 +6709,7 @@ GameObject:
   - component: {fileID: 745456127}
   - component: {fileID: 745456128}
   - component: {fileID: 745456129}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearHatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6833,7 +6798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 748711173}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6868,7 +6833,7 @@ GameObject:
   - component: {fileID: 752970296}
   - component: {fileID: 752970297}
   - component: {fileID: 752970298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLDoorWindow_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6950,7 +6915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 760236880}
   - component: {fileID: 760236881}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6993,7 +6958,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 765812830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRDoorWindow_Point_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7026,7 +6991,7 @@ GameObject:
   - component: {fileID: 786909709}
   - component: {fileID: 786909710}
   - component: {fileID: 786909711}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRDoorWindow_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7109,7 +7074,7 @@ GameObject:
   - component: {fileID: 800240328}
   - component: {fileID: 800240327}
   - component: {fileID: 800240326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Windscreen_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7190,7 +7155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 800810788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLDoorWindow_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7223,7 +7188,7 @@ GameObject:
   - component: {fileID: 801386393}
   - component: {fileID: 801386394}
   - component: {fileID: 801386395}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRDoorWindow_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7306,7 +7271,7 @@ GameObject:
   - component: {fileID: 805609787}
   - component: {fileID: 805609788}
   - component: {fileID: 805609789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Chassis_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7622,7 +7587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816307843}
   - component: {fileID: 816307844}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FR Suspension
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7965,7 +7930,7 @@ GameObject:
   - component: {fileID: 822321957}
   - component: {fileID: 822321956}
   - component: {fileID: 822321955}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Handbrake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8058,7 +8023,7 @@ GameObject:
   - component: {fileID: 836575124}
   - component: {fileID: 836575123}
   - component: {fileID: 836575125}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -8456,7 +8421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848367309}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainEngine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8490,7 +8455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 850475104}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRDoorWindow_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8521,7 +8486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 857756308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_BodyPartPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8563,7 +8528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 860760672}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8586,6 +8551,41 @@ Transform:
   - {fileID: 1349269528}
   m_Father: {fileID: 38999697}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &860951254
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Height Fog Global
+  m_Shader: {fileID: 4800000, guid: 3a7ef1b66bafb7a448a880ef76d2e6e6, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AdvancedCat: 1
+    - _Banner: 1
+    - _DirectionalCat: 1
+    - _FogCat: 1
+    - _HeightFogGlobal: 1
+    - _IsHeightFogShader: 1
+    - _NoiseCat: 1
+    - _SkyboxCat: 1
+    m_Colors: []
+  m_BuildTextureStacks: []
 --- !u!1001 &884850195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8654,7 +8654,7 @@ GameObject:
   - component: {fileID: 911214280}
   - component: {fileID: 911214279}
   - component: {fileID: 911214278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8739,7 +8739,7 @@ GameObject:
   - component: {fileID: 911707826}
   - component: {fileID: 911707825}
   - component: {fileID: 911707824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_LeftWindscreenWiper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8824,7 +8824,7 @@ GameObject:
   - component: {fileID: 920632744}
   - component: {fileID: 920632742}
   - component: {fileID: 920632743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Bonnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9148,7 +9148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 979861431}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 80sClassicCar#3_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9180,7 +9180,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 984744578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Windscreen_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9213,7 +9213,7 @@ GameObject:
   - component: {fileID: 986109624}
   - component: {fileID: 986109625}
   - component: {fileID: 986109626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLDoor_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9306,7 +9306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 993722312}
   - component: {fileID: 993722313}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9401,7 +9401,7 @@ GameObject:
   - component: {fileID: 1003605520}
   - component: {fileID: 1003605519}
   - component: {fileID: 1003605518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_BrakePedal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9483,7 +9483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1025874570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRDoor_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9514,7 +9514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1054859342}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ParticleSystems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9546,7 +9546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1065103147}
   - component: {fileID: 1065103148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1980sClassicCar#3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9715,7 +9715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1067958532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLDoorWindow_Point_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9746,7 +9746,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1120291900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Suspension_Drivetrain_Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9789,7 +9789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1129252862}
   - component: {fileID: 1129252863}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9839,7 +9839,7 @@ GameObject:
   - component: {fileID: 1138557214}
   - component: {fileID: 1138557213}
   - component: {fileID: 1138557212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Collider.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9944,7 +9944,7 @@ GameObject:
   - component: {fileID: 1139679395}
   - component: {fileID: 1139679394}
   - component: {fileID: 1139679393}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_BackPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10025,7 +10025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1173000654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 80sClassicCar#3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10060,7 +10060,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1174313627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FRWheelPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10093,7 +10093,7 @@ GameObject:
   - component: {fileID: 1181471854}
   - component: {fileID: 1181471855}
   - component: {fileID: 1181471856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRDoor_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10185,7 +10185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1187021273}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearHatch_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10218,7 +10218,7 @@ GameObject:
   - component: {fileID: 1205226382}
   - component: {fileID: 1205226383}
   - component: {fileID: 1205226384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLDoorWindow_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10299,7 +10299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1207239651}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uC5F0\uB8CC\uACC4\uAE30\uD310"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10330,7 +10330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1210361335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRDoorWindow_Point_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10363,7 +10363,7 @@ GameObject:
   - component: {fileID: 1215271747}
   - component: {fileID: 1215271748}
   - component: {fileID: 1215271749}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRDoor_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10455,7 +10455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1217522843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uACC4\uAE30\uD310"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10489,7 +10489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1219743768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_AnimatableObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10539,7 +10539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1246185534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRDoorWindow_Point_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10570,7 +10570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1282778260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrontSuspensionHub.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10602,7 +10602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1292030370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CamPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10635,7 +10635,7 @@ GameObject:
   - component: {fileID: 1294707030}
   - component: {fileID: 1294707029}
   - component: {fileID: 1294707028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLDoorWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10717,7 +10717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1295210130}
   - component: {fileID: 1295210131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10810,7 +10810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1306605408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLDoorWindow_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10843,7 +10843,7 @@ GameObject:
   - component: {fileID: 1307032969}
   - component: {fileID: 1307032971}
   - component: {fileID: 1307032970}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: vcam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10934,7 +10934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1319559647}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Engine_AltenatorPulley
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10956,6 +10956,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 848367309}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1319560490
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Override
+  m_Shader: {fileID: 4800000, guid: a3a3bc8785681554d9558e2ea68f100e, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _AdvancedCat: 1
+    - _Banner: 1
+    - _DirectionalCat: 1
+    - _DirectionalFalloff: 2
+    - _DirectionalIntensity: 1
+    - _FarDistanceHeight: 0
+    - _FarDistanceOffset: 0
+    - _FogAxisMode: 1
+    - _FogCameraMode: 0
+    - _FogCat: 1
+    - _FogColorDuo: 1
+    - _FogDistanceEnd: 100
+    - _FogDistanceFalloff: 2
+    - _FogDistanceStart: 0
+    - _FogHeightEnd: 100
+    - _FogHeightFalloff: 2
+    - _FogHeightStart: 0
+    - _FogIntensity: 1
+    - _FogLayersMode: 0
+    - _IsHeightFogPreset: 1
+    - _IsHeightFogShader: 1
+    - _JitterIntensity: 1
+    - _NoiseCat: 1
+    - _NoiseDistanceEnd: 50
+    - _NoiseIntensity: 1
+    - _NoiseMax: 1
+    - _NoiseMin: 0
+    - _NoiseModeBlend: 1
+    - _NoiseScale: 30
+    - _SkyboxCat: 1
+    - _SkyboxFogBottom: 0
+    - _SkyboxFogFalloff: 1
+    - _SkyboxFogFill: 1
+    - _SkyboxFogHeight: 1
+    - _SkyboxFogIntensity: 1
+    - _SkyboxFogOffset: 0
+    m_Colors:
+    - _DirectionalColor: {r: 1, g: 0.7793103, b: 0.5, a: 1}
+    - _DirectionalDir: {r: 0, g: 0, b: 0, a: 0}
+    - _FogAxisOption: {r: 0, g: 0, b: 0, a: 0}
+    - _FogColorEnd: {r: 0.8862745, g: 1.443137, b: 2, a: 1}
+    - _FogColorStart: {r: 0.4411765, g: 0.722515, b: 1, a: 1}
+    - _NoiseSpeed: {r: 0.5, g: 0, b: 0.5, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1349269525
 GameObject:
   m_ObjectHideFlags: 0
@@ -10967,7 +11036,7 @@ GameObject:
   - component: {fileID: 1349269528}
   - component: {fileID: 1349269527}
   - component: {fileID: 1349269526}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11050,7 +11119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1357315278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RearSuspension.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11072,41 +11141,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1120291900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1364090159
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Height Fog Global
-  m_Shader: {fileID: 4800000, guid: 3a7ef1b66bafb7a448a880ef76d2e6e6, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AdvancedCat: 1
-    - _Banner: 1
-    - _DirectionalCat: 1
-    - _FogCat: 1
-    - _HeightFogGlobal: 1
-    - _IsHeightFogShader: 1
-    - _NoiseCat: 1
-    - _SkyboxCat: 1
-    m_Colors: []
-  m_BuildTextureStacks: []
 --- !u!1 &1368267115
 GameObject:
   m_ObjectHideFlags: 0
@@ -11118,7 +11152,7 @@ GameObject:
   - component: {fileID: 1368267118}
   - component: {fileID: 1368267117}
   - component: {fileID: 1368267116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11201,7 +11235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1403091224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GearLever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11232,7 +11266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1408622162}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLDoorWindow_Point_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11264,7 +11298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1408791766}
   - component: {fileID: 1408791765}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EngineSound
   m_TagString: engine
   m_Icon: {fileID: 0}
@@ -11322,7 +11356,7 @@ GameObject:
   - component: {fileID: 1431313616}
   - component: {fileID: 1431313615}
   - component: {fileID: 1431313614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_LeftSunVisor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11438,7 +11472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1469505044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uD398\uB2EC"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11477,7 +11511,7 @@ GameObject:
   - component: {fileID: 1469865961}
   - component: {fileID: 1469865960}
   - component: {fileID: 1469865959}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11775,7 +11809,7 @@ GameObject:
   - component: {fileID: 1481178700}
   - component: {fileID: 1481178699}
   - component: {fileID: 1481178698}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uC640\uC774\uD37C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11983,7 +12017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1486579779}
   - component: {fileID: 1486579778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Suspension
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12080,7 +12114,7 @@ GameObject:
   - component: {fileID: 1534355068}
   - component: {fileID: 1534355066}
   - component: {fileID: 1534355067}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_GasPedal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12191,7 +12225,7 @@ GameObject:
   - component: {fileID: 1534733850}
   - component: {fileID: 1534733849}
   - component: {fileID: 1534733848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_WiperLever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12274,7 +12308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1536843816}
   - component: {fileID: 1536843815}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Steering Help
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12328,7 +12362,7 @@ GameObject:
   - component: {fileID: 1544170204}
   - component: {fileID: 1544170203}
   - component: {fileID: 1544170202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uC804\uB4F1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12476,75 +12510,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544170200}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!21 &1544690608
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Override
-  m_Shader: {fileID: 4800000, guid: a3a3bc8785681554d9558e2ea68f100e, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AdvancedCat: 1
-    - _Banner: 1
-    - _DirectionalCat: 1
-    - _DirectionalFalloff: 2
-    - _DirectionalIntensity: 1
-    - _FarDistanceHeight: 0
-    - _FarDistanceOffset: 0
-    - _FogAxisMode: 1
-    - _FogCameraMode: 0
-    - _FogCat: 1
-    - _FogColorDuo: 1
-    - _FogDistanceEnd: 100
-    - _FogDistanceFalloff: 2
-    - _FogDistanceStart: 0
-    - _FogHeightEnd: 100
-    - _FogHeightFalloff: 2
-    - _FogHeightStart: 0
-    - _FogIntensity: 1
-    - _FogLayersMode: 0
-    - _IsHeightFogPreset: 1
-    - _IsHeightFogShader: 1
-    - _JitterIntensity: 1
-    - _NoiseCat: 1
-    - _NoiseDistanceEnd: 50
-    - _NoiseIntensity: 1
-    - _NoiseMax: 1
-    - _NoiseMin: 0
-    - _NoiseModeBlend: 1
-    - _NoiseScale: 30
-    - _SkyboxCat: 1
-    - _SkyboxFogBottom: 0
-    - _SkyboxFogFalloff: 1
-    - _SkyboxFogFill: 1
-    - _SkyboxFogHeight: 1
-    - _SkyboxFogIntensity: 1
-    - _SkyboxFogOffset: 0
-    m_Colors:
-    - _DirectionalColor: {r: 1, g: 0.7793103, b: 0.5, a: 1}
-    - _DirectionalDir: {r: 0, g: 0, b: 0, a: 0}
-    - _FogAxisOption: {r: 0, g: 0, b: 0, a: 0}
-    - _FogColorEnd: {r: 0.8862745, g: 1.443137, b: 2, a: 1}
-    - _FogColorStart: {r: 0.4411765, g: 0.722515, b: 1, a: 1}
-    - _NoiseSpeed: {r: 0.5, g: 0, b: 0.5, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &1549253295
 GameObject:
   m_ObjectHideFlags: 0
@@ -12556,7 +12521,7 @@ GameObject:
   - component: {fileID: 1549253298}
   - component: {fileID: 1549253297}
   - component: {fileID: 1549253296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12642,7 +12607,7 @@ GameObject:
   - component: {fileID: 1559708985}
   - component: {fileID: 1559708984}
   - component: {fileID: 1559708983}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12756,7 +12721,7 @@ GameObject:
   - component: {fileID: 1575912290}
   - component: {fileID: 1575912289}
   - component: {fileID: 1575912288}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: carMAIN
   m_TagString: Car
   m_Icon: {fileID: 0}
@@ -12985,7 +12950,7 @@ Transform:
   m_GameObject: {fileID: 1575912287}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0023572592, y: 0.70710284, z: -0.0031840096, w: 0.7070996}
-  m_LocalPosition: {x: 966.6094, y: 4214.2407, z: -1966.225}
+  m_LocalPosition: {x: 966.6094, y: 4214.2407, z: -1982.68}
   m_LocalScale: {x: 1.4000001, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13014,7 +12979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1598226178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRDoorWindow_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13047,7 +13012,7 @@ GameObject:
   - component: {fileID: 1610138177}
   - component: {fileID: 1610138176}
   - component: {fileID: 1610138175}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_IndicatorLever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13131,7 +13096,7 @@ GameObject:
   - component: {fileID: 1612378506}
   - component: {fileID: 1612378507}
   - component: {fileID: 1612378508}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FrontBumper_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13218,7 +13183,7 @@ GameObject:
   - component: {fileID: 1620615054}
   - component: {fileID: 1620615055}
   - component: {fileID: 1620615056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRDoor_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13309,7 +13274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1637714652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLDoor_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13342,7 +13307,7 @@ GameObject:
   - component: {fileID: 1648208726}
   - component: {fileID: 1648208727}
   - component: {fileID: 1648208728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Bonnet_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13425,7 +13390,7 @@ GameObject:
   - component: {fileID: 1655443680}
   - component: {fileID: 1655443681}
   - component: {fileID: 1655443682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_LeftFender_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13509,7 +13474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1663792356}
   - component: {fileID: 1663792357}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RL Suspension
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13862,7 +13827,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1711559185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FrontSuspensionHub.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13896,7 +13861,7 @@ GameObject:
   - component: {fileID: 1728156817}
   - component: {fileID: 1728156818}
   - component: {fileID: 1728156819}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRWheel_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14196,7 +14161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1766041231}
   - component: {fileID: 1766041232}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: RR Suspension
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14537,7 +14502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1816928475}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RightFender_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14570,7 +14535,7 @@ GameObject:
   - component: {fileID: 1816942431}
   - component: {fileID: 1816942432}
   - component: {fileID: 1816942433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RLDoor_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14663,7 +14628,7 @@ GameObject:
   - component: {fileID: 1817253705}
   - component: {fileID: 1817253706}
   - component: {fileID: 1817253707}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Generic_NumberPlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14746,7 +14711,7 @@ GameObject:
   - component: {fileID: 1822773627}
   - component: {fileID: 1822773629}
   - component: {fileID: 1822773628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14908,7 +14873,7 @@ GameObject:
   - component: {fileID: 1847027498}
   - component: {fileID: 1847027497}
   - component: {fileID: 1847027496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRDoorWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14991,7 +14956,7 @@ GameObject:
   - component: {fileID: 1870297416}
   - component: {fileID: 1870297417}
   - component: {fileID: 1870297418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FRDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15086,7 +15051,7 @@ GameObject:
   - component: {fileID: 1874520381}
   - component: {fileID: 1874520380}
   - component: {fileID: 1874520379}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_PassengerSeat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15169,7 +15134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1884092169}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearWindow_Point_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15202,7 +15167,7 @@ GameObject:
   - component: {fileID: 1891044799}
   - component: {fileID: 1891044798}
   - component: {fileID: 1891044797}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_Windscreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15286,7 +15251,7 @@ GameObject:
   - component: {fileID: 1891568940}
   - component: {fileID: 1891568939}
   - component: {fileID: 1891568938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15401,7 +15366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1897842342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 80sClassicCar#3_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15435,7 +15400,7 @@ GameObject:
   - component: {fileID: 1900737425}
   - component: {fileID: 1900737426}
   - component: {fileID: 1900737427}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FLWheel_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15555,7 +15520,7 @@ GameObject:
   - component: {fileID: 1916807040}
   - component: {fileID: 1916807039}
   - component: {fileID: 1916807038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_DriverSeat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15640,7 +15605,7 @@ GameObject:
   - component: {fileID: 1918403583}
   - component: {fileID: 1918403582}
   - component: {fileID: 1918403581}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RightWindscreenWiper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15723,7 +15688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1928011273}
   - component: {fileID: 1928011274}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15770,7 +15735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1928244883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_LeftFender_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15801,7 +15766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1954247081}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Engine_CamPulley
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15834,7 +15799,7 @@ GameObject:
   - component: {fileID: 1956897508}
   - component: {fileID: 1956897507}
   - component: {fileID: 1956897506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_TemperatureDial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15916,7 +15881,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1960788426}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 80sClassicCar#3_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15952,7 +15917,7 @@ GameObject:
   - component: {fileID: 1964285933}
   - component: {fileID: 1964285932}
   - component: {fileID: 1964285935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16038,7 +16003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1964984192}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16072,7 +16037,7 @@ GameObject:
   - component: {fileID: 1970512320}
   - component: {fileID: 1970512321}
   - component: {fileID: 1970512322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RRDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16166,7 +16131,7 @@ GameObject:
   - component: {fileID: 1976524598}
   - component: {fileID: 1976524599}
   - component: {fileID: 1976524600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FrontBumper_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16253,7 +16218,7 @@ GameObject:
   - component: {fileID: 1990393168}
   - component: {fileID: 1990393167}
   - component: {fileID: 1990393166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearBumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16384,7 +16349,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 2019007315}
   roadLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   eye_ghostSound: {fileID: 8300000, guid: c922081a161935047babba52f856f551, type: 3}
   eventSound: {fileID: 8300000, guid: 8417c18176f92b54d832c5a7437a07b0, type: 3}
   hitchhikerSound: {fileID: 0}
@@ -16494,7 +16459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2027422007}
   - component: {fileID: 2027422008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uC640\uC774\uD37CR"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16553,7 +16518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2031389650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\uBE0C\uB808\uC774\uD06C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16586,7 +16551,7 @@ GameObject:
   - component: {fileID: 2042896229}
   - component: {fileID: 2042896230}
   - component: {fileID: 2042896228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowSound
   m_TagString: enginesound
   m_Icon: {fileID: 0}
@@ -16738,7 +16703,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2059289765}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CenterOfMass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16771,7 +16736,7 @@ GameObject:
   - component: {fileID: 2067606118}
   - component: {fileID: 2067606119}
   - component: {fileID: 2067606120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RightFender_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16854,7 +16819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2104417263}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FLWheelPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16887,7 +16852,7 @@ GameObject:
   - component: {fileID: 2125773049}
   - component: {fileID: 2125773050}
   - component: {fileID: 2125773051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearHatch_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16974,7 +16939,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2133342463}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearBumper_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17005,7 +16970,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2141788902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_FrontBumper_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17036,7 +17001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2145180601}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: O_RearWindow_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
