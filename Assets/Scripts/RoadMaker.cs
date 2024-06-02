@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class CarCollisionSpawner : MonoBehaviour
+    
+public class RoadMaker : MonoBehaviour
 {
     public string prefabPath = "PreFabs/Roads"; // 프리팹 경로
     public List<Transform> spawnTransforms; // Inspector에서 편집 가능한 빈 오브젝트 리스트

@@ -6,6 +6,7 @@ public class EventPrefabSpawner : MonoBehaviour
 {
     private GameObject[] eventPrefabs; // PreFabs/event 디렉토리에 있는 모든 프리팹
     public Transform spawnPoint; // 빈 오브젝트 위치 (Ghost 태그가 있을 경우)
+    public LayerMask roadLayerMask; // 도로 레이어 마스크
 
     public AudioClip eye_ghostSound;
     public AudioClip eventSound;
@@ -53,7 +54,8 @@ public class EventPrefabSpawner : MonoBehaviour
         if (selectedPrefab.CompareTag("ghost"))
         {
             audioSource.clip = hitchhikerSound;
-            instance = Instantiate(selectedPrefab, spawnPoint.position, Quaternion.identity, spawnPoint);
+            Vector3 spawnPosition = FindRoadPositionNearby(spawnPoint.position);
+            instance = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity, spawnPoint);
         }
         else
         {
@@ -62,7 +64,8 @@ public class EventPrefabSpawner : MonoBehaviour
             if (roadObjects.Length == 0) return;
 
             GameObject randomRoadObject = roadObjects[Random.Range(0, roadObjects.Length)];
-            instance = Instantiate(selectedPrefab, randomRoadObject.transform.position, Quaternion.identity);
+            Vector3 spawnPosition = FindRoadPositionNearby(randomRoadObject.transform.position);
+            instance = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
         }
 
         //audioSource.Play();
@@ -108,10 +111,24 @@ public class EventPrefabSpawner : MonoBehaviour
                     Random.Range(randomRoadObject.transform.position.z - 10, randomRoadObject.transform.position.z + 10)
                 );
 
-                instance = Instantiate(selectedPrefabs[count], randomPosition, Quaternion.identity);
+                Vector3 spawnPosition = FindRoadPositionNearby(randomPosition);
+                instance = Instantiate(selectedPrefabs[count], spawnPosition, Quaternion.identity);
                 instantiateAndDestroyCoroutine = StartCoroutine(InstantiateAndPlayAudio(instance));
             }
         }
+    }
+
+    private Vector3 FindRoadPositionNearby(Vector3 startPosition)
+    {
+        Vector3 searchPosition = startPosition + Vector3.up * 1000f; // 높은 위치에서 시작
+        RaycastHit hit;
+        if (Physics.Raycast(searchPosition, Vector3.down, out hit, Mathf.Infinity, roadLayerMask))
+        {
+            return hit.point; // 도로 위치 반환
+        }
+
+        // 도로 위치를 찾지 못한 경우 원래 위치 반환
+        return startPosition;
     }
 
     IEnumerator InstantiateAndPlayAudio(GameObject instance)
