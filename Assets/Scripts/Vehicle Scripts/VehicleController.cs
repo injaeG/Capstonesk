@@ -56,6 +56,8 @@ public class VehicleController : MonoBehaviour
     private float currentSpeedometerAngle = 0f;
     private float speedometerSmoothVelocity = 0f;
 
+     public float gravityScale = 2.0f; // 중력의 강도를 설정합니다. 기본값은 1입니다.
+
     void Start()
     {
         if (steeringWheel != null)
@@ -79,6 +81,7 @@ public class VehicleController : MonoBehaviour
 
     void Update()
     {
+        
         float speedAdjustedSteeringSpeed = steeringSpeed * (1 + (currentSpeed / maxSpeed));
         float targetSteeringAngle = controls.steering * maxSteeringAngle;
         currentSteeringAngle = Mathf.SmoothDamp(currentSteeringAngle, targetSteeringAngle, ref speedAdjustedSteeringSpeed, steeringSmoothTime);
@@ -165,6 +168,12 @@ public class VehicleController : MonoBehaviour
             currentSpeedometerAngle = Mathf.SmoothDampAngle(currentSpeedometerAngle, targetAngle, ref speedometerSmoothVelocity, 0.2f); // 부드러운 시간을 0.5초로 설정
             speedometerNeedle.transform.localRotation = initialNeedleRotation * Quaternion.Euler(0, currentSpeedometerAngle, 0);
         }
+    }
+        void FixedUpdate()
+    {
+        // 중력에 강도(scale factor)를 적용하여 원하는 강도로 설정합니다.
+        Vector3 gravity = gravityScale * Physics.gravity;
+        vehicleRigidbody.AddForce(gravity, ForceMode.Acceleration);
     }
 
     IEnumerator SmoothSteeringWheelRotation(float targetAngle)
