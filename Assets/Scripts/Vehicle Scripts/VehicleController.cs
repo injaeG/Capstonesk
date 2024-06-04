@@ -272,6 +272,8 @@ public class VehicleController : MonoBehaviour
         {
             Debug.Log("gameover");
 
+            fuelAmount = 0f;
+
             gameOverScreenController.TriggerGameOver();
         }
     }
