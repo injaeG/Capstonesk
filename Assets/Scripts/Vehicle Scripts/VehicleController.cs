@@ -23,6 +23,7 @@ public class VehicleController : MonoBehaviour
 
     private double nextEventTime;
     private bool isPlaying = false;
+
     public struct Controls
     {
         public float throttle;
@@ -56,7 +57,9 @@ public class VehicleController : MonoBehaviour
     private float currentSpeedometerAngle = 0f;
     private float speedometerSmoothVelocity = 0f;
 
-     public float gravityScale = 2.0f; // 중력의 강도를 설정합니다. 기본값은 1입니다.
+    public float gravityScale = 2.0f; // 중력의 강도를 설정합니다. 기본값은 1입니다.
+
+    public EventPrefabSpawner eventController;
 
     void Start()
     {
@@ -81,7 +84,7 @@ public class VehicleController : MonoBehaviour
 
     void Update()
     {
-        
+
         float speedAdjustedSteeringSpeed = steeringSpeed * (1 + (currentSpeed / maxSpeed));
         float targetSteeringAngle = controls.steering * maxSteeringAngle;
         currentSteeringAngle = Mathf.SmoothDamp(currentSteeringAngle, targetSteeringAngle, ref speedAdjustedSteeringSpeed, steeringSmoothTime);
@@ -169,7 +172,7 @@ public class VehicleController : MonoBehaviour
             speedometerNeedle.transform.localRotation = initialNeedleRotation * Quaternion.Euler(0, currentSpeedometerAngle, 0);
         }
     }
-        void FixedUpdate()
+    void FixedUpdate()
     {
         // 중력에 강도(scale factor)를 적용하여 원하는 강도로 설정합니다.
         Vector3 gravity = gravityScale * Physics.gravity;
@@ -222,33 +225,33 @@ public class VehicleController : MonoBehaviour
         }
     }
 
-  void UpdateFuelSystem()
-{
-    if (fuelAmount > 0) // 연료가 0보다 큰 경우에만 연료 소비
+    void UpdateFuelSystem()
     {
-        float fuelConsumed = fuelConsumptionRate * vehicleRigidbody.velocity.magnitude * Time.deltaTime;
-        fuelAmount -= fuelConsumed;
-        fuelAmount = Mathf.Max(fuelAmount, 0);
-
-        float fuelPercent = fuelAmount / maxFuel;
-        float angle = Mathf.Lerp(0, maxFuelGaugeAngle, 1 - fuelPercent);
-
-        if (fuelGaugeNeedle != null)
+        if (fuelAmount > 0) // 연료가 0보다 큰 경우에만 연료 소비
         {
-            fuelGaugeNeedle.transform.localRotation = initialFuelNeedleRotation * Quaternion.Euler(0, 0, -angle);
-        }
+            float fuelConsumed = fuelConsumptionRate * vehicleRigidbody.velocity.magnitude * Time.deltaTime;
+            fuelAmount -= fuelConsumed;
+            fuelAmount = Mathf.Max(fuelAmount, 0);
 
-        if (Mathf.Approximately(angle, maxFuelGaugeAngle))
-        {
-            var engines = GameObject.FindGameObjectsWithTag("engine");
-            foreach (var engine in engines)
+            float fuelPercent = fuelAmount / maxFuel;
+            float angle = Mathf.Lerp(0, maxFuelGaugeAngle, 1 - fuelPercent);
+
+            if (fuelGaugeNeedle != null)
             {
-                engine.SetActive(false);
-                StartCoroutine(FadeOutEngineSoundWithFilters());
+                fuelGaugeNeedle.transform.localRotation = initialFuelNeedleRotation * Quaternion.Euler(0, 0, -angle);
+            }
+
+            if (Mathf.Approximately(angle, maxFuelGaugeAngle))
+            {
+                var engines = GameObject.FindGameObjectsWithTag("engine");
+                foreach (var engine in engines)
+                {
+                    engine.SetActive(false);
+                    StartCoroutine(FadeOutEngineSoundWithFilters());
+                }
             }
         }
     }
-}
 
     void ApplySpeedBasedDeceleration()
     {
@@ -266,13 +269,69 @@ public class VehicleController : MonoBehaviour
         }
     }
 
+    private Coroutine timerCoroutine;
+
+    bool ishitchtrigger = false;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Game_Over"))
+        if (other.CompareTag("Game_Over")) // 도로 구역을 벗어났을 때
         {
             Debug.Log("gameover");
 
+            fuelAmount = 0f;
+
             gameOverScreenController.TriggerGameOver();
         }
+
+        if (other.CompareTag("eye_ghost"))
+        {
+            Debug.Log("eye_ghost 닿음");
+
+            Destroy(other.gameObject);
+
+            eventController.EyeGhostDestroy(other);
+
+            fuelAmount -= 5f;
+        }
+
+        if (other.CompareTag("hitchstop"))
+        {
+            if (!ishitchtrigger)
+            {
+                ishitchtrigger = true;
+                // 트리거에 들어올 때 타이머 코루틴 시작
+                timerCoroutine = StartCoroutine(ExecuteAfterDelay(2f)); // 2초 후 실행
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("hitchstop"))
+        {
+            // 트리거에서 벗어날 때 타이머 초기화
+            if (timerCoroutine != null)
+            {
+                ishitchtrigger = false;
+                StopCoroutine(timerCoroutine);
+                timerCoroutine = null;
+                Debug.Log("타이머가 초기화되었습니다.");
+            }
+        }
+    }
+
+    IEnumerator ExecuteAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // 지정된 시간 동안 대기
+        ExecuteEvent(); // 지연 후 메서드 실행
+    }
+
+    void ExecuteEvent()
+    {
+        // 이벤트 실행 코드
+        Debug.Log("2초 동안 머물러 이벤트 실행!");
+
+        eventController.HitchDestroy();
     }
 }
