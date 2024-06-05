@@ -11,12 +11,12 @@ public class Event_ArrowKey : MonoBehaviour
         {
             ChangeVehicleControls(other.gameObject, true);
             carCollided = true;
-            Debug.Log("Car¿Í Ãæµ¹Çß½À´Ï´Ù. Â÷·® Á¦¾î°¡ º¯°æµË´Ï´Ù.");
+            Debug.Log("Carï¿½ï¿½ ï¿½æµ¹ï¿½ß½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î°¡ ï¿½ï¿½ï¿½ï¿½Ë´Ï´ï¿½.");
         }
         else if (other.CompareTag("Arrow_Key") && !arrowKeyCollided)
         {
             arrowKeyCollided = true;
-            Debug.Log("Arrow_Key¿Í Ãæµ¹Çß½À´Ï´Ù. Â÷·® Á¦¾î°¡ º¯°æµË´Ï´Ù.");
+            Debug.Log("Arrow_Keyï¿½ï¿½ ï¿½æµ¹ï¿½ß½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î°¡ ï¿½ï¿½ï¿½ï¿½Ë´Ï´ï¿½.");
         }
     }
 
@@ -26,12 +26,12 @@ public class Event_ArrowKey : MonoBehaviour
         {
             ChangeVehicleControls(other.gameObject, false);
             carCollided = false;
-            Debug.Log("Car¿Í Ãæµ¹ÀÌ ³¡³µ½À´Ï´Ù. Â÷·® Á¦¾î°¡ ¿ø·¡´ë·Î º¹±¸µË´Ï´Ù.");
+            Debug.Log("Carï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ë´Ï´ï¿½.");
         }
         else if (other.CompareTag("Arrow_Key_Og") && arrowKeyCollided)
         {
             arrowKeyCollided = false;
-            Debug.Log("Arrow_Key_Og¿Í Ãæµ¹ÀÌ ³¡³µ½À´Ï´Ù. Â÷·® Á¦¾î°¡ ¿ø·¡´ë·Î º¹±¸µË´Ï´Ù.");
+            Debug.Log("Arrow_Key_Ogï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ë´Ï´ï¿½.");
         }
     }
 
@@ -40,9 +40,9 @@ public class Event_ArrowKey : MonoBehaviour
         VehicleController vehicleController = vehicle.GetComponent<VehicleController>();
         if (vehicleController != null)
         {
-            // W Å°·Î ÀüÁø, S Å°·Î ÈÄÁø, A Å°·Î ÁÂÈ¸Àü, D Å°·Î ¿ìÈ¸Àü
-            float horizontalInput = reverseControls ? -Input.GetAxis("Horizontal") : Input.GetAxis("Horizontal");
-            vehicleController.SetControls(reverseControls ? -1 : 1, reverseControls ? 1 : 0, horizontalInput);
+            vehicleController.controls.throttle = reverseControls ? -1 : 1;
+            vehicleController.controls.brakes = reverseControls ? 1 : 0;
+            vehicleController.controls.steering = reverseControls ? -Input.GetAxis("Horizontal") : Input.GetAxis("Horizontal");
         }
     }
 }
