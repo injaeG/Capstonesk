@@ -31,6 +31,8 @@ TagManager:
   - hitchpoint
   - hitch_human
   - hitch_ghost
+  - Arrow_Key
+  - Arrow_Key_Og
   layers:
   - Default
   - TransparentFX

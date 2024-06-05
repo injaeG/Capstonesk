@@ -23,6 +23,7 @@ public class VehicleController : MonoBehaviour
 
     private double nextEventTime;
     private bool isPlaying = false;
+
     public struct Controls
     {
         public float throttle;
@@ -83,7 +84,7 @@ public class VehicleController : MonoBehaviour
 
     void Update()
     {
-        
+
         float speedAdjustedSteeringSpeed = steeringSpeed * (1 + (currentSpeed / maxSpeed));
         float targetSteeringAngle = controls.steering * maxSteeringAngle;
         currentSteeringAngle = Mathf.SmoothDamp(currentSteeringAngle, targetSteeringAngle, ref speedAdjustedSteeringSpeed, steeringSmoothTime);
@@ -171,7 +172,7 @@ public class VehicleController : MonoBehaviour
             speedometerNeedle.transform.localRotation = initialNeedleRotation * Quaternion.Euler(0, currentSpeedometerAngle, 0);
         }
     }
-        void FixedUpdate()
+    void FixedUpdate()
     {
         // 중력에 강도(scale factor)를 적용하여 원하는 강도로 설정합니다.
         Vector3 gravity = gravityScale * Physics.gravity;
@@ -287,7 +288,7 @@ public class VehicleController : MonoBehaviour
         {
             Debug.Log("eye_ghost 닿음");
 
-            Destroy(other);
+            Destroy(other.gameObject);
 
             eventController.EyeGhostDestroy(other);
 
