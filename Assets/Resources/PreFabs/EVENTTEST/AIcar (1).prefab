@@ -952,7 +952,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_Range: 34.98
   m_SpotAngle: 42
   m_InnerSpotAngle: 21.80208
@@ -1361,7 +1361,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_Range: 34.98
   m_SpotAngle: 42
   m_InnerSpotAngle: 21.80208
@@ -1545,7 +1545,7 @@ MonoBehaviour:
   - {fileID: 6494219806390356868}
   centerOfMass: {fileID: 4832309018944958577}
   maxSteerAngle: 30
-  motorTorque: 1500
+  motorTorque: 2000
   forwardFrictionStiffness: 2
   sidewaysFrictionStiffness: 2
 --- !u!114 &8457090588817317742
@@ -1571,7 +1571,7 @@ MonoBehaviour:
   zigzagChase: 0
   zigzagFrequency: 5
   stoppingDistance: 15
-  detectionRadius: 1000
+  detectionRadius: 3000
   respawnCheckInterval: 5
   maxDistanceFromTarget: 50
 --- !u!1 &7861898088974166847

@@ -34,15 +34,8 @@ public class EventPrefabSpawner : MonoBehaviour
     {
         // 'Event' 레이어에 있는 오브젝트가 있는지 확인합니다.
         GameObject[] eventObjects = GameObject.FindObjectsOfType<GameObject>();
-        bool eventObjectExists = false;
-        foreach (GameObject obj in eventObjects)
-        {
-            if (obj.layer == LayerMask.NameToLayer("Event"))
-            {
-                eventObjectExists = true;
-                break;
-            }
-        }
+        bool eventObjectExists = true;
+
 
         if (eventObjectExists)
         {
@@ -50,7 +43,7 @@ public class EventPrefabSpawner : MonoBehaviour
             eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
             foreach (GameObject taggedPrefab in GameObject.FindGameObjectsWithTag("event"))
             {
-                if (false) //(Random.Range(0, 3) == 0)
+                if (Random.Range(0, 3) == 0)
                     EyeGhostSpawnEventPrefab();
                 else
                     SpawnRandomEventPrefab();
@@ -114,11 +107,11 @@ public class EventPrefabSpawner : MonoBehaviour
 
         audioSource.clip = eye_ghostSound;
 
-        if (eventPrefabs.Length == 0) return;
+        if (eventPrefabs.Length == 1) return;
 
         GameObject[] selectedPrefabs = new GameObject[8];
 
-        for (int i = 0; i < 8; i++)
+        for (int i = 1; i < 8; i++)
         {
             do
             {
@@ -278,6 +271,6 @@ public class EventPrefabSpawner : MonoBehaviour
             instance = null;
         }
 
-        audioSource.Stop();
+        audioSource.Stop();     
     }
 }

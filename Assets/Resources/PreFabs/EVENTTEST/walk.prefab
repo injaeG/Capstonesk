@@ -2087,7 +2087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1998967576853681932}
   - component: {fileID: 2242894842208812797}
-  - component: {fileID: 2571517289299822982}
+  - component: {fileID: -5990367618516130622}
   m_Layer: 3
   m_Name: walk
   m_TagString: Untagged
@@ -2137,7 +2137,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2571517289299822982
+--- !u!114 &-5990367618516130622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2149,7 +2149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a44c112fecd7743838c061f5112a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 1
 --- !u!1 &5278823260667924454
 GameObject:
   m_ObjectHideFlags: 0

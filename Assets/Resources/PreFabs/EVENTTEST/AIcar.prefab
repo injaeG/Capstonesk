@@ -554,7 +554,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_Range: 34.98
   m_SpotAngle: 42
   m_InnerSpotAngle: 21.80208
@@ -803,7 +803,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_Range: 34.98
   m_SpotAngle: 42
   m_InnerSpotAngle: 21.80208
@@ -1419,7 +1419,7 @@ MonoBehaviour:
   zigzagChase: 0
   zigzagFrequency: 5
   stoppingDistance: 15
-  detectionRadius: 1000
+  detectionRadius: 2000
   respawnCheckInterval: 5
   maxDistanceFromTarget: 50
 --- !u!1 &6873906278721612638
