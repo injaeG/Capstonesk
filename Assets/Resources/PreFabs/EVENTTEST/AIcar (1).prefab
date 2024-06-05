@@ -1467,7 +1467,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7090646, z: -0, w: 0.70514363}
   m_LocalPosition: {x: -55.27, y: 2.21, z: 47.7}
-  m_LocalScale: {x: 1.4, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.52, z: 0.52}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3104847086523097562}
@@ -1564,10 +1564,10 @@ MonoBehaviour:
   rayDistance: 20
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   roadLayerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   zigzagChase: 0
   zigzagFrequency: 5
   stoppingDistance: 15

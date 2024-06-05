@@ -41,9 +41,8 @@ public class Event_ArrowKey : MonoBehaviour
         if (vehicleController != null)
         {
             // W 키로 전진, S 키로 후진, A 키로 좌회전, D 키로 우회전
-            vehicleController.controls.throttle = reverseControls ? -1 : 1;
-            vehicleController.controls.brakes = reverseControls ? 1 : 0;
-            vehicleController.controls.steering = reverseControls ? -Input.GetAxis("Horizontal") : Input.GetAxis("Horizontal");
+            float horizontalInput = reverseControls ? -Input.GetAxis("Horizontal") : Input.GetAxis("Horizontal");
+            vehicleController.SetControls(reverseControls ? -1 : 1, reverseControls ? 1 : 0, horizontalInput);
         }
     }
 }
