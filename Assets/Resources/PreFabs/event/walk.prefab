@@ -2087,10 +2087,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1998967576853681932}
   - component: {fileID: 2242894842208812797}
-  - component: {fileID: -3921071599407340273}
+  - component: {fileID: -5990367618516130622}
   m_Layer: 3
-  m_Name: hitch_ghost
-  m_TagString: hitch_ghost
+  m_Name: walk
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2105,7 +2105,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8447618212738769546}
@@ -2137,7 +2137,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-3921071599407340273
+--- !u!114 &-5990367618516130622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2146,10 +2146,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5195756491469888853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1bfb42203a2f53458a1108dd8328e2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 41a44c112fecd7743838c061f5112a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fixedY: 1
+  speed: 1
 --- !u!1 &5278823260667924454
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,8 @@ public class EventPrefabSpawner : MonoBehaviour
 
     public VehicleController vehicleController;
 
+    private bool eventObjectExists = true;
+
     void Awake()
     {
         // AudioSource 컴포넌트를 가져옵니다.
@@ -32,21 +34,34 @@ public class EventPrefabSpawner : MonoBehaviour
 
     void Start()
     {
+        //initEvent();
+    }
+
+    public void initEvent()
+    {
         // 'Event' 레이어에 있는 오브젝트가 있는지 확인합니다.
-        GameObject[] eventObjects = GameObject.FindObjectsOfType<GameObject>();
-        bool eventObjectExists = true;
+        //GameObject[] eventObjects = GameObject.FindObjectsOfType<GameObject>();
+        //bool eventObjectExists = true;
 
-
-        if (eventObjectExists)
+        if (true)
         {
-            // PreFabs/event 디렉토리에 있는 모든 프리팹을 로드합니다.
-            eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
-            foreach (GameObject taggedPrefab in GameObject.FindGameObjectsWithTag("event"))
+            Debug.Log("aa");
+
+            if (eventObjectExists)
             {
-                if (Random.Range(0, 3) == 0)
-                    EyeGhostSpawnEventPrefab();
-                else
-                    SpawnRandomEventPrefab();
+                // PreFabs/event 디렉토리에 있는 모든 프리팹을 로드합니다.
+                eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
+                foreach (GameObject taggedPrefab in GameObject.FindGameObjectsWithTag("event"))
+                {
+                    if (Random.Range(0, 3) == 0)
+                        EyeGhostSpawnEventPrefab();
+                    else
+                        SpawnRandomEventPrefab();
+
+                    //EyeGhostSpawnEventPrefab();
+
+                    //SpawnRandomEventPrefab();
+                }
             }
         }
     }
@@ -111,13 +126,13 @@ public class EventPrefabSpawner : MonoBehaviour
 
         GameObject[] selectedPrefabs = new GameObject[8];
 
-        for (int i = 1; i < 8; i++)
+        for (int i = 0; i < 8; i++) // 인덱스를 0부터 시작하도록 수정
         {
             do
             {
                 int index = Random.Range(0, eventPrefabs.Length);
                 selectedPrefabs[i] = eventPrefabs[index];
-            } while (!selectedPrefabs[i].CompareTag("eye_ghost") && selectedPrefabs[i] != null);
+            } while (selectedPrefabs[i] == null || !selectedPrefabs[i].CompareTag("eye_ghost")); // 조건 수정
         }
 
         GameObject[] roadObjects = GameObject.FindGameObjectsWithTag("Road");
@@ -148,6 +163,7 @@ public class EventPrefabSpawner : MonoBehaviour
             }
         }
     }
+
 
     private Vector3 FindRoadPositionNearby()
     {

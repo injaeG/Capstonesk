@@ -276,6 +276,17 @@ public class VehicleController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Road_Make")) // 이벤트를 호출하기 위해 사용
+        {
+            Debug.Log("bb");
+            if (!ishitchtrigger)
+            {
+                Debug.Log("cc");
+                ishitchtrigger = true;
+                eventController.initEvent();
+            }
+        }
+
         if (other.CompareTag("Game_Over")) // 도로 구역을 벗어났을 때
         {
             Debug.Log("gameover");
@@ -305,6 +316,7 @@ public class VehicleController : MonoBehaviour
                 timerCoroutine = StartCoroutine(ExecuteAfterDelay(2f)); // 2초 후 실행
             }
         }
+
     }
 
     private void OnTriggerExit(Collider other)
