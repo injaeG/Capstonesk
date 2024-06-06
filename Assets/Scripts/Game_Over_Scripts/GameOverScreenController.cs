@@ -70,14 +70,11 @@ public class GameOverScreenController : MonoBehaviour
         // 게임 오버 사운드 재생
         gameOverSound.Play();
 
-        if (!isGameover)
-        {
-            // 게임 오버 상태를 true로 설정
-            isGameover = true;
+        // 게임 오버 상태를 true로 설정
+        isGameover = true;
 
-            // 게임 오버 화면 표시
-            ShowGameOverScreen();
-        }
+        // 게임 오버 화면 표시
+        ShowGameOverScreen();
     }
 
     public void ShowGameOverScreen()
