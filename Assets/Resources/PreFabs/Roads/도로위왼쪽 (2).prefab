@@ -493,6 +493,8 @@ MonoBehaviour:
   prefabPath: PreFabs/Roads
   spawnTransforms:
   - {fileID: 2762792952466423703}
+  eventPrefabGasStation: {fileID: 2066882542522046554, guid: f62d2332b7524bc4b951aeb2f546ed36, type: 3}
+  gasStationFrequency: 5
 --- !u!65 &4277807114588873378
 BoxCollider:
   m_ObjectHideFlags: 0

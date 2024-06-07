@@ -10,6 +10,10 @@ public class RoadMaker : MonoBehaviour
     private List<int> occupiedIndices; // 이미 프리팹이 생성된 위치 인덱스 리스트
     private GameObject world; // 월드 오브젝트 (부모로 설정)
 
+    // 추가
+    public GameObject eventPrefabGasStation;
+    public int gasStationFrequency = 5; // Gas Station 프리팹의 등장 빈도
+
     void Start()
     {
         LoadPrefabs();
@@ -46,7 +50,18 @@ public class RoadMaker : MonoBehaviour
         if (randomIndex != -1)
         {
             Transform spawnTransform = spawnTransforms[randomIndex];
-            GameObject prefab = prefabs[Random.Range(0, prefabs.Count)]; // 랜덤 프리팹 선택
+            GameObject prefab;
+
+            // Gas Station 프리팹을 랜덤하게 생성하는 로직
+            if (Random.Range(1, gasStationFrequency + 1) == 1)
+            {
+                prefab = eventPrefabGasStation;
+            }
+            else
+            {
+                prefab = prefabs[Random.Range(0, prefabs.Count)]; // 랜덤 프리팹 선택
+            }
+
             GameObject instance = Instantiate(prefab, spawnTransform.position, spawnTransform.rotation); // 프리팹 생성
 
             if (world != null)

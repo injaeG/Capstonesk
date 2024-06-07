@@ -35,6 +35,7 @@ TagManager:
   - Arrow_Key_Og
   - hitchstop
   - Slender
+  - SpecialCollider
   layers:
   - Default
   - TransparentFX
