@@ -9,7 +9,7 @@ public class SlenderMan : MonoBehaviour
 
     void Start()
     {
-        // Find the object named "표지판생성"
+       
         GameObject signObject = GameObject.Find("슬렌더");
 
         // Check if the object exists
