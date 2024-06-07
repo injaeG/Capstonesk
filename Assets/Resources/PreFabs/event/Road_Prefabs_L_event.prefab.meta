@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: aaa469849265c404f9ce2ad470b88329
 =======
 guid: d5478917a176f374abdc92b9460dab21
@@ -8,6 +9,13 @@ guid: d5478917a176f374abdc92b9460dab21
 =======
 <<<<<<<< HEAD:Assets/Resources/PreFabs/event/hitch_ghost.prefab.meta
 guid: 42107e6486c02ce45b8e57c2e1d3132d
+========
+guid: d5478917a176f374abdc92b9460dab21
+>>>>>>>> parent of d40993a (revart):Assets/Resources/PreFabs/event/Road_Prefabs_L_event.prefab.meta
+>>>>>>> parent of d40993a (revart)
+=======
+<<<<<<<< HEAD:Assets/Resources/PreFabs/event/hitch_human.prefab.meta
+guid: 4bfb5b411dbb59f44ba215d8490c5834
 ========
 guid: d5478917a176f374abdc92b9460dab21
 >>>>>>>> parent of d40993a (revart):Assets/Resources/PreFabs/event/Road_Prefabs_L_event.prefab.meta

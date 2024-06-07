@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<<< HEAD:Assets/Resources/PreFabs/event/hitch_ghost.prefab.meta
 guid: 42107e6486c02ce45b8e57c2e1d3132d
 ========
 guid: d5478917a176f374abdc92b9460dab21
 >>>>>>>> parent of d40993a (revart):Assets/Resources/PreFabs/event/Road_Prefabs_L_event.prefab.meta
+=======
+guid: 42107e6486c02ce45b8e57c2e1d3132d
+>>>>>>> parent of d40993a (revart)
 PrefabImporter:
   externalObjects: {}
   userData: 
