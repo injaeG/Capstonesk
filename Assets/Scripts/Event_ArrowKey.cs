@@ -40,6 +40,10 @@ public class Event_ArrowKey : MonoBehaviour
         VehicleController vehicleController = vehicle.GetComponent<VehicleController>();
         if (vehicleController != null)
         {
+<<<<<<< HEAD
+=======
+            // W 키로 전진, S 키로 후진, A 키로 좌회전, D 키로 우회전
+>>>>>>> parent of 412c208 (Merge branch 'main' of https://github.com/injaeG/Capstonesk)
             vehicleController.controls.throttle = reverseControls ? -1 : 1;
             vehicleController.controls.brakes = reverseControls ? 1 : 0;
             vehicleController.controls.steering = reverseControls ? -Input.GetAxis("Horizontal") : Input.GetAxis("Horizontal");
