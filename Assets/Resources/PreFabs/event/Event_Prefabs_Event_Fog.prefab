@@ -5471,6 +5471,7 @@ BoxCollider:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &4086578198981779744
 GameObject:
   m_ObjectHideFlags: 0
@@ -5502,6 +5503,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3828605916833613817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of d40993a (revart)
 =======
 >>>>>>> parent of d40993a (revart)
 =======
@@ -8375,7 +8378,10 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 3591504773057661701}
+=======
+>>>>>>> parent of d40993a (revart)
 =======
 >>>>>>> parent of d40993a (revart)
 =======
