@@ -17262,7 +17262,7 @@ MonoBehaviour:
   emptyObjectPrefab: {fileID: 4825214446942011152}
   prefabsToSpawn:
   - {fileID: 4061999138098054953, guid: c0ec2cd63f93487d92d6623d393c83ba, type: 3}
-  spawnProbability: 1
+  spawnProbability: 0.5
 --- !u!1 &4831476064760079227
 GameObject:
   m_ObjectHideFlags: 0
