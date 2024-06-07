@@ -15,7 +15,7 @@ public class Slender : MonoBehaviour
             // Reduce fuel amount by 20
             if (other.GetComponent<VehicleController>() != null)
             {
-                other.GetComponent<VehicleController>().fuelAmount -= 20f;
+                other.GetComponent<VehicleController>().fuelAmount -= 10f;
             }
         }
     }
