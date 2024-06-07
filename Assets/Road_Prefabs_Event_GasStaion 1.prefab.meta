@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Road_Prefabs_Event_GasStaion 1.prefab.meta
 guid: b589a129441580f4892730379a306ec9
+========
+guid: d5478917a176f374abdc92b9460dab21
+>>>>>>>> parent of d40993a (revart):Assets/Resources/PreFabs/event/Road_Prefabs_L_event.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

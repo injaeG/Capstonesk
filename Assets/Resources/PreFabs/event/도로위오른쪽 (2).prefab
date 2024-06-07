@@ -79,6 +79,7 @@ Transform:
   - {fileID: 1656803344886915981}
   - {fileID: 5435367655837977424}
   - {fileID: 599023354989951947}
+<<<<<<< HEAD
   - {fileID: 3817150084992628233}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -113,6 +114,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4004572434576387290}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of d40993a (revart)
 --- !u!1 &5542026949189940735
 GameObject:
   m_ObjectHideFlags: 0

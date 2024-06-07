@@ -4605,6 +4605,10 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300110, guid: bca5c93adbc71744ca9ea932c796e900, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &3725107652630714908
 GameObject:
   m_ObjectHideFlags: 0
@@ -4636,6 +4640,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3828605916833613817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of d40993a (revart)
+=======
+>>>>>>> parent of d40993a (revart)
+=======
+>>>>>>> parent of d40993a (revart)
+=======
+>>>>>>> parent of d40993a (revart)
 --- !u!1 &3799880497378708016
 GameObject:
   m_ObjectHideFlags: 0
@@ -8244,7 +8256,19 @@ Transform:
   - {fileID: 5626160660422499338}
   - {fileID: 741424051279819982}
   - {fileID: 361022336591339905}
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 1580520413866700330}
+=======
+>>>>>>> parent of d40993a (revart)
+=======
+>>>>>>> parent of d40993a (revart)
+=======
+>>>>>>> parent of d40993a (revart)
+=======
+>>>>>>> parent of d40993a (revart)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7117794469046017192

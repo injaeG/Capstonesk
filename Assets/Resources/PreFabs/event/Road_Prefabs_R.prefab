@@ -8825,7 +8825,10 @@ Transform:
   - {fileID: 2652471381265715099}
   - {fileID: 5974775223152837829}
   - {fileID: 5013775694876761616}
+<<<<<<< HEAD
   - {fileID: 885926498446099326}
+=======
+>>>>>>> parent of d40993a (revart)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6800615621288846268
@@ -10916,6 +10919,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.9999967, y: 0.8225595, z: 0.015863687}
   m_Center: {x: -0.00001513958, y: 0.723443, z: 0.000000031664968}
+<<<<<<< HEAD
 --- !u!1 &8619073802741473163
 GameObject:
   m_ObjectHideFlags: 0
@@ -10947,6 +10951,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3828605916833613817}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of d40993a (revart)
 --- !u!1 &8746647303539433723
 GameObject:
   m_ObjectHideFlags: 0
