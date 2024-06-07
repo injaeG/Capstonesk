@@ -310,20 +310,6 @@ public class VehicleController : MonoBehaviour
 
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("hitchstop"))
-        {
-            // 트리거에서 벗어날 때 타이머 초기화
-            if (timerCoroutine != null)
-            {
-                ishitchtrigger = false;
-                StopCoroutine(timerCoroutine);
-                timerCoroutine = null;
-                Debug.Log("타이머가 초기화되었습니다.");
-            }
-        }
-    }
 
     IEnumerator ExecuteAfterDelay(float delay)
     {
