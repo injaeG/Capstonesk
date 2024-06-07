@@ -600,7 +600,7 @@ MonoBehaviour:
   spawnTransforms:
   - {fileID: 2836561694889897943}
   eventPrefabGasStation: {fileID: 2066882542522046554, guid: f62d2332b7524bc4b951aeb2f546ed36, type: 3}
-  gasStationFrequency: 5
+  gasStationFrequency: 4
 --- !u!65 &8468248120202844110
 BoxCollider:
   m_ObjectHideFlags: 0
