@@ -6,13 +6,9 @@ public class EVENTSTICK : MonoBehaviour
 {
     public GameObject prefab; // Prefab to instantiate
     public float spawnProbability = 0.5f; // Probability to spawn the prefab (0 to 1)
-    private Quaternion prefabRotation; // Variable to store the prefab's rotation
 
     void Start()
     {
-        // Store the prefab's initial rotation
-        prefabRotation = prefab.transform.rotation;
-
         // Find the object named "표지판생성"
         GameObject signObject = GameObject.Find("표지판생성");
 
@@ -25,8 +21,8 @@ public class EVENTSTICK : MonoBehaviour
             // Check if the random value is less than the spawn probability
             if (randomValue < spawnProbability)
             {
-                // Instantiate the prefab at the position of the sign object with the stored rotation
-                Instantiate(prefab, signObject.transform.position, prefabRotation);
+                // Instantiate the prefab at the position of the sign object with the prefab's default rotation
+                Instantiate(prefab, signObject.transform.position, prefab.transform.rotation);
             }
         }
         else
