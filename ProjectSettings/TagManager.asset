@@ -33,6 +33,8 @@ TagManager:
   - hitch_ghost
   - Arrow_Key
   - Arrow_Key_Og
+  - hitchstop
+  - Slender
   layers:
   - Default
   - TransparentFX

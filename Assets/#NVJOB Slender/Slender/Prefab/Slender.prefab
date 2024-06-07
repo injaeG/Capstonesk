@@ -1173,6 +1173,8 @@ GameObject:
   - component: {fileID: 1010010733671478586}
   - component: {fileID: 6957573965259036736}
   - component: {fileID: 2891481974308657385}
+  - component: {fileID: -5897709096622128751}
+  - component: {fileID: 1636570827419111973}
   m_Layer: 0
   m_Name: Slender
   m_TagString: Untagged
@@ -1189,8 +1191,8 @@ Transform:
   m_GameObject: {fileID: 4061999138098054953}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0014176, y: -0.64336, z: -0.28351}
+  m_LocalScale: {x: 2.533566, y: 2.533566, z: 2.533566}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2348605131638083324}
@@ -1314,6 +1316,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &-5897709096622128751
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061999138098054953}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1636570827419111973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061999138098054953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00d2d7b29ca3d844acf9ca1da2a91b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4162965382049386049
 GameObject:
   m_ObjectHideFlags: 0
