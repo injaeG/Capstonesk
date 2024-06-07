@@ -11,26 +11,29 @@ public class EventPrefabSpawner : MonoBehaviour
     public AudioClip eventSound;
     public AudioClip hitchhikerSound;
 
+    public AudioClip successSound;
+    public AudioClip failSound;
+
     private AudioSource audioSource;
+    private AudioSource eventcheckaudio;
     private GameObject instance;
+    private GameObject[] instances;
     private Coroutine instantiateAndDestroyCoroutine;
 
-<<<<<<< HEAD
     public VehicleController vehicleController;
 
     private bool eventObjectExists = true;
 
-=======
->>>>>>> parent of 8a61a040 (표지판 생성)
     void Awake()
     {
         // AudioSource 컴포넌트를 가져옵니다.
         audioSource = GetComponent<AudioSource>();
+
+        eventcheckaudio = GetComponent<AudioSource>();
     }
 
     void Start()
     {
-<<<<<<< HEAD
         //initEvent();
     }
 
@@ -60,18 +63,10 @@ public class EventPrefabSpawner : MonoBehaviour
                     //SpawnRandomEventPrefab();
                 }
             }
-=======
-        // PreFabs/event 디렉토리에 있는 모든 프리팹을 로드합니다.
-        eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
-        foreach (GameObject taggedPrefab in GameObject.FindGameObjectsWithTag("event"))
-        {
-            if (Random.Range(0, 3) == 0)
-                EyeGhostSpawnEventPrefab();
-            else
-                SpawnRandomEventPrefab();
->>>>>>> parent of 8a61a040 (표지판 생성)
         }
     }
+
+    private GameObject randomhitchPoint;
 
     void SpawnRandomEventPrefab()
     {
@@ -93,6 +88,23 @@ public class EventPrefabSpawner : MonoBehaviour
         {
             audioSource.clip = hitchhikerSound;
             instance = Instantiate(selectedPrefab, spawnPoint.position, Quaternion.identity, spawnPoint);
+        }
+        else if (selectedPrefab.CompareTag("hitch_ghost") || selectedPrefab.CompareTag("hitch_human")) // 히치하이커
+        {
+            audioSource.clip = hitchhikerSound;
+            GameObject[] hitchPoints = GameObject.FindGameObjectsWithTag("hitchpoint");
+            if (hitchPoints.Length == 0) return;
+
+            randomhitchPoint = hitchPoints[Random.Range(0, hitchPoints.Length)];
+            randomhitchPoint.SetActive(true);
+
+            Transform[] children = randomhitchPoint.GetComponentsInChildren<Transform>(true);
+            foreach (Transform child in children)
+            {
+                child.gameObject.SetActive(true);
+            }
+
+            instance = Instantiate(selectedPrefab, randomhitchPoint.transform.position, Quaternion.identity);
         }
         else
         {
@@ -132,6 +144,8 @@ public class EventPrefabSpawner : MonoBehaviour
         {
             GameObject randomRoadObject = roadObjects[Random.Range(0, roadObjects.Length)];
 
+            instances = new GameObject[selectedPrefabs.Length];
+
             for (int k = 0; k < 2; k++)
             {
                 count++;
@@ -144,8 +158,8 @@ public class EventPrefabSpawner : MonoBehaviour
                 );
 
                 Vector3 spawnPosition = FindRoadPositionNearby();
-                instance = Instantiate(selectedPrefabs[count], spawnPosition, Quaternion.identity);
-                instantiateAndDestroyCoroutine = StartCoroutine(InstantiateAndPlayAudio(instance));
+                instances[count] = Instantiate(selectedPrefabs[count], spawnPosition, Quaternion.identity);
+                instantiateAndDestroyCoroutine = StartCoroutine(InstantiateAndPlayAudio(instances[count]));
             }
         }
     }
@@ -166,12 +180,97 @@ public class EventPrefabSpawner : MonoBehaviour
         return randomRoadObject.transform.position;
     }
 
+    public void HitchDestroy()
+    {
+        if (instance.CompareTag("hitch_ghost"))
+        {
+            Debug.Log("귀신입니다.");
+
+            eventcheckaudio.clip = failSound;
+
+            vehicleController.fuelAmount -= 20f;
+        }
+        else
+        {
+            Debug.Log("사람입니다.");
+
+            eventcheckaudio.clip = successSound;
+        }
+        StopAndDestroyEarly();
+
+        eventcheckaudio.Play();
+
+        randomhitchPoint.SetActive(false);
+    }
+
+    public void EyeGhostDestroy(Collider other)
+    {
+        if (other.CompareTag("Game_Over"))
+        {
+            Destroy(other.gameObject); // 오타 수정 및 정확한 파라미터 전달
+        }
+
+        foreach (GameObject inst in instances)
+        {
+            if (inst == null)
+            {
+                // 객체가 비어있으면 발생시킬 이벤트 추가
+                Debug.Log("눈알 귀신이 없습니다.");
+                // 혹은 다른 이벤트를 발생시킬 수 있습니다.
+                eventcheckaudio.clip = failSound;
+                eventcheckaudio.Play();
+
+                audioSource.Stop();
+
+                if (instantiateAndDestroyCoroutine != null)
+                {
+                    StopCoroutine(instantiateAndDestroyCoroutine);
+                    instantiateAndDestroyCoroutine = null;
+                }
+            }
+        }
+    }
+
+    bool iseyetriggered = false;
+
     IEnumerator InstantiateAndPlayAudio(GameObject instance)
     {
         audioSource.Play();
         yield return new WaitForSeconds(60);
+
+        if (instances != null)
+        {
+
+
+            eventcheckaudio.clip = successSound;
+            eventcheckaudio.Play();
+        }
+
+        if (instance.CompareTag("eye_ghost"))
+        {
+
+           
+        }
+        else if (instance.CompareTag("hitch_ghost"))
+        {
+            Debug.Log("귀신입니다.");
+
+            eventcheckaudio.clip = successSound;
+        }
+        else if (instance.CompareTag("hitch_human"))
+        {
+            Debug.Log("사람입니다.");
+
+            eventcheckaudio.clip = failSound;
+
+            vehicleController.fuelAmount -= 20f;
+        }
+
         Destroy(instance);
+
         audioSource.Stop();
+
+        eventcheckaudio.Play();
     }
 
     public void StopAndDestroyEarly()

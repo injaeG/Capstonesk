@@ -28,6 +28,11 @@ TagManager:
   - eye_ghost
   - Fuel_Charge
   - Event_Fog
+  - hitchpoint
+  - hitch_human
+  - hitch_ghost
+  - Arrow_Key
+  - Arrow_Key_Og
   layers:
   - Default
   - TransparentFX
@@ -38,7 +43,7 @@ TagManager:
   - wall
   - road
   - Car
-  - 
+  - Event
   - 
   - 
   - 

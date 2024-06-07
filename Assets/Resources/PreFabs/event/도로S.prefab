@@ -589,6 +589,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8758989497277282772}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+<<<<<<< HEAD
 --- !u!1 &7764663588406549178
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +621,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8758989497277282772}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of d40993a (revart)
 --- !u!1 &8270295733960614766
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +668,10 @@ Transform:
   - {fileID: 3058450394222695374}
   - {fileID: 193038715926341818}
   - {fileID: 8939460557766637782}
+<<<<<<< HEAD
   - {fileID: 7544080551250278158}
+=======
+>>>>>>> parent of d40993a (revart)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &296538740471970656
