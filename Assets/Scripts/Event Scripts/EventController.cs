@@ -15,13 +15,6 @@ public class EventPrefabSpawner : MonoBehaviour
     private GameObject instance;
     private Coroutine instantiateAndDestroyCoroutine;
 
-<<<<<<< HEAD
-    public VehicleController vehicleController;
-
-    private bool eventObjectExists = true;
-
-=======
->>>>>>> parent of 8a61a040 (표지판 생성)
     void Awake()
     {
         // AudioSource 컴포넌트를 가져옵니다.
@@ -30,37 +23,6 @@ public class EventPrefabSpawner : MonoBehaviour
 
     void Start()
     {
-<<<<<<< HEAD
-        //initEvent();
-    }
-
-    public void initEvent()
-    {
-        // 'Event' 레이어에 있는 오브젝트가 있는지 확인합니다.
-        //GameObject[] eventObjects = GameObject.FindObjectsOfType<GameObject>();
-        //bool eventObjectExists = true;
-
-        if (true)
-        {
-            Debug.Log("aa");
-
-            if (eventObjectExists)
-            {
-                // PreFabs/event 디렉토리에 있는 모든 프리팹을 로드합니다.
-                eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
-                foreach (GameObject taggedPrefab in GameObject.FindGameObjectsWithTag("event"))
-                {
-                    if (Random.Range(0, 3) == 0)
-                        EyeGhostSpawnEventPrefab();
-                    else
-                        SpawnRandomEventPrefab();
-
-                    //EyeGhostSpawnEventPrefab();
-
-                    //SpawnRandomEventPrefab();
-                }
-            }
-=======
         // PreFabs/event 디렉토리에 있는 모든 프리팹을 로드합니다.
         eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
         foreach (GameObject taggedPrefab in GameObject.FindGameObjectsWithTag("event"))
@@ -69,7 +31,6 @@ public class EventPrefabSpawner : MonoBehaviour
                 EyeGhostSpawnEventPrefab();
             else
                 SpawnRandomEventPrefab();
->>>>>>> parent of 8a61a040 (표지판 생성)
         }
     }
 

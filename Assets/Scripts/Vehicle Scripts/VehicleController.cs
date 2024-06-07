@@ -269,51 +269,11 @@ public class VehicleController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-<<<<<<< HEAD
-        if (other.CompareTag("Road_Make")) // 이벤트를 호출하기 위해 사용
-        {
-            Debug.Log("bb");
-            if (!ishitchtrigger)
-            {
-                Debug.Log("cc");
-                ishitchtrigger = true;
-                eventController.initEvent();
-            }
-        }
-
-        if (other.CompareTag("Game_Over")) // 도로 구역을 벗어났을 때
-=======
         if (other.CompareTag("Game_Over"))
->>>>>>> parent of 8a61a040 (표지판 생성)
         {
             Debug.Log("gameover");
 
             gameOverScreenController.TriggerGameOver();
         }
-<<<<<<< HEAD
-
-        if (other.CompareTag("eye_ghost"))
-        {
-            Debug.Log("eye_ghost 닿음");
-
-            Destroy(other.gameObject);
-
-            eventController.EyeGhostDestroy(other);
-
-            fuelAmount -= 5f;
-        }
-
-        if (other.CompareTag("hitchstop"))
-        {
-            if (!ishitchtrigger)
-            {
-                ishitchtrigger = true;
-                // 트리거에 들어올 때 타이머 코루틴 시작
-                timerCoroutine = StartCoroutine(ExecuteAfterDelay(2f)); // 2초 후 실행
-            }
-        }
-
-=======
->>>>>>> parent of 8a61a040 (표지판 생성)
     }
 }
