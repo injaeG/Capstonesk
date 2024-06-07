@@ -4216,8 +4216,11 @@ Transform:
   - {fileID: 1169048377706852994}
   - {fileID: 1044578926627250473}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 8099999955863948085}
   - {fileID: 2402382030550600156}
+=======
+>>>>>>> parent of d40993a (revart)
 =======
 >>>>>>> parent of d40993a (revart)
   m_Father: {fileID: 0}
@@ -8481,6 +8484,7 @@ BoxCollider:
   m_Size: {x: 3.9999967, y: 0.8225595, z: 0.015863687}
   m_Center: {x: -0.00001513958, y: 0.723443, z: 0.000000031664968}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &4302068403825595401
 GameObject:
   m_ObjectHideFlags: 0
@@ -8512,6 +8516,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 551128043192020481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of d40993a (revart)
 =======
 >>>>>>> parent of d40993a (revart)
 --- !u!1 &4311605630011759973
@@ -22495,6 +22501,7 @@ Transform:
   m_PrefabInstance: {fileID: 2799789808384581183}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &2800184291885936183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22565,6 +22572,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 49f9e3ccd96c8f44788e6a0a767e0552, type: 3}
   m_PrefabInstance: {fileID: 2800184291885936183}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of d40993a (revart)
 =======
 >>>>>>> parent of d40993a (revart)
 --- !u!1001 &2881791776170891822
