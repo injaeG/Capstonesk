@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EVENTSTICK : MonoBehaviour
+public class SlenderMan : MonoBehaviour
 {
     public GameObject prefab; // Prefab to instantiate
     public float spawnProbability = 0.5f; // Probability to spawn the prefab (0 to 1)
 
     void Start()
     {
-        // Find the object named "표지판생성"
-        GameObject signObject = GameObject.Find("표지판생성");
+       
+        GameObject signObject = GameObject.Find("슬렌더");
 
         // Check if the object exists
         if (signObject != null)
@@ -24,17 +24,10 @@ public class EVENTSTICK : MonoBehaviour
                 // Instantiate the prefab at the position of the sign object with the prefab's default rotation
                 Instantiate(prefab, signObject.transform.position, prefab.transform.rotation);
             }
-
-
         }
         else
         {
-            Debug.LogError("Object with name '표지판생성' not found");
+            Debug.LogError("Object with name '슬렌더' not found");
         }
-    }
-
-    void spawnEventStick()
-    {
-
     }
 }

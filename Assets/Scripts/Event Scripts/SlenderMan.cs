@@ -7,9 +7,10 @@ public class SlenderMan : MonoBehaviour
     public GameObject prefab; // Prefab to instantiate
     public float spawnProbability = 0.5f; // Probability to spawn the prefab (0 to 1)
 
-    void Start()
+    void SlenderManSpawnEventPrefab()
     {
-       
+        Debug.Log("SlenderMan");
+
         GameObject signObject = GameObject.Find("슬렌더");
 
         // Check if the object exists
