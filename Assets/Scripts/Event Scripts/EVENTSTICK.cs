@@ -6,6 +6,7 @@ public class EVENTSTICK : MonoBehaviour
 {
     public GameObject prefab; // Prefab to instantiate
     public float spawnProbability = 0.5f; // Probability to spawn the prefab (0 to 1)
+    public EventPrefabSpawner eventController;
 
     void Start()
     {
@@ -23,6 +24,8 @@ public class EVENTSTICK : MonoBehaviour
             {
                 // Instantiate the prefab at the position of the sign object with the prefab's default rotation
                 Instantiate(prefab, signObject.transform.position, prefab.transform.rotation);
+
+                eventController.initEvent();
             }
         }
         else

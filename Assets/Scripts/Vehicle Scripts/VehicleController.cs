@@ -277,6 +277,10 @@ public class VehicleController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
        
+        //if (other.CompareTag("Road_Make"))
+        //{
+        //    eventController.initEvent();
+        //}
 
         if (other.CompareTag("Game_Over")) // 도로 구역을 벗어났을 때
         {
@@ -307,6 +311,11 @@ public class VehicleController : MonoBehaviour
                 timerCoroutine = StartCoroutine(ExecuteAfterDelay(2f)); // 2초 후 실행
             }
         }
+
+        //if (other.CompareTag("SlenderMan"))
+        //{
+        //  
+        //}
 
     }
 

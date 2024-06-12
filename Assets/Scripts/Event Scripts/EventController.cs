@@ -21,6 +21,7 @@ public class EventPrefabSpawner : MonoBehaviour
     private Coroutine instantiateAndDestroyCoroutine;
 
     public VehicleController vehicleController;
+    public SlenderMan slenderMan;
 
     private bool eventObjectExists = true;
 
@@ -53,14 +54,18 @@ public class EventPrefabSpawner : MonoBehaviour
                 eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
                 foreach (GameObject taggedPrefab in GameObject.FindGameObjectsWithTag("event"))
                 {
-                    if (Random.Range(0, 3) == 0)
+                    int randnum = Random.Range(0, 3);
+
+                    if (randnum == 0)
                         EyeGhostSpawnEventPrefab();
+                    else if (randnum == 1)
+                        HitchhikerSpawnEventPrefab();
                     else
-                        SpawnRandomEventPrefab();
+                        slenderMan.SpawnEventPrefab();
 
                     //EyeGhostSpawnEventPrefab();
 
-                    //SpawnRandomEventPrefab();
+                        //SpawnRandomEventPrefab();
                 }
             }
         }
@@ -84,12 +89,12 @@ public class EventPrefabSpawner : MonoBehaviour
 
         if (selectedPrefab == null) return; // selectedPrefab가 null인 경우 처리를 중단합니다.
 
-        if (selectedPrefab.CompareTag("ghost"))
-        {
-            audioSource.clip = hitchhikerSound;
-            instance = Instantiate(selectedPrefab, spawnPoint.position, Quaternion.identity, spawnPoint);
-        }
-        else if (selectedPrefab.CompareTag("hitch_ghost") || selectedPrefab.CompareTag("hitch_human")) // 히치하이커
+        //if (selectedPrefab.CompareTag("ghost"))
+        //{
+        //    audioSource.clip = hitchhikerSound;
+        //    instance = Instantiate(selectedPrefab, spawnPoint.position, Quaternion.identity, spawnPoint);
+        //}
+        if (selectedPrefab.CompareTag("hitch_ghost") || selectedPrefab.CompareTag("hitch_human")) // 히치하이커
         {
             audioSource.clip = hitchhikerSound;
             GameObject[] hitchPoints = GameObject.FindGameObjectsWithTag("hitchpoint");
@@ -114,6 +119,36 @@ public class EventPrefabSpawner : MonoBehaviour
         }
 
         instantiateAndDestroyCoroutine = StartCoroutine(InstantiateAndPlayAudio(instance));
+    }
+
+    void HitchhikerSpawnEventPrefab()
+    {
+        Debug.Log("hitchhiker");
+
+        if (eventPrefabs.Length == 0) return;
+
+        GameObject selectedPrefab = null;
+
+        do
+        {
+            int index = Random.Range(0, eventPrefabs.Length);
+            selectedPrefab = eventPrefabs[index];
+        } while (selectedPrefab == null || !selectedPrefab.CompareTag("hitch_human") || !selectedPrefab.CompareTag("hitch_ghost")); // 조건 수정
+
+        audioSource.clip = hitchhikerSound;
+        GameObject[] hitchPoints = GameObject.FindGameObjectsWithTag("hitchpoint");
+        if (hitchPoints.Length == 0) return;
+
+        randomhitchPoint = hitchPoints[Random.Range(0, hitchPoints.Length)];
+        randomhitchPoint.SetActive(true);
+
+        Transform[] children = randomhitchPoint.GetComponentsInChildren<Transform>(true);
+        foreach (Transform child in children)
+        {
+            child.gameObject.SetActive(true);
+        }
+
+        instance = Instantiate(selectedPrefab, randomhitchPoint.transform.position, Quaternion.identity);
     }
 
     void EyeGhostSpawnEventPrefab()
@@ -205,7 +240,7 @@ public class EventPrefabSpawner : MonoBehaviour
 
     public void EyeGhostDestroy(Collider other)
     {
-        if (other.CompareTag("Game_Over"))
+        if (other.CompareTag("Car"))
         {
             Destroy(other.gameObject); // 오타 수정 및 정확한 파라미터 전달
         }
@@ -238,13 +273,13 @@ public class EventPrefabSpawner : MonoBehaviour
         audioSource.Play();
         yield return new WaitForSeconds(60);
 
-        if (instances != null)
-        {
+        //if (instances != null)
+        //{
 
 
-            eventcheckaudio.clip = successSound;
-            eventcheckaudio.Play();
-        }
+        //    eventcheckaudio.clip = successSound;
+        //    eventcheckaudio.Play();
+        //}
 
         if (instance.CompareTag("eye_ghost"))
         {
