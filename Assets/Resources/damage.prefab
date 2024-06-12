@@ -1,0 +1,354 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &121150559050371563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4960697426439369107}
+  m_Layer: 0
+  m_Name: damage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4960697426439369107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121150559050371563}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2615594375681312841}
+  - {fileID: 7826820163584246664}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3967161939592804608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2615594375681312841}
+  - component: {fileID: 4625241337208304002}
+  m_Layer: 0
+  m_Name: Screen Effect [Screen Shake]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2615594375681312841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3967161939592804608}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4960697426439369107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4625241337208304002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3967161939592804608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7731e18125717ec48bf79d880784ea73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMaterial: {fileID: 0}
+  priority: 0
+  stopAction: 2
+  useTargetFPS: 1
+  targetFPS: 60
+  isTimeModeSeconds: 1
+  durationSeconds: 2
+  durationFrame: 0
+  animPlaySpeed: 1
+  affectedByTimescale: 1
+  __optionFoldout1: 1
+  __optionFoldout2: 1
+  __matPropListFoldout: 1
+  __propCount: 4
+  __durationChangeActionPopupIndex: 0
+  __materialDefaultValues:
+  - time: 0
+    frame: 0
+    floatValue: 0.051
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 0.051, g: 0, b: 0, a: 0}
+    vector4: {x: 0.051, y: 0, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 40
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 40, g: 0, b: 0, a: 0}
+    vector4: {x: 40, y: 0, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 25
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 25, g: 0, b: 0, a: 0}
+    vector4: {x: 25, y: 0, z: 0, w: 0}
+  __materialCurrentValues:
+  - time: 0
+    frame: 0
+    floatValue: 0.2
+    range: {x: 0, y: 1}
+    min: 0
+    max: 1
+    color: {r: 0.2, g: 0, b: 1, a: 0}
+    vector4: {x: 0.2, y: 0, z: 1, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 40.7
+    range: {x: 0, y: 100}
+    min: 0
+    max: 100
+    color: {r: 40.7, g: 0, b: 100, a: 0}
+    vector4: {x: 40.7, y: 0, z: 100, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 60.2
+    range: {x: 0, y: 100}
+    min: 0
+    max: 100
+    color: {r: 60.2, g: 0, b: 100, a: 0}
+    vector4: {x: 60.2, y: 0, z: 100, w: 0}
+  matPropertyList:
+  - material: {fileID: 0}
+    propName: _ShakeIntensity
+    propType: 3
+    enabled: 0
+    animKeyList: []
+    __displayName: Shake Intensity
+    __propIndex: 0
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+  - material: {fileID: 0}
+    propName: _HorizontalShakeSpeed
+    propType: 3
+    enabled: 0
+    animKeyList: []
+    __displayName: Horizontal Shake Speed
+    __propIndex: 1
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+  - material: {fileID: 0}
+    propName: _VerticalShakeSpeed
+    propType: 3
+    enabled: 1
+    animKeyList:
+    - time: 0
+      frame: 0
+      floatValue: 20
+      range: {x: 0, y: 100}
+      min: 0
+      max: 100
+      color: {r: 20, g: 0, b: 100, a: 0}
+      vector4: {x: 20, y: 0, z: 100, w: 0}
+    - time: 1
+      frame: 0
+      floatValue: 20
+      range: {x: 0, y: 100}
+      min: 0
+      max: 100
+      color: {r: 20, g: 0, b: 100, a: 0}
+      vector4: {x: 20, y: 0, z: 100, w: 0}
+    - time: 2
+      frame: 0
+      floatValue: 0
+      range: {x: 0, y: 100}
+      min: 0
+      max: 100
+      color: {r: 0, g: 0, b: 100, a: 0}
+      vector4: {x: 0, y: 0, z: 100, w: 0}
+    __displayName: Vertical Shake Speed
+    __propIndex: 2
+    __foldout: 1
+    __playingIndex: 1
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 1
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+--- !u!1 &6873234124437243232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7826820163584246664}
+  - component: {fileID: 4176302980090945781}
+  m_Layer: 0
+  m_Name: damage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7826820163584246664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873234124437243232}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4960697426439369107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4176302980090945781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873234124437243232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7731e18125717ec48bf79d880784ea73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectMaterial: {fileID: 0}
+  priority: 0
+  stopAction: 2
+  useTargetFPS: 1
+  targetFPS: 60
+  isTimeModeSeconds: 1
+  durationSeconds: 2
+  durationFrame: 0
+  animPlaySpeed: 1
+  affectedByTimescale: 1
+  __optionFoldout1: 1
+  __optionFoldout2: 1
+  __matPropListFoldout: 1
+  __propCount: 4
+  __durationChangeActionPopupIndex: 0
+  __materialDefaultValues:
+  - time: 0
+    frame: 0
+    floatValue: 0.29
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 0.29, g: 0, b: 0, a: 0}
+    vector4: {x: 0.29, y: 0, z: 0, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 1
+    range: {x: 0, y: 0}
+    min: 0
+    max: 0
+    color: {r: 1, g: 0, b: 0, a: 0}
+    vector4: {x: 1, y: 0, z: 0, w: 0}
+  __materialCurrentValues:
+  - time: 0
+    frame: 0
+    floatValue: 0
+    range: {x: 0, y: 5}
+    min: 0
+    max: 5
+    color: {r: 0, g: 0, b: 5, a: 0}
+    vector4: {x: 0, y: 0, z: 5, w: 0}
+  - time: 0
+    frame: 0
+    floatValue: 1
+    range: {x: 0, y: 5}
+    min: 0
+    max: 5
+    color: {r: 1, g: 0, b: 5, a: 0}
+    vector4: {x: 1, y: 0, z: 5, w: 0}
+  matPropertyList:
+  - material: {fileID: 0}
+    propName: _Power
+    propType: 3
+    enabled: 1
+    animKeyList:
+    - time: 0
+      frame: 0
+      floatValue: 0
+      range: {x: 0, y: 5}
+      min: 0
+      max: 5
+      color: {r: 0, g: 0, b: 5, a: 0}
+      vector4: {x: 0, y: 0, z: 5, w: 0}
+    - time: 2
+      frame: 0
+      floatValue: 1
+      range: {x: 0, y: 5}
+      min: 0
+      max: 5
+      color: {r: 1, g: 0, b: 5, a: 0}
+      vector4: {x: 1, y: 0, z: 5, w: 0}
+    __displayName: Power
+    __propIndex: 1
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 1
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0
+  - material: {fileID: 0}
+    propName: _Speed
+    propType: 3
+    enabled: 0
+    animKeyList: []
+    __displayName: Speed
+    __propIndex: 2
+    __foldout: 1
+    __playingIndex: 0
+    __showGraph: 0
+    __showVectorGraphs: 01010101
+    __showAnimation: 0
+    __isGradientView: 1
+    __showIndexOrTime: 1
+    __isKeyListDirty: 0

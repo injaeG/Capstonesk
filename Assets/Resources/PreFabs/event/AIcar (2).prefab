@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5763867703841830591}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8270053236389965622}
   - component: {fileID: 8834027462278277054}
   - component: {fileID: 4771103047171700190}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4997417763560130489}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5990403923644688699}
   - component: {fileID: 5846035168395219263}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 929256891867412923}
   - component: {fileID: 2400098743502336181}
   - component: {fileID: 8035036523665676687}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 332009696374735340}
   - component: {fileID: 9188597939466090203}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2577710ba2fedff49afe28b2b3710e9b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -429,8 +429,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
-  MaxDistance: 25
+  MinDistance: 1
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -495,7 +495,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.1
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 2823981021545035854}
   - component: {fileID: 2087068595348764254}
   - component: {fileID: 5110863849560706956}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WRB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7487604056959528420}
   - component: {fileID: 2149579345109414199}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7693301255554311539}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel reansform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 2677159652797031075}
   - component: {fileID: 8399252063625802899}
   - component: {fileID: 3724095345757578384}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lightL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 1982499614073232227}
   - component: {fileID: 4106395167489875716}
   - component: {fileID: 8113425744025375945}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WRF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 6080265825954861049}
   - component: {fileID: 1253341819530074580}
   - component: {fileID: 5767348224943288856}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AIcar (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7090646, z: -0, w: 0.70514363}
   m_LocalPosition: {x: -55.27, y: 2.21, z: 47.7}
-  m_LocalScale: {x: 0.7, y: 0.52, z: 0.52}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2064436816222077542}
@@ -990,10 +990,10 @@ MonoBehaviour:
   - {fileID: 5763867703841830591}
   - {fileID: 7358925906011771797}
   centerOfMass: {fileID: 2304822874652257045}
-  maxSteerAngle: 30
-  motorTorque: 1000
-  forwardFrictionStiffness: 1
-  sidewaysFrictionStiffness: 1
+  maxSteerAngle: 60
+  motorTorque: 10000
+  forwardFrictionStiffness: 3
+  sidewaysFrictionStiffness: 3
 --- !u!114 &5767348224943288856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,7 +1010,7 @@ MonoBehaviour:
   rayDistance: 20
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   roadLayerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -1018,8 +1018,8 @@ MonoBehaviour:
   zigzagFrequency: 5
   stoppingDistance: 15
   detectionRadius: 5000
-  respawnCheckInterval: 5
-  maxDistanceFromTarget: 50
+  maxDistanceFromTarget: 1000
+  spawnHeight: 1.5
 --- !u!1 &5469797060749724784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +1029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3744620253685750319}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: scencer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 6456649096058361084}
   - component: {fileID: 5745790490784299361}
   - component: {fileID: 5266091584193791887}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: vehicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1167,7 +1167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2304822874652257045}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: center of mass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1198,7 +1198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7358925906011771797}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1231,7 +1231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5839830223950948114}
   - component: {fileID: 4568980545449367752}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1301,7 +1301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8766462987276988323}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1334,7 +1334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2063987048978501008}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1371,7 +1371,7 @@ GameObject:
   - component: {fileID: 4523796665453968176}
   - component: {fileID: 3502730711584821773}
   - component: {fileID: 2275047776553688159}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WLB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1453,7 +1453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3029915863778268912}
   - component: {fileID: 2892558964361502343}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1526,7 +1526,7 @@ GameObject:
   - component: {fileID: 4211511521846425791}
   - component: {fileID: 5254247606171799797}
   - component: {fileID: 2868831989721463867}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lightR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,7 +1629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 562313933687586185}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 4699163635039054583}
   - component: {fileID: 4027697429499353217}
   - component: {fileID: 257501013543516505}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WLF
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 2257394154852263574}
   - component: {fileID: 7056565655732488419}
   - component: {fileID: 4261554301412088135}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: prop_barrier_4M__388_.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ Transform:
   m_GameObject: {fileID: 7788182288031455240}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.91, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -60,7 +60,6 @@ public class VehicleController : MonoBehaviour
 
     public float gravityScale = 2.0f; // 중력의 강도를 설정합니다. 기본값은 1입니다.
 
-    public EventPrefabSpawner eventController;
 
     void Start()
     {
@@ -293,7 +292,6 @@ public class VehicleController : MonoBehaviour
 
             Destroy(other.gameObject);
 
-            eventController.EyeGhostDestroy(other);
 
             fuelAmount -= 5f;
         }
@@ -322,6 +320,5 @@ public class VehicleController : MonoBehaviour
         // 이벤트 실행 코드
         Debug.Log("2초 동안 머물러 이벤트 실행!");
 
-        eventController.HitchDestroy();
     }
 }

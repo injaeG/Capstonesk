@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 6500000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: "\uD45C\uC9C0\uD310"
-  m_TagString: Untagged
+  m_TagString: event
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

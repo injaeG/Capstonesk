@@ -12,7 +12,6 @@ public class CarDriverAI1 : MonoBehaviour
     [SerializeField] private float zigzagFrequency = 5f; // 지그재그 이동 빈도
     [SerializeField] private float stoppingDistance = 15f; // 타겟에서 멈출 거리
     [SerializeField] private float detectionRadius = 1000f; // 타겟 차량을 감지할 반경
-    [SerializeField] private float respawnCheckInterval = 5f; // 리스폰 체크 간격
     [SerializeField] private float maxDistanceFromTarget = 50f; // 타겟에서 최대 거리
 
     private CarDriver carDriver; // CarDriver 컴포넌트 참조
@@ -20,18 +19,16 @@ public class CarDriverAI1 : MonoBehaviour
     private Vector3 targetPosition; // 현재 타겟 위치
     private float lastTurnAmount = 0f; // 마지막 회전량 (후진 시 사용)
     private bool isReversing = false; // 후진 플래그
-    private VehicleController vehicleController; // VehicleController 컴포넌트 참조
+public float spawnHeight = 1.5f; // 차량 생성 높이
 
     private void Awake()
     {
         carDriver = GetComponent<CarDriver>();
-        vehicleController = GetComponent<VehicleController>(); // VehicleController 참조 가져오기
     }
 
     private void Start()
     {
         FindNearestTargetCar();
-        StartCoroutine(CheckAndRespawn());
     }
 
     private void Update()
@@ -98,8 +95,11 @@ public class CarDriverAI1 : MonoBehaviour
         // 계산된 값을 CarDriver 컴포넌트에 적용
         carDriver.SetInputs(forwardAmount, turnAmount);
         lastTurnAmount = turnAmount;
+            if (IsFarFromTarget())
+    {
+        Destroy(gameObject);
     }
-
+    }
     private bool IsObstacleDetected(out float turnAmount)
     {
         turnAmount = 0f;
@@ -168,70 +168,27 @@ public class CarDriverAI1 : MonoBehaviour
         this.targetPosition = targetPosition;
     }
 
-    private IEnumerator CheckAndRespawn()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(respawnCheckInterval);
-
-            if (!IsOnRoad() || IsFarFromTarget())
-            {
-                RespawnOnRoad();
-            }
-        }
-    }
-
     private bool IsOnRoad()
     {
         return Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, Mathf.Infinity, roadLayerMask);
     }
 
-    private bool IsFarFromTarget()
-    {
-        if (targetCarTransform == null) return false;
-        float distanceToTarget = Vector3.Distance(transform.position, targetCarTransform.position);
-        return distanceToTarget > maxDistanceFromTarget;
-    }
-
-    public void RespawnOnRoad()
-    {
-        // 타겟 차량의 뒤에서 스폰
-        Vector3 respawnPosition = FindBehindTargetPosition();
-        transform.position = respawnPosition;
-
-        // 타겟을 바라보도록 설정
-        if (targetCarTransform != null)
-        {
-            transform.rotation = Quaternion.LookRotation(targetCarTransform.position - transform.position, Vector3.up);
-        }
-        else
-        {
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
-        }
-    }
-
-    private Vector3 FindBehindTargetPosition()
-    {
-        Vector3 searchCenter = targetCarTransform != null ? targetCarTransform.position : transform.position;
-        Vector3 behindPosition = searchCenter - targetCarTransform.forward * 10f; // 타겟 차량 뒤 10미터
-
-        // 높은 위치에서 아래로 레이캐스팅하여 도로 위치 찾기
-        behindPosition.y = 1000f;
-        RaycastHit hit;
-        if (Physics.Raycast(behindPosition, Vector3.down, out hit, Mathf.Infinity, roadLayerMask))
-        {
-            return hit.point;
-        }
-
-        // 도로 위치를 찾지 못한 경우 원래 위치 반환
-        return transform.position;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform == targetCarTransform)
-        {
-            vehicleController.fuelConsumptionRate -= 20f;
-        }
-    }
+private bool IsFarFromTarget()
+{
+    if (targetCarTransform == null) return false;
+    float distanceToTarget = Vector3.Distance(transform.position, targetCarTransform.position);
+    return distanceToTarget > detectionRadius;
 }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Reduce fuel amount by 20 for any colliding object
+        if (other.GetComponent<VehicleController>() != null)
+        {
+            other.GetComponent<VehicleController>().fuelAmount -= 20f;
+        }
+    }
+
+    
+
+    }
