@@ -18,12 +18,25 @@ public class EVENTSTICK : MonoBehaviour
         TrySpawnPrefab();
     }
 
+    void OnTransformChildrenChanged()
+    {
+        Debug.Log("Children changed, checking for new '표지판생성' objects.");
+
+        // Re-check for the latest sign object whenever children change
+        FindLatestSignObject();
+
+        // Try to instantiate the prefab
+        TrySpawnPrefab();
+    }
+
     void FindLatestSignObject()
     {
         GameObject[] signObjects = GameObject.FindGameObjectsWithTag("표지판생성");
+        Debug.Log($"Found {signObjects.Length} objects with tag '표지판생성'.");
         if (signObjects.Length > 0)
         {
             latestSignObject = signObjects[signObjects.Length - 1];
+            Debug.Log("Latest sign object found: " + latestSignObject.name);
         }
         else
         {
@@ -38,14 +51,21 @@ public class EVENTSTICK : MonoBehaviour
         {
             // Generate a random value between 0 and 1
             float randomValue = Random.Range(0f, 1f);
+            Debug.Log($"Random value generated: {randomValue}");
 
             // Check if the random value is less than the spawn probability
             if (randomValue < spawnProbability)
             {
                 // Instantiate the prefab at the position of the latest sign object with the prefab's default rotation
                 instantiatedPrefab = Instantiate(prefab, latestSignObject.transform.position, prefab.transform.rotation, latestSignObject.transform);
+                Debug.Log("Prefab instantiated.");
+
                 // Start the coroutine to monitor the prefab
                 StartCoroutine(MonitorPrefab());
+            }
+            else
+            {
+                Debug.Log("Prefab not instantiated due to probability check.");
             }
         }
         else
@@ -61,6 +81,7 @@ public class EVENTSTICK : MonoBehaviour
             // Check if the instantiated prefab has been destroyed
             if (instantiatedPrefab == null)
             {
+                Debug.Log("Prefab destroyed. Trying to spawn again.");
                 // Try to spawn the prefab again
                 TrySpawnPrefab();
                 yield break; // Exit the coroutine
