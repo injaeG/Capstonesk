@@ -20,10 +20,12 @@ public class CarDriverAI1 : MonoBehaviour
     private Vector3 targetPosition; // 현재 타겟 위치
     private float lastTurnAmount = 0f; // 마지막 회전량 (후진 시 사용)
     private bool isReversing = false; // 후진 플래그
+    private VehicleController vehicleController; // VehicleController 컴포넌트 참조
 
     private void Awake()
     {
         carDriver = GetComponent<CarDriver>();
+        vehicleController = GetComponent<VehicleController>(); // VehicleController 참조 가져오기
     }
 
     private void Start()
@@ -223,5 +225,13 @@ public class CarDriverAI1 : MonoBehaviour
 
         // 도로 위치를 찾지 못한 경우 원래 위치 반환
         return transform.position;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform == targetCarTransform)
+        {
+            vehicleController.fuelConsumptionRate -= 20f;
+        }
     }
 }
