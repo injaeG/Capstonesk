@@ -8,7 +8,7 @@ public class EVENTSTICK : MonoBehaviour
     public float spawnProbability = 0.5f; // Probability to spawn the prefab (0 to 1)
     public EventPrefabSpawner eventController;
 
-    void Start()
+    public void Spawnstick(Transform parentTransform)
     {
         // Find the object named "표지판생성"
         GameObject signObject = GameObject.Find("표지판생성");
@@ -16,16 +16,18 @@ public class EVENTSTICK : MonoBehaviour
         // Check if the object exists
         if (signObject != null)
         {
+            Debug.Log("표지판생성");
+
             // Generate a random value between 0 and 1
             float randomValue = Random.Range(0f, 1f);
 
             // Check if the random value is less than the spawn probability
-            if (randomValue < spawnProbability)
+            if(true) /*(randomValue < spawnProbability)*/
             {
                 // Instantiate the prefab at the position of the sign object with the prefab's default rotation
                 Instantiate(prefab, signObject.transform.position, prefab.transform.rotation);
 
-                eventController.initEvent();
+                eventController.initEvent(parentTransform);
             }
         }
         else

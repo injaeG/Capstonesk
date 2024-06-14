@@ -62,6 +62,8 @@ public class VehicleController : MonoBehaviour
 
     public EventPrefabSpawner eventController;
 
+    public EVENTSTICK eventstick;
+
     void Start()
     {
         if (steeringWheel != null)
@@ -274,13 +276,30 @@ public class VehicleController : MonoBehaviour
 
     bool ishitchtrigger = false;
 
+    bool iseventtrigger = false;
+
     private void OnTriggerEnter(Collider other)
     {
-       
-        //if (other.CompareTag("Road_Make"))
-        //{
-        //    eventController.initEvent();
-        //}
+        if (other.CompareTag("Road_Make"))
+        {
+            if (!iseventtrigger)
+            {
+                // 충돌한 객체의 부모 객체를 찾습니다.
+                Transform parentTransform = other.transform.parent;
+                if (parentTransform != null)
+                {
+                    iseventtrigger = true;
+                    eventstick.Spawnstick(parentTransform);
+                }
+            }
+        }
+
+        if (other.CompareTag("Destory"))
+        {
+            iseventtrigger = false;
+
+
+        }
 
         if (other.CompareTag("Game_Over")) // 도로 구역을 벗어났을 때
         {
@@ -314,9 +333,29 @@ public class VehicleController : MonoBehaviour
 
         //if (other.CompareTag("SlenderMan"))
         //{
-        //  
-        //}
+        //    Debug.Log("SlenderMan 닿음");
 
+        //    Destroy(other.gameObject);
+
+        //    fuelAmount -= 20f;
+        //}
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("hitchstop"))
+        {
+            if (ishitchtrigger)
+            {
+                ishitchtrigger = false;
+                // 트리거에서 나갈 때 코루틴 중단
+                if (timerCoroutine != null)
+                {
+                    StopCoroutine(timerCoroutine);
+                    timerCoroutine = null;
+                }
+            }
+        }
     }
 
 
