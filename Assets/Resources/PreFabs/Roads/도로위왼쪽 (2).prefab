@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 3472266430443854203}
   m_Layer: 7
   m_Name: prop_barrier_4M__388_.004
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

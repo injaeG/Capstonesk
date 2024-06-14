@@ -82,7 +82,7 @@ public class EventPrefabSpawner : MonoBehaviour
         if (roadObjects.Length == 0) return;
 
         int count = -1;
-        float spawnHeightOffset = 1.9f; // eye_ghost 프리팹을 도로 오브젝트보다 약간 높게 생성하는 오프셋
+        float spawnHeightOffset = 1.0f; // eye_ghost 프리팹을 도로 오브젝트보다 약간 높게 생성하는 오프셋
 
         for (int j = 0; j < 4; j++)
         {
@@ -136,6 +136,7 @@ public class EventPrefabSpawner : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("Raycast failed");
                     // 레이캐스트가 지형을 맞추지 못한 경우, 기본 높이를 사용할 수 있습니다.
                     randomPosition.y = randomRoadObject.transform.position.y + spawnHeightOffset; // 기본 높이
                 }
@@ -201,7 +202,7 @@ public class EventPrefabSpawner : MonoBehaviour
     {
         if (other.CompareTag("Car"))
         {
-            Destroy(other.gameObject); // 오타 수정 및 정확한 파라미터 전달
+            Destroy(other.gameObject);
         }
 
         foreach (GameObject inst in instances)
@@ -225,13 +226,8 @@ public class EventPrefabSpawner : MonoBehaviour
         }
     }
 
-    //public void EyeGhostDestroyAll(Collider other)
+    //public void EyeGhostDestroyAll()
     //{
-    //    if (other.CompareTag("Car"))
-    //    {
-    //        Destroy(other.gameObject); // 오타 수정 및 정확한 파라미터 전달
-    //    }
-
     //    foreach (GameObject inst in instances)
     //    {
     //        if (inst == null)

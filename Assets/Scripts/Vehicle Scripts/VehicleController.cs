@@ -314,8 +314,6 @@ public class VehicleController : MonoBehaviour
         {
             Debug.Log("eye_ghost 닿음");
 
-            Destroy(other.gameObject);
-
             eventController.EyeGhostDestroy(other);
 
             fuelAmount -= 5f;
