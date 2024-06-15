@@ -129,7 +129,8 @@ public class EventPrefabSpawner : MonoBehaviour
                 Ray ray = new Ray(randomPosition + Vector3.up * 100f, Vector3.down);
                 RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity, terrainLayerMask))
+                //if (Physics.Raycast(ray, out hit, Mathf.Infinity, terrainLayerMask))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                 {
                     // 지형의 높이를 얻은 후 스폰 높이 오프셋을 더합니다.
                     randomPosition.y = hit.point.y + spawnHeightOffset;
