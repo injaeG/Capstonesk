@@ -22,7 +22,7 @@ public class EVENTSTICK : MonoBehaviour
             float randomValue = Random.Range(0f, 1f);
 
             // Check if the random value is less than the spawn probability
-            if(true) /*(randomValue < spawnProbability)*/
+            if (randomValue < spawnProbability)
             {
                 // Instantiate the prefab at the position of the sign object with the prefab's default rotation
                 Instantiate(prefab, signObject.transform.position, prefab.transform.rotation);

@@ -286,8 +286,13 @@ public class VehicleController : MonoBehaviour
             {
                 // 충돌한 객체의 부모 객체를 찾습니다.
                 Transform parentTransform = other.transform.parent;
+
+                Debug.Log(parentTransform.gameObject.name);
+
                 if (parentTransform != null)
                 {
+                    if (parentTransform.gameObject.name == "Event_PreFab_GasStation" || parentTransform.gameObject.name == "Event_Prefab_Fog")
+                        return;
                     iseventtrigger = true;
                     eventstick.Spawnstick(parentTransform);
                 }

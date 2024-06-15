@@ -43,16 +43,16 @@ public class EventPrefabSpawner : MonoBehaviour
         // PreFabs/event 디렉토리에 있는 모든 프리팹을 로드합니다.
         eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
 
-        //int randnum = Random.Range(0, 3);
+        //int randnum = Random.Range(0, 2);
 
-        int randnum = 0;
+        //Debug.Log(randnum);
 
-        if (randnum == 0)
+        if (parentTransform.gameObject.name == "Road_Prefabs_L" || parentTransform.gameObject.name == "Road_Prefabs_R")
             EyeGhostSpawnEventPrefab(parentTransform.gameObject);
-        else if (randnum == 1)
-            HitchhikerSpawnEventPrefab(parentTransform.gameObject);
         else
-            slenderMan.SpawnEventPrefab();
+            HitchhikerSpawnEventPrefab(parentTransform.gameObject);
+        //else if (randnum == 1)
+        //    slenderMan.SpawnEventPrefab(parentTransform);
     }
 
     private GameObject hitchPoint;
@@ -95,52 +95,13 @@ public class EventPrefabSpawner : MonoBehaviour
                 count++;
                 if (count >= selectedPrefabs.Length) break;
 
-                //Vector3 randomPosition = new Vector3(
-                //    Random.Range(randomRoadObject.transform.position.x - 17, randomRoadObject.transform.position.x + 17),
-                //    randomRoadObject.transform.position.y + spawnHeightOffset, // 도로의 높이 + 오프셋
-                //    Random.Range(randomRoadObject.transform.position.z - 10, randomRoadObject.transform.position.z + 10)
-                //);
-
-                //Vector3 spawnPosition = FindRoadPositionNearby();
-
-                if (randomRoadObject == null)
-                {
-                    Debug.LogError("Terrain object not assigned!");
-                    return;
-                }
-
-                MeshRenderer meshRenderer = randomRoadObject.GetComponent<MeshRenderer>();
-                if (meshRenderer == null)
-                {
-                    Debug.LogError("Terrain object does not have a MeshRenderer component!");
-                    return;
-                }
-
-                Bounds terrainBounds = meshRenderer.bounds;
-
-                // 지형의 범위 내에서 랜덤 위치를 선택합니다
                 Vector3 randomPosition = new Vector3(
-                    Random.Range(terrainBounds.min.x, terrainBounds.max.x),
-                    0, // 높이는 나중에 설정합니다.
-                    Random.Range(terrainBounds.min.z, terrainBounds.max.z)
+                    Random.Range(randomRoadObject.transform.position.x - 17, randomRoadObject.transform.position.x + 17),
+                    randomRoadObject.transform.position.y + spawnHeightOffset, // 도로의 높이 + 오프셋
+                    Random.Range(randomRoadObject.transform.position.z - 10, randomRoadObject.transform.position.z + 10)
                 );
 
-                // 지형의 높이를 계산하기 위해 아래로 레이캐스트를 수행합니다.
-                Ray ray = new Ray(randomPosition + Vector3.up * 100f, Vector3.down);
-                RaycastHit hit;
-
-                //if (Physics.Raycast(ray, out hit, Mathf.Infinity, terrainLayerMask))
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-                {
-                    // 지형의 높이를 얻은 후 스폰 높이 오프셋을 더합니다.
-                    randomPosition.y = hit.point.y + spawnHeightOffset;
-                }
-                else
-                {
-                    Debug.Log("Raycast failed");
-                    // 레이캐스트가 지형을 맞추지 못한 경우, 기본 높이를 사용할 수 있습니다.
-                    randomPosition.y = randomRoadObject.transform.position.y + spawnHeightOffset; // 기본 높이
-                }
+                //Vector3 spawnPosition = FindRoadPositionNearby();
 
                 instances[count] = Instantiate(selectedPrefabs[count], randomPosition, Quaternion.identity);
                 instantiateAndDestroyCoroutine = StartCoroutine(InstantiateAndPlayAudio(instances[count]));
@@ -184,71 +145,32 @@ public class EventPrefabSpawner : MonoBehaviour
         instantiateAndDestroyCoroutine = StartCoroutine(InstantiateAndPlayAudio(instance, randomhitchPoint));
     }
 
-    private Vector3 FindRoadPositionNearby()
-    {
-        // 'road' 태그가 있는 모든 오브젝트를 찾습니다.
-        GameObject[] roadObjects = GameObject.FindGameObjectsWithTag("Road");
-
-        // 'road' 태그가 있는 오브젝트가 없는 경우, 현재 위치 반환
-        if (roadObjects.Length == 0) return spawnPoint.position;
-
-        // 'road' 태그가 있는 오브젝트 중에서 랜덤으로 하나를 선택합니다.
-        GameObject randomRoadObject = roadObjects[Random.Range(0, roadObjects.Length)];
-
-        // 선택한 오브젝트의 위치를 반환합니다.
-        return randomRoadObject.transform.position;
-    }
+    int eye_count = 8;
 
     public void EyeGhostDestroy(Collider other)
     {
-        if (other.CompareTag("Car"))
-        {
-            Destroy(other.gameObject);
-        }
+        Destroy(other.gameObject);
 
-        foreach (GameObject inst in instances)
+        eye_count--;
+
+        Debug.Log(eye_count);
+
+        if (eye_count <= 4)
         {
-            if (inst == null)
+            // 객체가 비어있으면 발생시킬 이벤트 추가
+            Debug.Log("눈알 귀신이 4개 이하입니다.");
+
+            if (instantiateAndDestroyCoroutine != null)
             {
-                // 객체가 비어있으면 발생시킬 이벤트 추가
-                Debug.Log("눈알 귀신이 없습니다.");
-                // 혹은 다른 이벤트를 발생시킬 수 있습니다.
-                eventcheckaudio.clip = failSound;
-                eventcheckaudio.Play();
-
-                audioSource.Stop();
-
-                if (instantiateAndDestroyCoroutine != null)
-                {
-                    StopCoroutine(instantiateAndDestroyCoroutine);
-                    instantiateAndDestroyCoroutine = null;
-                }
+                StopCoroutine(instantiateAndDestroyCoroutine);
+                instantiateAndDestroyCoroutine = null;
             }
+            audioSource.Stop();
+
+            eventcheckaudio.clip = failSound;
+            eventcheckaudio.Play();
         }
     }
-
-    //public void EyeGhostDestroyAll()
-    //{
-    //    foreach (GameObject inst in instances)
-    //    {
-    //        if (inst == null)
-    //        {
-    //            // 객체가 비어있으면 발생시킬 이벤트 추가
-    //            Debug.Log("눈알 귀신이 없습니다.");
-    //            // 혹은 다른 이벤트를 발생시킬 수 있습니다.
-    //            eventcheckaudio.clip = failSound;
-    //            eventcheckaudio.Play();
-
-    //            audioSource.Stop();
-
-    //            if (instantiateAndDestroyCoroutine != null)
-    //            {
-    //                StopCoroutine(instantiateAndDestroyCoroutine);
-    //                instantiateAndDestroyCoroutine = null;
-    //            }
-    //        }
-    //    }
-    //}
 
     public void HitchDestroy()
     {
