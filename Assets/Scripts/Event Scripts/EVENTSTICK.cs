@@ -4,73 +4,85 @@ using UnityEngine;
 
 public class EVENTSTICK : MonoBehaviour
 {
-    public GameObject prefab; // Prefab to instantiate
-    public float spawnProbability = 0.5f; // Probability to spawn the prefab (0 to 1)
-    private GameObject instantiatedPrefab; // Reference to the instantiated prefab
-    private static GameObject latestSignObject; // Static reference to the most recent "표지판생성" object
+    public GameObject prefab; // 기본 Prefab
+    public GameObject specialPrefab; // 특별 Prefab
+    public float spawnProbability = 0.5f; // Prefab을 생성할 확률 (0에서 1 사이)
+    private GameObject instantiatedPrefab; // 생성된 Prefab의 참조
+    private static GameObject latestSignObject; // 가장 최근의 "표지판생성" 오브젝트
+
+    private int signSpawnCount = 0; // 생성된 표지판 개수 카운트
 
     void Start()
     {
-        // Find the most recent "표지판생성" object
+        // 최근 "표지판생성" 오브젝트 찾기
         FindLatestSignObject();
 
-        // Try to instantiate the prefab
+        // Prefab 시도
         TrySpawnPrefab();
     }
 
     void OnTransformChildrenChanged()
     {
-        Debug.Log("Children changed, checking for new '표지판생성' objects.");
+        Debug.Log("자식이 변경되었습니다. 새로운 '표지판생성' 오브젝트를 확인합니다.");
 
-        // Re-check for the latest sign object whenever children change
+        // 자식이 변경될 때마다 최신의 표지판 오브젝트 재확인
         FindLatestSignObject();
 
-        // Try to instantiate the prefab
+        // Prefab 시도
         TrySpawnPrefab();
     }
 
     void FindLatestSignObject()
     {
         GameObject[] signObjects = GameObject.FindGameObjectsWithTag("표지판생성");
-        Debug.Log($"Found {signObjects.Length} objects with tag '표지판생성'.");
+        Debug.Log($"'표지판생성' 태그를 가진 오브젝트를 발견했습니다: {signObjects.Length}개.");
         if (signObjects.Length > 0)
         {
             latestSignObject = signObjects[signObjects.Length - 1];
-            Debug.Log("Latest sign object found: " + latestSignObject.name);
+            Debug.Log("최신 표지판 오브젝트 발견: " + latestSignObject.name);
         }
         else
         {
-            Debug.LogError("No object with tag '표지판생성' found");
+            Debug.LogError("'표지판생성' 태그를 가진 오브젝트를 찾을 수 없습니다.");
         }
     }
 
     void TrySpawnPrefab()
     {
-        // Check if the most recent "표지판생성" object exists
+        // 최신 "표지판생성" 오브젝트가 존재하는지 확인
         if (latestSignObject != null)
         {
-            // Generate a random value between 0 and 1
+            // 0에서 1 사이의 랜덤 값 생성
             float randomValue = Random.Range(0f, 1f);
-            Debug.Log($"Random value generated: {randomValue}");
+            Debug.Log($"생성된 랜덤 값: {randomValue}");
 
-            // Check if the random value is less than the spawn probability
+            // 생성 확률보다 랜덤 값이 작은지 확인
             if (randomValue < spawnProbability)
             {
-                // Instantiate the prefab at the position of the latest sign object with the prefab's default rotation
+                // 기본 Prefab을 최신 표지판 오브젝트의 위치에 기본 회전으로 생성
                 instantiatedPrefab = Instantiate(prefab, latestSignObject.transform.position, prefab.transform.rotation, latestSignObject.transform);
-                Debug.Log("Prefab instantiated.");
+                Debug.Log("Prefab 생성됨.");
 
-                // Start the coroutine to monitor the prefab
+                // Prefab 모니터링 코루틴 시작
                 StartCoroutine(MonitorPrefab());
+
+                // 표지판 생성 카운트 증가
+                signSpawnCount++;
+
+                // 5개의 표지판이 생성되면 특별 Prefab 생성
+                if (signSpawnCount >= 5)
+                {
+                    InstantiateSpecialPrefab();
+                }
             }
             else
             {
-                Debug.Log("Prefab not instantiated due to probability check.");
+                Debug.Log("확률 검사에 의해 Prefab이 생성되지 않았습니다.");
             }
         }
         else
         {
-            Debug.LogError("Latest object with tag '표지판생성' not found");
+            Debug.LogError("'표지판생성' 태그를 가진 최신 오브젝트를 찾을 수 없습니다.");
         }
     }
 
@@ -78,16 +90,26 @@ public class EVENTSTICK : MonoBehaviour
     {
         while (true)
         {
-            // Check if the instantiated prefab has been destroyed
+            // 생성된 Prefab이 파괴되었는지 확인
             if (instantiatedPrefab == null)
             {
-                Debug.Log("Prefab destroyed. Trying to spawn again.");
-                // Try to spawn the prefab again
+                Debug.Log("Prefab이 파괴되었습니다. 다시 생성을 시도합니다.");
+                // 다시 Prefab 생성을 시도
                 TrySpawnPrefab();
-                yield break; // Exit the coroutine
+                yield break; // 코루틴 종료
             }
-            // Wait for a frame before checking again
+            // 다시 확인하기 전에 한 프레임 기다림
             yield return null;
         }
+    }
+
+    void InstantiateSpecialPrefab()
+    {
+        // 특별 Prefab을 최신 표지판 오브젝트의 위치에 기본 회전으로 생성
+        GameObject instance = Instantiate(specialPrefab, latestSignObject.transform.position, specialPrefab.transform.rotation, latestSignObject.transform);
+        Debug.Log("특별 Prefab 생성됨.");
+
+        // 특별 Prefab 생성 후 표지판 생성 카운트 초기화
+        signSpawnCount = 0;
     }
 }
