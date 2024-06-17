@@ -3924,7 +3924,7 @@ GameObject:
   - component: {fileID: 3704011524508386030}
   - component: {fileID: 7188671678999769577}
   - component: {fileID: 2695551241298059}
-  - component: {fileID: 1169669451521439484}
+  - component: {fileID: 8413052259364981964}
   m_Layer: 0
   m_Name: Fuel_Charge
   m_TagString: Fuel_Charge
@@ -4019,7 +4019,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1169669451521439484
+--- !u!114 &8413052259364981964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4028,10 +4028,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1916714016789130831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98086fb4385e8f44c85043bb4b6b851f, type: 3}
+  m_Script: {fileID: 11500000, guid: 18a0ddfe602d4d9408e2bd11bf63915c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargeSound: {fileID: 8300000, guid: 96e6cd4d02b3d7e4cb236d6686b33222, type: 3}
+  chargeSound: {fileID: 8300000, guid: b57171b37744bd9499ead37a476c92b3, type: 3}
 --- !u!1 &2002076681456029008
 GameObject:
   m_ObjectHideFlags: 0
@@ -4149,7 +4149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 551128043192020481}
   m_Layer: 0
-  m_Name: Event_PreFab_GasStation
+  m_Name: Event_PreFab_GasStation_Fake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12505,7 +12505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea1497effcf9894d98515a9f0be3252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 4980ecce566431d48bd3978176b4e1a9, type: 3}
+  audioClip: {fileID: 8300000, guid: 1d5ab138835f7f0438acc9baa6de3f53, type: 3}
 --- !u!82 &625731884271467112
 AudioSource:
   m_ObjectHideFlags: 0

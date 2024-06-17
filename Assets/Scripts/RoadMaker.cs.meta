@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - endMarker: {fileID: 8941601876672791298, guid: 7c77e490201da0343b205f2db7f0c0bf, type: 3}
+  - eventPrefabGasStation: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
