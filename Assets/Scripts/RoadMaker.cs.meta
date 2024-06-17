@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - eventPrefabGasStation: {instanceID: 0}
+  - specialPrefab: {fileID: 4713865722116576609, guid: 1cf118e833f80904983295675898f0e3, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
