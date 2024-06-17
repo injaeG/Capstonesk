@@ -17,6 +17,12 @@ public class PlayOnGameStart : MonoBehaviour
             return;
         }
 
+        // 2초 뒤에 PlaySound 메서드를 호출합니다.
+        Invoke("PlaySound", 2f);
+    }
+
+    void PlaySound()
+    {
         // 오디오 클립 설정 및 재생
         audioSource.clip = startClip;
         audioSource.Play();
