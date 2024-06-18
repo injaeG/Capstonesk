@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2650832525687602341}
   - component: {fileID: 4664391342125388571}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 8776310091198817843}
   - component: {fileID: 3494374392995294578}
   - component: {fileID: 3667996821614332605}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lightR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5812553250390999568}
   - component: {fileID: 717888180858326771}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 3309080974283563664}
   - component: {fileID: 521543470052017072}
   - component: {fileID: 2304882716224966547}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7325459054663256023}
   - component: {fileID: 477376410533830958}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 2213952378425876228}
   - component: {fileID: 7486695198263746800}
   - component: {fileID: 578409503077637851}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WFL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 1875217303764708780}
   - component: {fileID: 3926706225949198556}
   - component: {fileID: 3263187281057747267}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6984750529177940631}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: scencer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5042446986888724852}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2207584480450845599}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5048148904122662770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 7034198507333159978}
   - component: {fileID: 493681918901802029}
   - component: {fileID: 7084980390216852508}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,7 +888,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5202081361744726324}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel reansform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -923,7 +923,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3280925457110777577}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheel Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 1580718756424742956}
   - component: {fileID: 6038816161778933382}
   - component: {fileID: 6740915118219683036}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1120,7 +1120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 248948632185683047}
   - component: {fileID: 1715502952774240837}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1193,7 +1193,7 @@ GameObject:
   - component: {fileID: 4562102009189108191}
   - component: {fileID: 5766069801446198002}
   - component: {fileID: 8681868398349795694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lightL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1296,7 +1296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3305330030373879429}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: center of mass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1331,7 +1331,7 @@ GameObject:
   - component: {fileID: 4416452545886491859}
   - component: {fileID: 576459608096771800}
   - component: {fileID: 8754315926551157123}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AIcar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1348,7 +1348,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7090646, z: -0, w: 0.70514363}
   m_LocalPosition: {x: -56.52, y: 2.8, z: 47.7}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6304680495170821804}
@@ -1445,15 +1445,15 @@ MonoBehaviour:
   rayDistance: 20
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 1024
   roadLayerMask:
     serializedVersion: 2
     m_Bits: 128
   zigzagChase: 0
   zigzagFrequency: 5
-  stoppingDistance: 15
-  detectionRadius: 10000
-  maxDistanceFromTarget: 50
+  stoppingDistance: 1
+  detectionRadius: 30
+  maxDistanceFromTarget: 100
   spawnHeight: 1.5
 --- !u!1 &6873906278721612638
 GameObject:
@@ -1466,7 +1466,7 @@ GameObject:
   - component: {fileID: 7863742522145075999}
   - component: {fileID: 157519641210771911}
   - component: {fileID: 1387978948096459139}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WBR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1549,7 +1549,7 @@ GameObject:
   - component: {fileID: 8299245802630971750}
   - component: {fileID: 553393302686234898}
   - component: {fileID: 5641011533093682436}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WBL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1630,7 +1630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5791325541091637491}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1662,7 +1662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3822741145258100585}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1696,7 +1696,7 @@ GameObject:
   - component: {fileID: 1689749018604791284}
   - component: {fileID: 6821383846746596348}
   - component: {fileID: 3141475762019576909}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}

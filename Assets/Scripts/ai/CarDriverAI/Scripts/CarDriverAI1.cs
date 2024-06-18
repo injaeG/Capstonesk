@@ -19,7 +19,7 @@ public class CarDriverAI1 : MonoBehaviour
     private Vector3 targetPosition; // 현재 타겟 위치
     private float lastTurnAmount = 0f; // 마지막 회전량 (후진 시 사용)
     private bool isReversing = false; // 후진 플래그
-public float spawnHeight = 1.5f; // 차량 생성 높이
+    public float spawnHeight = 1.5f; // 차량 생성 높이
 
     private void Awake()
     {
@@ -62,26 +62,16 @@ public float spawnHeight = 1.5f; // 차량 생성 높이
             else
             {
                 // 장애물 없음, 타겟으로 이동
-                if (dot > 0)
-                {
-                    forwardAmount = 1f;
+                forwardAmount = 1f;
 
-                    if (zigzagChase)
-                    {
-                        turnAmount = Mathf.Sin(Time.time * zigzagFrequency) * 0.5f; // 지그재그 이동
-                    }
-                    else
-                    {
-                        float angleToDir = Vector3.SignedAngle(frontTransform.forward, dirToMovePosition, Vector3.up);
-                        turnAmount = Mathf.Clamp(angleToDir / 45f, -1f, 1f); // 타겟 각도에 비례한 회전량
-                    }
+                if (zigzagChase)
+                {
+                    turnAmount = Mathf.Sin(Time.time * zigzagFrequency) * 0.5f; // 지그재그 이동
                 }
                 else
                 {
-                    // 타겟이 뒤에 있을 경우 후진
-                    forwardAmount = -1f;
                     float angleToDir = Vector3.SignedAngle(frontTransform.forward, dirToMovePosition, Vector3.up);
-                    turnAmount = Mathf.Clamp(angleToDir / 45f, -1f, 1f);
+                    turnAmount = Mathf.Clamp(angleToDir / 45f, -1f, 1f); // 타겟 각도에 비례한 회전량
                 }
             }
         }
@@ -95,11 +85,13 @@ public float spawnHeight = 1.5f; // 차량 생성 높이
         // 계산된 값을 CarDriver 컴포넌트에 적용
         carDriver.SetInputs(forwardAmount, turnAmount);
         lastTurnAmount = turnAmount;
-            if (IsFarFromTarget())
-    {
-        Destroy(gameObject);
+        
+        if (IsFarFromTarget())
+        {
+            Destroy(gameObject);
+        }
     }
-    }
+
     private bool IsObstacleDetected(out float turnAmount)
     {
         turnAmount = 0f;
@@ -168,17 +160,12 @@ public float spawnHeight = 1.5f; // 차량 생성 높이
         this.targetPosition = targetPosition;
     }
 
-    private bool IsOnRoad()
+    private bool IsFarFromTarget()
     {
-        return Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, Mathf.Infinity, roadLayerMask);
+        if (targetCarTransform == null) return false;
+        float distanceToTarget = Vector3.Distance(transform.position, targetCarTransform.position);
+        return distanceToTarget > detectionRadius;
     }
-
-private bool IsFarFromTarget()
-{
-    if (targetCarTransform == null) return false;
-    float distanceToTarget = Vector3.Distance(transform.position, targetCarTransform.position);
-    return distanceToTarget > detectionRadius;
-}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -188,7 +175,4 @@ private bool IsFarFromTarget()
             other.GetComponent<VehicleController>().fuelAmount -= 20f;
         }
     }
-
-    
-
-    }
+}

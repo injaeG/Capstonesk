@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1784676, g: 0.2234643, b: 0.3054576, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,9 +136,9 @@ GameObject:
   - component: {fileID: 324378206}
   - component: {fileID: 324378205}
   - component: {fileID: 324378204}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: sidewalk
-  m_TagString: event
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 491264143}
   m_Layer: 0
   m_Name: target
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 1161190806}
   - component: {fileID: 1161190805}
   - component: {fileID: 1161190804}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: sidewalk (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,7 +630,7 @@ GameObject:
   - component: {fileID: 1184753343}
   - component: {fileID: 1184753342}
   - component: {fileID: 1184753341}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: sidewalk (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +849,7 @@ GameObject:
   - component: {fileID: 1354796573}
   - component: {fileID: 1354796572}
   - component: {fileID: 1354796571}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: sidewalk (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1066,7 +1066,7 @@ GameObject:
   - component: {fileID: 1616975204}
   - component: {fileID: 1616975203}
   - component: {fileID: 1616975202}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: sidewalk (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1191,7 +1191,7 @@ GameObject:
   - component: {fileID: 1846924162}
   - component: {fileID: 1846924161}
   - component: {fileID: 1846924160}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: sidewalk (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,6 +1359,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5116567843950156253, guid: 9f22d0eff8812994e8d32a1070a664c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1433,6 +1437,10 @@ PrefabInstance:
       value: AIcar
       objectReference: {fileID: 0}
     - target: {fileID: 3884867223306751915, guid: 21bc9bb92ecd84449a33eac5739627cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574216063323143261, guid: 21bc9bb92ecd84449a33eac5739627cc, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1565,6 +1573,26 @@ PrefabInstance:
     - target: {fileID: 6344654605482303600, guid: 2d57d730009c9d0408f996fb7bfd0592, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150343479776870530, guid: 2d57d730009c9d0408f996fb7bfd0592, type: 3}
+      propertyPath: maxSteerAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150343479776870530, guid: 2d57d730009c9d0408f996fb7bfd0592, type: 3}
+      propertyPath: forwardFrictionStiffness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150343479776870530, guid: 2d57d730009c9d0408f996fb7bfd0592, type: 3}
+      propertyPath: sidewaysFrictionStiffness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832231036160894489, guid: 2d57d730009c9d0408f996fb7bfd0592, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457090588817317742, guid: 2d57d730009c9d0408f996fb7bfd0592, type: 3}
+      propertyPath: detectionRadius
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
