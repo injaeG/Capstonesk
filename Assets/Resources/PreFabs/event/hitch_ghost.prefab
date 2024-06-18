@@ -2090,7 +2090,7 @@ GameObject:
   - component: {fileID: -3921071599407340273}
   m_Layer: 3
   m_Name: hitch_ghost
-  m_TagString: hitch_ghost
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

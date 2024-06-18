@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MoveForwardHitch : MonoBehaviour
 {
-    public float fixedY = 1.0f; // 고정할 Y 좌표 값
+    //public float fixedY = 1.0f; // 고정할 Y 좌표 값
 
     void Update()
     {

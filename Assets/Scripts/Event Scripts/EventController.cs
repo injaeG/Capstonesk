@@ -22,7 +22,7 @@ public class EventPrefabSpawner : MonoBehaviour
     private Coroutine instantiateAndDestroyCoroutine;
 
     public VehicleController vehicleController;
-    public SlenderMan slenderMan;
+    //public SlenderMan slenderMan;
 
     public LayerMask terrainLayerMask; // 지형 레이어 마스크
 
@@ -49,7 +49,7 @@ public class EventPrefabSpawner : MonoBehaviour
 
         if (parentTransform.gameObject.name == "Road_Prefabs_L" || parentTransform.gameObject.name == "Road_Prefabs_R")
             EyeGhostSpawnEventPrefab(parentTransform.gameObject);
-        else
+        else if (parentTransform.gameObject.name != "Event_Prefab_Fog" || parentTransform.gameObject.name != "Event_PreFab_GasStation")
             HitchhikerSpawnEventPrefab(parentTransform.gameObject);
         //else if (randnum == 1)
         //    slenderMan.SpawnEventPrefab(parentTransform);
@@ -115,13 +115,19 @@ public class EventPrefabSpawner : MonoBehaviour
 
         if (eventPrefabs.Length == 0) return;
 
-        GameObject selectedPrefab = null;
+        GameObject[] selectedPrefab = new GameObject[2];
 
         do
         {
             int index = Random.Range(0, eventPrefabs.Length);
-            selectedPrefab = eventPrefabs[index];
-        } while (selectedPrefab == null || (!selectedPrefab.CompareTag("hitch_human") && !selectedPrefab.CompareTag("hitch_ghost")));
+            selectedPrefab[0] = eventPrefabs[index];
+        } while (selectedPrefab[0] == null || (!selectedPrefab[0].CompareTag("hitch_human")));
+
+        do
+        {
+            int index = Random.Range(0, eventPrefabs.Length);
+            selectedPrefab[1] = eventPrefabs[index];
+        } while (selectedPrefab[1] == null || (!selectedPrefab[1].CompareTag("hitch_ghost")));
 
         audioSource.clip = hitchhikerSound;
 
@@ -141,7 +147,9 @@ public class EventPrefabSpawner : MonoBehaviour
             child.gameObject.SetActive(true);
         }
 
-        instance = Instantiate(selectedPrefab, randomhitchPoint.transform.position, Quaternion.identity);
+        int i = Random.Range(0, 2);
+
+        instance = Instantiate(selectedPrefab[i], randomhitchPoint.transform.position, Quaternion.identity);
         instantiateAndDestroyCoroutine = StartCoroutine(InstantiateAndPlayAudio(instance, randomhitchPoint));
     }
 
