@@ -9,6 +9,7 @@ public class EVENTSTICK : MonoBehaviour
     public float spawnProbability = 0.5f; // Prefab을 생성할 확률 (0에서 1 사이)
     private GameObject instantiatedPrefab; // 생성된 Prefab의 참조
     private static GameObject latestSignObject; // 가장 최근의 "표지판생성" 오브젝트
+    private RoadMaker roadMaker; // RoadMaker 스크립트 참조
 
     private int signSpawnCount = 0; // 생성된 표지판 개수 카운트
 
@@ -16,6 +17,9 @@ public class EVENTSTICK : MonoBehaviour
     {
         // 최근 "표지판생성" 오브젝트 찾기
         FindLatestSignObject();
+
+        // RoadMaker 스크립트 찾기
+        FindRoadMaker();
 
         // Prefab 시도
         TrySpawnPrefab();
@@ -47,6 +51,15 @@ public class EVENTSTICK : MonoBehaviour
         }
     }
 
+    void FindRoadMaker()
+    {
+        roadMaker = FindObjectOfType<RoadMaker>();
+        if (roadMaker == null)
+        {
+            Debug.LogError("RoadMaker 스크립트를 찾을 수 없습니다.");
+        }
+    }
+
     void TrySpawnPrefab()
     {
         // 최신 "표지판생성" 오브젝트가 존재하는지 확인
@@ -68,6 +81,13 @@ public class EVENTSTICK : MonoBehaviour
 
                 // 표지판 생성 카운트 증가
                 signSpawnCount++;
+
+                // RoadMaker 스크립트 중지 조건
+                if (signSpawnCount >= 4 && roadMaker != null)
+                {
+                    roadMaker.enabled = false;
+                    Debug.Log("RoadMaker 스크립트가 중지되었습니다.");
+                }
 
                 // 5개의 표지판이 생성되면 특별 Prefab 생성
                 if (signSpawnCount >= 5)
@@ -105,11 +125,21 @@ public class EVENTSTICK : MonoBehaviour
 
     void InstantiateSpecialPrefab()
     {
-        // 특별 Prefab을 최신 표지판 오브젝트의 위치에 기본 회전으로 생성
-        GameObject instance = Instantiate(specialPrefab, latestSignObject.transform.position, specialPrefab.transform.rotation, latestSignObject.transform);
-        Debug.Log("특별 Prefab 생성됨.");
+        // "Road_Spawn_Place" 태그를 가진 오브젝트 찾기
+        GameObject roadSpawnPlace = GameObject.FindGameObjectWithTag("Road_Spawn_Place");
+        
+        if (roadSpawnPlace != null)
+        {
+            // 특별 Prefab을 "Road_Spawn_Place" 오브젝트의 위치와 회전으로 생성
+            GameObject instance = Instantiate(specialPrefab, roadSpawnPlace.transform.position, roadSpawnPlace.transform.rotation);
+            Debug.Log("특별 Prefab 생성됨.");
 
-        // 특별 Prefab 생성 후 표지판 생성 카운트 초기화
-        signSpawnCount = 0;
+            // 특별 Prefab 생성 후 표지판 생성 카운트 초기화
+            signSpawnCount = 0;
+        }
+        else
+        {
+            Debug.LogError("'Road_Spawn_Place' 태그를 가진 오브젝트를 찾을 수 없습니다.");
+        }
     }
 }

@@ -3445,7 +3445,7 @@ GameObject:
   - component: {fileID: 1546002287950505687}
   m_Layer: 0
   m_Name: EndPoint
-  m_TagString: Untagged
+  m_TagString: Road_Spawn_Place
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

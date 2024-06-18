@@ -1545,7 +1545,7 @@ MonoBehaviour:
   - {fileID: 6494219806390356868}
   centerOfMass: {fileID: 4832309018944958577}
   maxSteerAngle: 30
-  motorTorque: 2000
+  motorTorque: 7000
   forwardFrictionStiffness: 2
   sidewaysFrictionStiffness: 2
 --- !u!114 &8457090588817317742
@@ -1564,16 +1564,16 @@ MonoBehaviour:
   rayDistance: 20
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   roadLayerMask:
     serializedVersion: 2
     m_Bits: 128
   zigzagChase: 0
   zigzagFrequency: 5
   stoppingDistance: 15
-  detectionRadius: 3000
-  respawnCheckInterval: 5
+  detectionRadius: 10000
   maxDistanceFromTarget: 50
+  spawnHeight: 1.5
 --- !u!1 &7861898088974166847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,6 +1584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7749935959206780025}
   - component: {fileID: 2103204747047185496}
+  - component: {fileID: 4587680923702678659}
   m_Layer: 0
   m_Name: sound
   m_TagString: Untagged
@@ -1626,8 +1627,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 5
-  MaxDistance: 25
+  MinDistance: 10
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1637,23 +1638,41 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 0.17979737
+      value: 0.620945
+      inSlope: -5.0019917
+      outSlope: -5.0019917
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.4
+      value: 0.5
+      inSlope: -1.2504979
+      outSlope: -1.2504979
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.8
+      value: 0.25
+      inSlope: -0.31262448
+      outSlope: -0.31262448
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 0.2
+      inSlope: -0.20007975
+      outSlope: -0.20007975
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -1662,7 +1681,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1692,7 +1711,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.1
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1702,6 +1721,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4587680923702678659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7861898088974166847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8371bba76bfbf44a1109cd0f859370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionChange: {x: 0, y: 0, z: 0.02}
+  front: 1
 --- !u!1 &8991602242240308589
 GameObject:
   m_ObjectHideFlags: 0

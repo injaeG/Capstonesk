@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 6142507033853272990}
   m_Layer: 0
   m_Name: Ending_Place
-  m_TagString: End
+  m_TagString: Road_Spawn_Place
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 8998988499281219098}
   - component: {fileID: 7847281256146968767}
   - component: {fileID: 71547526401632209}
+  - component: {fileID: 3118178043585396092}
   m_Layer: 0
   m_Name: rock.001
   m_TagString: Untagged
@@ -422,6 +423,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3118178043585396092
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4202319559427278851}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020836126, y: 0.028526794, z: 0.013897933}
+  m_Center: {x: -0.004402397, y: 0.010312309, z: -0.003046162}
 --- !u!1 &4713865722116576609
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,8 +468,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4713865722116576609}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -286, y: 0, z: -51.7}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -459,7 +481,7 @@ Transform:
   - {fileID: 21701535164026301}
   - {fileID: 1331048178644035454}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &7506610014329889985
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +695,7 @@ GameObject:
   - component: {fileID: 7703157213737580384}
   - component: {fileID: 2610612317477692769}
   - component: {fileID: 771423648276414415}
+  - component: {fileID: 3394978366573831063}
   m_Layer: 0
   m_Name: WetFloorSign_01
   m_TagString: Untagged
@@ -688,13 +711,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8442059507014298760}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000035390258, y: 0.00000017881393, z: -0.99871194, w: 0.050738703}
-  m_LocalPosition: {x: 0.022371, y: 0.5208, z: 0.0015}
+  m_LocalRotation: {x: -0.00000026822087, y: 0.00000039488071, z: -0.15681379, w: 0.98762816}
+  m_LocalPosition: {x: -0.057245657, y: -0.09759795, z: 0.0009999562}
   m_LocalScale: {x: 0.69065, y: 0.69065, z: 0.69065}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 400478422380374432}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -174.183}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -18.044}
 --- !u!33 &2610612317477692769
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -745,3 +768,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3394978366573831063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442059507014298760}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.019298859, y: 0.021546308, z: 0.032483853}
+  m_Center: {x: 0.02602453, y: 0.3075964, z: 0.020925699}
