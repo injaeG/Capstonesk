@@ -5,9 +5,9 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - spawnPoint: {instanceID: 0}
-  - eye_ghostSound: {fileID: 8300000, guid: c922081a161935047babba52f856f551, type: 3}
+  - eye_ghostSound: {instanceID: 0}
   - eventSound: {instanceID: 0}
-  - hitchhikerSound: {fileID: 8300000, guid: 8417c18176f92b54d832c5a7437a07b0, type: 3}
+  - hitchhikerSound: {instanceID: 0}
   - successSound: {instanceID: 0}
   - failSound: {instanceID: 0}
   - vehicleController: {instanceID: 0}

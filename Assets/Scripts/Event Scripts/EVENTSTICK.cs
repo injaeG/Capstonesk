@@ -11,6 +11,8 @@ public class EVENTSTICK : MonoBehaviour
     private static GameObject latestSignObject; // 가장 최근의 "표지판생성" 오브젝트
     private RoadMaker roadMaker; // RoadMaker 스크립트 참조
 
+    public EventPrefabSpawner eventPrefabSpawner;
+
     private int signSpawnCount = 0; // 생성된 표지판 개수 카운트
 
     void Start()
@@ -94,6 +96,10 @@ public class EVENTSTICK : MonoBehaviour
                 {
                     InstantiateSpecialPrefab();
                 }
+
+                randomint = Random.Range(0, 2);
+                if(ramdomint == 0)
+                    eventPrefabSpawner.initEvent();
             }
             else
             {
