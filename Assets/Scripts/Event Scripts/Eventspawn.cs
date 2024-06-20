@@ -6,6 +6,8 @@ public class PrefabSpawner : MonoBehaviour
 {
     public string eventTag = "event";
     public string carTag = "Car";
+    public string eventstickTag = "start_map";
+    private GameObject eventstick; // eventstick을 동적으로 할당하기 위한 변수
     public GameObject[] prefabs; // Inspector에서 프리팹을 직접 할당
     private bool hasSpawned = false; // 프리팹이 이미 생성되었는지 확인하는 변수
     private List<Vector3> spawnedPositions = new List<Vector3>(); // 생성된 프리팹 위치를 기록하는 리스트
@@ -21,10 +23,31 @@ public class PrefabSpawner : MonoBehaviour
         {
             GameObject[] eventTargets = GameObject.FindGameObjectsWithTag(eventTag);
             GameObject[] carTargets = GameObject.FindGameObjectsWithTag(carTag);
+            eventstick = GameObject.FindGameObjectWithTag(eventstickTag);
+
+            if (eventstick == null)
+            {
+                Debug.LogError("EventStick 오브젝트를 찾을 수 없습니다.");
+                return;
+            }
+
+            // EventStick 스크립트 컴포넌트를 가져옵니다.
+            EVENTSTICK eventStickComponent = eventstick.GetComponent<EVENTSTICK>();
+
+            if (eventStickComponent == null)
+            {
+                Debug.LogError("EventStick 컴포넌트를 찾을 수 없습니다.");
+                return;
+            }
 
             if (eventTargets.Length == 0 || carTargets.Length == 0)
             {
                 return; // 이벤트 타겟 또는 카 타겟이 없는 경우
+            }
+
+            if(eventStickComponent.isMakePrefab)
+            {
+                return;
             }
 
             GameObject farthestEventTarget = null;
@@ -48,6 +71,8 @@ public class PrefabSpawner : MonoBehaviour
                 Vector3 spawnPosition = farthestEventTarget.transform.position + Vector3.up * 10f;
 
                 // 이미 생성된 위치인지 확인합니다.
+
+
                 if (!spawnedPositions.Contains(spawnPosition))
                 {
                     // 프리팹 배열에서 랜덤하게 하나를 선택합니다.

@@ -10,10 +10,15 @@ public class EVENTSTICK : MonoBehaviour
     private GameObject instantiatedPrefab; // 생성된 Prefab의 참조
     private static GameObject latestSignObject; // 가장 최근의 "표지판생성" 오브젝트
     private RoadMaker roadMaker; // RoadMaker 스크립트 참조
+    private GameObject parentRoad;
 
     public EventPrefabSpawner eventPrefabSpawner;
 
+    public bool isMakePrefab;
+
     private int signSpawnCount = 0; // 생성된 표지판 개수 카운트
+
+    private Coroutine timerCoroutine;
 
     void Start()
     {
@@ -24,7 +29,7 @@ public class EVENTSTICK : MonoBehaviour
         FindRoadMaker();
 
         // Prefab 시도
-        TrySpawnPrefab();
+        TrySpawnPrefab(parentRoad);
     }
 
     void OnTransformChildrenChanged()
@@ -32,13 +37,13 @@ public class EVENTSTICK : MonoBehaviour
         Debug.Log("자식이 변경되었습니다. 새로운 '표지판생성' 오브젝트를 확인합니다.");
 
         // 자식이 변경될 때마다 최신의 표지판 오브젝트 재확인
-        FindLatestSignObject();
+        parentRoad = FindLatestSignObject();
 
         // Prefab 시도
-        TrySpawnPrefab();
+        TrySpawnPrefab(parentRoad);
     }
 
-    void FindLatestSignObject()
+    GameObject FindLatestSignObject()
     {
         GameObject[] signObjects = GameObject.FindGameObjectsWithTag("표지판생성");
         Debug.Log($"'표지판생성' 태그를 가진 오브젝트를 발견했습니다: {signObjects.Length}개.");
@@ -46,10 +51,12 @@ public class EVENTSTICK : MonoBehaviour
         {
             latestSignObject = signObjects[signObjects.Length - 1];
             Debug.Log("최신 표지판 오브젝트 발견: " + latestSignObject.name);
+            return latestSignObject.transform.parent.gameObject;
         }
         else
         {
             Debug.LogError("'표지판생성' 태그를 가진 오브젝트를 찾을 수 없습니다.");
+            return null;
         }
     }
 
@@ -62,7 +69,7 @@ public class EVENTSTICK : MonoBehaviour
         }
     }
 
-    void TrySpawnPrefab()
+    void TrySpawnPrefab(GameObject gameObject)
     {
         // 최신 "표지판생성" 오브젝트가 존재하는지 확인
         if (latestSignObject != null)
@@ -97,9 +104,18 @@ public class EVENTSTICK : MonoBehaviour
                     InstantiateSpecialPrefab();
                 }
 
-                randomint = Random.Range(0, 2);
-                if(ramdomint == 0)
-                    eventPrefabSpawner.initEvent();
+                int randomint = Random.Range(0, 2);
+                if (randomint == 0)
+                {
+                    Debug.Log("init Event ready");
+                    isMakePrefab = true;
+                    timerCoroutine = StartCoroutine(init(30f));
+                    //eventPrefabSpawner.initEvent(gameObject.transform);
+                }
+                else
+                {
+                    isMakePrefab = false;
+                }
             }
             else
             {
@@ -112,6 +128,12 @@ public class EVENTSTICK : MonoBehaviour
         }
     }
 
+    IEnumerator init(float delay)
+    {
+        yield return new WaitForSeconds(delay); // 지정된 시간 동안 대기
+        eventPrefabSpawner.initEvent(gameObject.transform);
+    }
+
     IEnumerator MonitorPrefab()
     {
         while (true)
@@ -121,7 +143,7 @@ public class EVENTSTICK : MonoBehaviour
             {
                 Debug.Log("Prefab이 파괴되었습니다. 다시 생성을 시도합니다.");
                 // 다시 Prefab 생성을 시도
-                TrySpawnPrefab();
+                TrySpawnPrefab(parentRoad);
                 yield break; // 코루틴 종료
             }
             // 다시 확인하기 전에 한 프레임 기다림

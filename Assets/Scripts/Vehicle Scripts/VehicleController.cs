@@ -61,6 +61,10 @@ public class VehicleController : MonoBehaviour
     public float gravityScale = 2.0f; // 중력의 강도를 설정합니다. 기본값은 1입니다.
 
 
+    public EventPrefabSpawner eventController;
+
+    public EVENTSTICK eventstick;
+
     void Start()
     {
         if (steeringWheel != null)
@@ -273,9 +277,30 @@ public class VehicleController : MonoBehaviour
 
     bool ishitchtrigger = false;
 
+    bool isEventTrigger = false;
+
     private void OnTriggerEnter(Collider other)
     {
-       
+        if (other.CompareTag("Road_Make"))
+        {
+            if (!isEventTrigger)
+            {
+                isEventTrigger = true;
+                // 충돌한 객체의 부모 객체를 찾습니다.
+                Transform parentTransform = other.transform.parent;
+
+                if (parentTransform != null)
+                {
+                    Debug.Log(parentTransform.gameObject.name);
+                    eventController.initEventghost(parentTransform);
+                }
+                else
+                {
+                    Debug.LogWarning("부모 객체가 없습니다.");
+                }
+            }
+        }
+
 
         if (other.CompareTag("Game_Over")) // 도로 구역을 벗어났을 때
         {
@@ -290,8 +315,7 @@ public class VehicleController : MonoBehaviour
         {
             Debug.Log("eye_ghost 닿음");
 
-            Destroy(other.gameObject);
-
+            eventController.EyeGhostDestroy(other);
 
             fuelAmount -= 5f;
         }
@@ -305,9 +329,24 @@ public class VehicleController : MonoBehaviour
                 timerCoroutine = StartCoroutine(ExecuteAfterDelay(2f)); // 2초 후 실행
             }
         }
-
     }
 
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("hitchstop"))
+        {
+            if (ishitchtrigger)
+            {
+                ishitchtrigger = false;
+                // 트리거에서 나갈 때 코루틴 중단
+                if (timerCoroutine != null)
+                {
+                    StopCoroutine(timerCoroutine);
+                    timerCoroutine = null;
+                }
+            }
+        }
+    }
 
     IEnumerator ExecuteAfterDelay(float delay)
     {
@@ -320,5 +359,6 @@ public class VehicleController : MonoBehaviour
         // 이벤트 실행 코드
         Debug.Log("2초 동안 머물러 이벤트 실행!");
 
+        eventController.HitchDestroy();
     }
 }

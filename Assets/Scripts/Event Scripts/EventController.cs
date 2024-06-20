@@ -6,7 +6,7 @@ using UnityEngine;
 public class EventPrefabSpawner : MonoBehaviour
 {
     private GameObject[] eventPrefabs; // PreFabs/event 디렉토리에 있는 모든 프리팹
-    public Transform spawnPoint; // 빈 오브젝트 위치 (Ghost 태그가 있을 경우)
+    //public Transform spawnPoint; // 빈 오브젝트 위치 (Ghost 태그가 있을 경우)
 
     public AudioClip eye_ghostSound;
     public AudioClip eventSound;
@@ -22,11 +22,12 @@ public class EventPrefabSpawner : MonoBehaviour
     private Coroutine instantiateAndDestroyCoroutine;
 
     public VehicleController vehicleController;
-    //public SlenderMan slenderMan;
 
     public LayerMask terrainLayerMask; // 지형 레이어 마스크
 
     private bool eventObjectExists = true;
+
+    private bool IsinitEvent = false;
 
     void Awake()
     {
@@ -38,20 +39,40 @@ public class EventPrefabSpawner : MonoBehaviour
 
     public void initEvent(Transform parentTransform)
     {
-        Debug.Log("init Event");
+        if (!IsinitEvent)
+        {
+            IsinitEvent = true;
+            Debug.Log("init Event");
 
-        // PreFabs/event 디렉토리에 있는 모든 프리팹을 로드합니다.
-        eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
+            // PreFabs/event 디렉토리에 있는 모든 프리팹을 로드합니다.
+            eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
 
-        if (parentTransform.gameObject.name == "Road_Prefabs_L" || parentTransform.gameObject.name == "Road_Prefabs_R")
-            EyeGhostSpawnEventPrefab(parentTransform.gameObject);
-        else if (parentTransform.gameObject.name != "Event_Prefab_Fog" || parentTransform.gameObject.name != "Event_PreFab_GasStation")
-            HitchhikerSpawnEventPrefab(parentTransform.gameObject);
+            Debug.Log(parentTransform.gameObject.name);
+            if (parentTransform.gameObject.name == "Road_Prefabs_L(Clone)" || parentTransform.gameObject.name == "Road_Prefabs_R(Clone)")
+                EyeGhostSpawnEventPrefab(parentTransform.gameObject);
+            else if (parentTransform.gameObject.name != "Event_Prefab_Fog(Clone)" || parentTransform.gameObject.name != "Event_PreFab_GasStation(Clone)" || parentTransform.gameObject.name != "Event_PreFab_GasStation_Fake(Clone)")
+                HitchhikerSpawnEventPrefab(parentTransform.gameObject);
+        }
     }
 
     private GameObject hitchPoint;
 
-    void EyeGhostSpawnEventPrefab(GameObject parentObject)
+    public void initEventghost(Transform parentTransform)
+    {
+        if (!IsinitEvent)
+        {
+            IsinitEvent = true;
+            Debug.Log("init Event");
+
+            // PreFabs/event 디렉토리에 있는 모든 프리팹을 로드합니다.
+            eventPrefabs = Resources.LoadAll<GameObject>("PreFabs/event");
+
+            EyeGhostSpawnEventPrefab(parentTransform.gameObject);
+        }
+    }
+
+
+    public void EyeGhostSpawnEventPrefab(GameObject parentObject)
     {
         Debug.Log("eye_ghost");
 
@@ -171,6 +192,8 @@ public class EventPrefabSpawner : MonoBehaviour
 
             eventcheckaudio.clip = failSound;
             eventcheckaudio.Play();
+
+            IsinitEvent = false;
         }
     }
 
@@ -195,6 +218,8 @@ public class EventPrefabSpawner : MonoBehaviour
         eventcheckaudio.Play();
 
         hitchPoint.SetActive(false);
+
+        IsinitEvent = false;
     }
 
     bool iseyetriggered = false;
@@ -218,6 +243,7 @@ public class EventPrefabSpawner : MonoBehaviour
         audioSource.Stop();
 
         eventcheckaudio.Play();
+        IsinitEvent = false;
     }
 
     IEnumerator InstantiateAndPlayAudio(GameObject instance, GameObject hitchPoint)
@@ -247,6 +273,8 @@ public class EventPrefabSpawner : MonoBehaviour
         audioSource.Stop();
 
         eventcheckaudio.Play();
+
+        IsinitEvent = false;
     }
 
     public void StopAndDestroyEarly()
@@ -263,6 +291,8 @@ public class EventPrefabSpawner : MonoBehaviour
             instance = null;
         }
 
-        audioSource.Stop();     
+        audioSource.Stop();
+
+        IsinitEvent = false;
     }
 }
